@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1000"
+   height="1000"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.0 r9654"
+   sodipodi:docname="drawing.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="1619.3547"
+     inkscape:cy="662.94949"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer3"
+     showgrid="false"
+     width="744.09px"
+     inkscape:showpageshadow="false"
+     inkscape:window-width="1680"
+     inkscape:window-height="978"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-52.362183)">
+    <text
+       xml:space="preserve"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;text-align:start;line-height:125%;letter-spacing:1px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Impact;-inkscape-font-specification:Impact Condensed"
+       x="324.83835"
+       y="265.41849"
+       id="text2985"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2987"
+         x="324.83835"
+         y="265.41849"
+         style="font-size:144px">git</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Impact;-inkscape-font-specification:Impact Condensed"
+       x="462.86526"
+       y="448.2807"
+       id="text2989"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2991"
+         x="462.86526"
+         y="448.2807">history</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Impact;-inkscape-font-specification:Impact Condensed"
+       x="572.93909"
+       y="663.6709"
+       id="text2993"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2995"
+         x="572.93909"
+         y="663.6709">strengths</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Impact;-inkscape-font-specification:Impact Condensed"
+       x="146.98274"
+       y="537.95667"
+       id="text2997"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="146.98274"
+         y="537.95667"
+         id="tspan3001">weaknesses</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Impact;-inkscape-font-specification:Impact Condensed"
+       x="330.52292"
+       y="808.39758"
+       id="text3006"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3008"
+         x="330.52292"
+         y="808.39758">conclusion</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 422.85714,275.64345 c 1.90477,0 3.80953,0 5.71429,0 3.80952,0 -0.47619,0.29184 1.42857,-0.87551 0.11471,-0.0703 6.01841,0 7.14286,0 0.52462,0 5.6568,0.0352 5.71428,0 0.33672,-0.20636 -0.33671,-0.66915 0,-0.87551 0.33672,-0.20636 0.95239,0 1.42858,0 2.38095,0 4.7619,0 7.14285,0 0.52463,0 5.6568,-0.0352 5.71429,0 0.33672,0.20636 -0.33672,0.66915 0,0.87551 0.67343,0.41272 2.18371,-0.41272 2.85714,0 0.33672,0.20635 -0.33672,0.66915 0,0.87551 0.67344,0.41272 2.18371,-0.41272 2.85714,0 0.33672,0.20637 -0.33671,0.66915 0,0.87552 0.33672,0.20636 1.09186,-0.20637 1.42858,0 0.33671,0.20636 -0.33672,0.66915 0,0.8755 0.33671,0.20637 1.09185,-0.20635 1.42857,0 0.33671,0.20637 -0.33672,0.66915 0,0.87552 0.33671,0.20636 1.09185,-0.20637 1.42857,0 0.33672,0.20636 0,0.58367 0,0.87551 0.47619,0 1.09185,-0.20636 1.42857,0 0.33672,0.20636 -0.21296,0.61449 0,0.87552 0.30117,0.36914 1.1274,0.50636 1.42857,0.87551 0.21738,0.26644 0,2.23224 0,2.62653 0,0.45783 0.18782,3.27185 0,3.50205 -0.30117,0.36915 -1.1274,0.50637 -1.42857,0.87552 -0.21296,0.26103 0.33672,0.66915 0,0.87551 -3.80952,0 0.47619,-0.29184 -1.42857,0.87551 -0.33672,0.20636 -1.09186,-0.20636 -1.42857,0 -0.67344,0.41272 0.67343,1.3383 0,1.75103 -0.33672,0.20636 -1.09186,-0.20636 -1.42857,0 -0.33672,0.20636 0.33671,0.66915 0,0.87551 -0.33672,0.20636 -1.09186,-0.20636 -1.42858,0 -0.67343,0.41271 0.67344,1.3383 0,1.75102 -0.33671,0.20637 -1.09185,-0.20636 -1.42857,0 -0.33671,0.20637 0.21296,0.61449 0,0.87552 -0.30117,0.36915 -1.1274,0.50636 -1.42857,0.87551 -0.21296,0.26102 0.33672,0.66914 0,0.87551 -0.33672,0.20636 -1.09185,-0.20637 -1.42857,0 -0.67343,0.41272 0.42592,1.22897 0,1.75103 -0.30117,0.36914 -1.1274,0.50636 -1.42857,0.87551 -0.42592,0.52205 0.67343,1.3383 0,1.75102 -0.33672,0.20636 -1.09186,-0.20636 -1.42857,0 -0.67344,0.41272 0.67343,1.33831 0,1.75102 -0.33672,0.20637 -1.09186,-0.20636 -1.42857,0 -0.67344,0.41273 0.67343,1.33831 0,1.75104 -0.33672,0.20635 -1.09186,-0.20637 -1.42858,0 -0.71428,0.43775 0.71429,2.18877 0,2.62653 -0.33671,0.20636 -1.09185,-0.20636 -1.42857,0 -0.33671,0.20636 0,0.58368 0,0.87551 0,1.45918 0,2.91838 0,4.37756 0,6.12859 0,12.25718 0,18.38577 0,2.62653 0,5.25307 0,7.87961 0,0.29183 0,0.58367 0,0.87551 0,0.29183 -0.33671,0.66915 0,0.87551 0.33672,0.20636 1.09186,-0.20636 1.42857,0 0.0575,0.0353 0,3.18054 0,3.50205 0,3.21021 0,6.42043 0,9.63064 0,0.29184 0,0.58368 0,0.87551 0,0.29184 -0.33671,0.66915 0,0.87551 0.33672,0.20636 1.09186,-0.20636 1.42858,0 0.33671,0.20636 0,0.58368 0,0.87552 0,1.75102 0,3.50205 0,5.25307 0,0.29184 -0.33672,0.66915 0,0.87551 0.33671,0.20636 1.09185,-0.20636 1.42857,0 0.0459,0.0281 0,2.41421 0,2.62653 0,2.33471 -0.47619,-0.29183 1.42857,0.87553 0.50146,0.30731 -0.49338,3.77281 0,4.37755 0.30117,0.36915 1.1274,0.50637 1.42857,0.87551 0.21296,0.26103 -0.33672,0.66916 0,0.87552 0.33672,0.20636 1.09185,-0.20636 1.42857,0 0.67344,0.41272 -0.67343,1.3383 0,1.75102 0.33672,0.20636 1.09186,-0.20636 1.42857,0 0.33672,0.20636 0,0.58368 0,0.87552 0,1.75102 0,3.50205 0,5.25307 0,0.29184 -0.33671,0.66915 0,0.87551 0.33672,0.20637 1.09186,-0.20636 1.42857,0 0.0648,0.0397 0,3.96476 0,4.37757 0,3.21021 0,6.42042 0,9.63063 0,0.45783 0.18782,3.27184 0,3.50205 -0.30116,0.36915 -1.1274,0.50636 -1.42857,0.87551 -0.21296,0.26103 0,0.58368 0,0.87552 0,0.29183 0,0.58367 0,0.87551 0,1.45918 0,2.91838 0,4.37756"
+       id="path3493"
+       inkscape:connector-curvature="0" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3509"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Bitstream Vera Sans;font-style:normal;font-weight:normal;font-size:48px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion3511"><rect
+           id="rect3513"
+           width="705.71429"
+           height="480"
+           x="131.42857"
+           y="347.14285" /></flowRegion><flowPara
+         id="flowPara3515"></flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 460,348.57143 c -8.62314,-0.73005 0.28836,5.42593 -1.42857,7.14286 -0.33672,0.33671 -1.09186,-0.33672 -1.42857,0 -0.67344,0.67343 0.42592,2.0053 0,2.85714 -0.30117,0.60234 -1.1274,0.82623 -1.42857,1.42857 -0.21296,0.42592 0.21295,1.00265 0,1.42857 -0.30117,0.60234 -1.12741,0.82623 -1.42858,1.42857 -0.21295,0.42592 0.21296,1.00266 0,1.42857 -0.30116,0.60234 -1.1274,0.82624 -1.42857,1.42858 -0.42591,0.85183 0.42592,2.0053 0,2.85714 -0.30117,0.60234 -1.1274,0.82623 -1.42857,1.42857 -0.42592,0.85184 0.42592,2.00531 0,2.85714 -0.30117,0.60234 -1.1274,0.82624 -1.42857,1.42857 -0.21296,0.42592 0.21296,1.00266 0,1.42858 -0.30117,0.60233 -1.1274,0.82623 -1.42857,1.42857 -0.42592,0.85183 0.30117,1.95363 0,2.85714 -0.33672,1.01015 -1.09186,1.84699 -1.42857,2.85714 -0.15059,0.45176 0.21296,1.00266 0,1.42857 -0.30117,0.60234 -1.1274,0.82624 -1.42857,1.42858 -0.21296,0.42591 0,0.95238 0,1.42857 -0.47619,0.95238 -0.83793,1.97118 -1.42858,2.85714 -0.37355,0.56033 -1.1274,0.82623 -1.42857,1.42857 -0.42591,0.85184 0.42592,2.00531 0,2.85714 -0.60234,1.20468 -2.2548,1.65247 -2.85714,2.85715 -0.42592,0.85183 0.42592,2.0053 0,2.85714 -0.30117,0.60234 -1.1274,0.82623 -1.42857,1.42857 -0.21296,0.42592 0.15058,0.97682 0,1.42857 -0.33672,1.01016 -1.09186,1.84699 -1.42857,2.85715 -0.15059,0.45175 0.15058,0.97681 0,1.42857 -0.33672,1.01015 -1.17032,1.82414 -1.42857,2.85714 -0.46198,1.84789 0.46197,3.86639 0,5.71429 -0.25825,1.033 -1.17032,1.82414 -1.42858,2.85714 -0.23098,0.92394 0.23099,1.9332 0,2.85714 -0.25825,1.033 -1.09185,1.84699 -1.42857,2.85714 -0.15058,0.45176 0.15059,0.97682 0,1.42858 -0.33671,1.01015 -1.09185,1.84699 -1.42857,2.85714 -0.15058,0.45175 0.21296,1.00265 0,1.42857 -0.30117,0.60234 -1.21561,0.78969 -1.42857,1.42857 -0.2178,0.65341 0.31784,5.0786 0,5.71429 -0.30117,0.60234 -1.1274,0.82623 -1.42857,1.42857 -0.42592,0.85183 0.42592,2.00531 0,2.85714 -0.60234,1.20468 -2.25481,1.65247 -2.85714,2.85714 -0.42592,0.85184 0.67343,2.18371 0,2.85715 -0.33672,0.33671 -1.09186,-0.33672 -1.42858,0 -0.33671,0.33671 0.21296,1.00265 0,1.42857 -0.30116,0.60234 -1.1274,0.82623 -1.42857,1.42857 -0.21296,0.42592 0.33672,1.09185 0,1.42857 -0.33671,0.33672 -1.09185,-0.33672 -1.42857,0 -0.67343,0.67344 0.67344,2.18371 0,2.85714 -0.33672,0.33672 -1.00265,-0.21295 -1.42857,0 -0.60234,0.30117 -0.95238,0.95238 -1.42857,1.42858 -0.47619,0.47619 -1.1274,0.82623 -1.42857,1.42857 -0.21296,0.42591 0.33671,1.09185 0,1.42857 -0.33672,0.33672 -1.00266,-0.21296 -1.42857,0 -0.60234,0.30117 -0.82624,1.1274 -1.42858,1.42857 -0.42591,0.21296 -1.09185,-0.33672 -1.42857,0 -0.33671,0.33672 0.33672,1.09185 0,1.42857 -0.33671,0.33672 -1.09185,-0.33672 -1.42857,0 -0.33672,0.33672 0.33672,1.09186 0,1.42857 -0.67343,0.67344 -2.18371,-0.67343 -2.85714,0 -0.33672,0.33672 0.33672,1.09186 0,1.42857 -0.33672,0.33672 -1.09186,-0.33671 -1.42857,0 -0.33672,0.33672 0.33671,1.09186 0,1.42858 -0.33672,0.33671 -1.09186,-0.33672 -1.42857,0 -0.33672,0.33671 0.33671,1.09185 0,1.42857 -0.67344,0.67343 -2.18371,-0.67344 -2.85715,0 -0.33671,0.33671 0.33672,1.09185 0,1.42857 -0.33671,0.33672 -1.09185,-0.33672 -1.42857,0 -0.67343,0.67343 0.67344,2.18371 0,2.85714 -0.33672,0.33672 -1.09185,-0.33672 -1.42857,0 -0.33672,0.33672 -0.33672,1.09186 0,1.42857 0.33672,0.33672 0.95238,0 1.42857,0 0.47619,0 0.95238,0 1.42857,0 3.33334,0 6.66667,0 10,0 0.47619,0 1.09186,-0.33671 1.42857,0 0.33672,0.33672 -0.33671,1.09186 0,1.42857 0.33672,0.33672 1.09186,-0.33671 1.42858,0 0.33671,0.33672 -0.33672,1.09186 0,1.42858 0.33671,0.33671 1.09185,-0.33672 1.42857,0 0.33671,0.33671 -0.33672,1.09185 0,1.42857 0.33671,0.33671 1.09185,-0.33672 1.42857,0 0.67343,0.67343 -0.42592,2.0053 0,2.85714 0.6331,1.2662 3.41875,2.98526 4.28571,4.28571 0.59064,0.88597 0.83793,1.97118 1.42857,2.85715 1.09891,1.64835 3.18682,2.63736 4.28572,4.28571 0.59064,0.88596 0.83793,1.97118 1.42857,2.85714 1.12066,1.681 3.07353,2.66947 4.28571,4.28572 0.63888,0.85183 0.83793,1.97118 1.42858,2.85714 1.0989,1.64835 3.18681,2.63736 4.28571,4.28572 0.59064,0.88596 0.83793,1.97118 1.42857,2.85714 0.37356,0.56033 0.95238,0.95238 1.42857,1.42857 1.42857,1.42857 2.85715,2.85714 4.28572,4.28571 0.95238,0.95238 2.11003,1.73648 2.85714,2.85715 0.59064,0.88596 0.67565,2.10422 1.42857,2.85714 0.75292,0.75292 2.10422,0.67565 2.85714,1.42857 0.75293,0.75292 0.7897,2.00531 1.42858,2.85714 7.70676,10.27569 -1.58626,-3.01482 5.71428,4.28572 1.21405,1.21405 1.78459,2.94502 2.85714,4.28571 0.84139,1.05173 1.90477,1.90476 2.85715,2.85715 1.90476,1.90476 3.80952,3.80952 5.71428,5.71428 0.95238,0.95238 1.90477,1.90476 2.85715,2.85714 0.95238,0.95238 2.04902,1.77965 2.85714,2.85715 0.63888,0.85183 0.67565,2.10422 1.42857,2.85714 0.75292,0.75292 2.10422,0.67565 2.85714,1.42857 0.75293,0.75292 0.83793,1.97118 1.42857,2.85714 0.37356,0.56034 0.95239,0.95239 1.42858,1.42858 0.47619,0.47619 0.86824,1.05501 1.42857,1.42857 0.88596,0.59064 1.97118,0.83793 2.85714,1.42857 0.56033,0.37355 0.82623,1.1274 1.42857,1.42857 0.42592,0.21296 1.09186,-0.33672 1.42857,0 0.33672,0.33672 -0.33671,1.09185 0,1.42857 0.33672,0.33672 1.00266,-0.21296 1.42857,0 1.20468,0.60234 1.65247,2.25481 2.85715,2.85714 0.42592,0.21296 1.00265,-0.21295 1.42857,0 0.60234,0.30117 0.78969,1.21562 1.42857,1.42858 0.90351,0.30116 1.95364,-0.30117 2.85714,0 0.63888,0.21295 0.7897,1.21561 1.42857,1.42857 0.90351,0.30117 1.95364,-0.30117 2.85715,0 0.63887,0.21296 0.78969,1.21561 1.42857,1.42857 1.35526,0.45175 2.93045,-0.45176 4.28571,0 1.01016,0.33672 1.84699,1.09185 2.85715,1.42857 0.9035,0.30117 1.90476,0 2.85714,0 2.38095,0 4.7619,0 7.14286,0 1.91044,0 0.94669,0 2.85714,0 0.47619,0 1.42857,-0.47619 1.42857,0 0,0.47619 -0.95238,0 -1.42857,0 -0.47619,0 -0.95238,0 -1.42857,0 -3.80953,0 0.47619,-0.47619 -1.42857,1.42857 -0.67344,0.67344 -2.00531,-0.42592 -2.85715,0 -0.60234,0.30117 -0.78969,1.21561 -1.42857,1.42857 -0.90351,0.30117 -1.95363,-0.30117 -2.85714,0 -0.63888,0.21296 -0.82623,1.1274 -1.42857,1.42857 -0.42592,0.21296 -0.97682,-0.15058 -1.42857,0 -1.01016,0.33672 -1.97118,0.83793 -2.85715,1.42858 -0.56033,0.37355 -0.78969,1.21561 -1.42857,1.42857 -0.90351,0.30117 -1.95363,-0.30117 -2.85714,0 -0.96736,0.32245 -3.19445,3.74008 -4.28572,4.28571 -0.42591,0.21296 -1.09185,-0.33672 -1.42857,0 -0.33671,0.33672 0.33672,1.09186 0,1.42857 -0.33671,0.33672 -1.09185,-0.33671 -1.42857,0 -0.33672,0.33672 0.21296,1.00266 0,1.42857 -0.30117,0.60234 -0.95238,0.95239 -1.42857,1.42858 -0.47619,0.47619 -0.95238,0.95238 -1.42857,1.42857 -1.90476,1.90476 -3.80952,3.80952 -5.71429,5.71428 -0.47619,0.47619 -1.1274,0.82624 -1.42857,1.42857 -0.21296,0.42592 0.21296,1.00266 0,1.42858 -0.54563,1.09127 -3.96326,3.31835 -4.28571,4.28571 -0.30117,0.90351 0.30117,1.95363 0,2.85714 -0.42592,1.27776 -2.25481,1.65247 -2.85715,2.85715 -0.21295,0.42591 0.15059,0.97681 0,1.42857 -4.04691,8.09383 0.5324,-2.12959 -1.42857,5.71428 -0.23165,0.92663 -3.67879,7.66105 -4.28571,8.57143 -0.37356,0.56033 -1.05502,0.86824 -1.42857,1.42857 -3.23754,4.85631 -0.19154,0.76615 -1.42857,5.71429 -0.86448,3.45791 -2.15108,2.86811 -4.28572,5.71428 -0.63887,0.85184 -0.95238,1.90477 -1.42857,2.85715 -0.95238,1.90476 -1.90476,3.80952 -2.85714,5.71428 -0.47619,0.95238 -0.67565,2.10422 -1.42857,2.85715 -0.75293,0.75292 -2.10422,0.67564 -2.85715,1.42857 -1.50584,1.50584 -1.57939,4.01061 -2.85714,5.71428 -0.80812,1.0775 -2.04902,1.77965 -2.85714,2.85715 -0.63888,0.85183 -0.83793,1.97118 -1.42857,2.85714 -0.37356,0.56033 -1.05502,0.86824 -1.42858,1.42857 -2.70632,-0.16269 -0.95238,3.33333 -1.42857,4.28571 -0.6331,1.2662 -3.41874,2.98527 -4.28571,4.28572 -0.59064,0.88596 -0.83793,1.97118 -1.42857,2.85714 -0.74711,1.12066 -2.25481,1.65247 -2.85715,2.85714 -0.21295,0.42592 0.21296,1.00266 0,1.42858 -0.30116,0.60233 -1.05501,0.86824 -1.42857,1.42857 -0.59064,0.88596 -0.83793,1.97118 -1.42857,2.85714 -0.74711,1.12066 -2.11003,1.73648 -2.85714,2.85714 -0.59064,0.88597 -0.83793,1.97118 -1.42857,2.85715 -0.86697,1.30045 -3.65262,3.01951 -4.28572,4.28571 -0.21296,0.42592 0.21296,1.00265 0,1.42857 -0.30117,0.60234 -1.1274,0.82623 -1.42857,1.42857 -0.21296,0.42592 0.33672,1.09186 0,1.42857 C 429.52381,696.19048 430,691.90476 430,695.71429"
+       id="path3517"
+       inkscape:connector-curvature="0"
+       transform="translate(0,52.362183)" />
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="18.571428"
+       y="410.93359"
+       id="text3519"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3521"
+         x="18.571428"
+         y="410.93359">User Interface</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="78.571426"
+       y="625.71429"
+       id="text3523"
+       sodipodi:linespacing="125%"
+       transform="translate(0,52.362183)"><tspan
+         sodipodi:role="line"
+         id="tspan3525"
+         x="78.571426"
+         y="625.71429" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="44.285717"
+       y="432.36215"
+       id="text3527"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3529"
+         x="44.285717"
+         y="432.36215">Internally inconsistent</tspan><tspan
+         sodipodi:role="line"
+         x="44.285717"
+         y="449.86215"
+         id="tspan3531">Externally inconsistent</tspan><tspan
+         sodipodi:role="line"
+         x="44.285717"
+         y="467.36215"
+         id="tspan3533">Error messages assume domain knowledge</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="95.714287"
+       y="588.07648"
+       id="text3535"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3537"
+         x="95.714287"
+         y="588.07648">Binary Files</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="94.285713"
+       y="613.79077"
+       id="text3539"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3541"
+         x="94.285713"
+         y="613.79077">Windows support</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="97.14286"
+       y="640.93359"
+       id="text3543"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3545"
+         x="97.14286"
+         y="640.93359">SHA1 revision numbers</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="-396.20917"
+       id="text3547"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3549"
+         x="904.72662"
+         y="-396.20917">1972 - SCCS: Source Code Control System</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="67.35939"
+       id="text3551"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3553"
+         x="904.72662"
+         y="67.35939">1982 - RCS: Revision Control System</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="206.43007"
+       id="text3555"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3557"
+         x="904.72662"
+         y="206.43007">1985 - PVCS: Polytron Version Control System</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="438.21442"
+       id="text3559"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3561"
+         x="904.72662"
+         y="438.21442">1990 - CVS: Concurrent Versions System</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="906.43549"
+       id="text3563"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3565"
+         x="904.72662"
+         y="906.43549">2000 - SVN: Subversion</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="535.58051"
+       id="text3567"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3569"
+         x="904.72662"
+         y="535.58051">1992 - ClearCase</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="628.29425"
+       id="text3571"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3573"
+         x="904.72662"
+         y="628.29425">1994 - Visual Source Safe</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="674.65112"
+       id="text3575"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3577"
+         x="904.72662"
+         y="674.65112">1995 - Perforce</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="952.79236"
+       id="text3579"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3581"
+         x="904.72662"
+         y="952.79236">2001 - GNU Arch</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="994.49689"
+       id="text3583"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3585"
+         x="904.72662"
+         y="994.49689">2002 - Darcs, Linux Kernel switches to BitKeeper</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="809.0694"
+       id="text3587"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3589"
+         x="904.72662"
+         y="809.0694">1998 - BitKeeper</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="1045.0842"
+       id="text3591"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3593"
+         x="904.72662"
+         y="1045.0842">2003 - Monotone</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="1135.7706"
+       id="text3595"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3597"
+         x="904.72662"
+         y="1135.7706">2005 - Git, Mercuial, Bazaar</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="1365.7144"
+       y="1198.5714"
+       id="text3599"
+       sodipodi:linespacing="125%"
+       transform="translate(0,52.362183)"><tspan
+         sodipodi:role="line"
+         id="tspan3601"
+         x="1365.7144"
+         y="1198.5714" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="1230.9336"
+       id="text3603"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3605"
+         x="904.72662"
+         y="1230.9336">2007 - Fossil</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="ExtraDates"
+     style="display:none">
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="-397.9841"
+       id="text3607"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3609"
+         x="904.72662"
+         y="-397.9841">1973</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="-351.62723"
+       id="text3611"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3613"
+         x="904.72662"
+         y="-351.62723">1974</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="-305.27032"
+       id="text3615"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3617"
+         x="904.72662"
+         y="-305.27032">1975</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="-258.91336"
+       id="text3619"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3621"
+         x="904.72662"
+         y="-258.91336">1976</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="-212.55661"
+       id="text3623"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3625"
+         x="904.72662"
+         y="-212.55661">1977</tspan><tspan
+         sodipodi:role="line"
+         x="904.72662"
+         y="-152.55661"
+         id="tspan3627" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="-166.1998"
+       id="text3629"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3631"
+         x="904.72662"
+         y="-166.1998">1978</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="-119.84286"
+       id="text3633"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3635"
+         x="904.72662"
+         y="-119.84286">1979</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="-73.48587"
+       id="text3637"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3639"
+         x="904.72662"
+         y="-73.48587">1980</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="-27.12915"
+       id="text3641"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3643"
+         x="904.72662"
+         y="-27.12915">1981</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="65.584625"
+       id="text3645"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3647"
+         x="904.72662"
+         y="65.584625">1983</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="111.94156"
+       id="text3649"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3651"
+         x="904.72662"
+         y="111.94156">1984</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="204.65524"
+       id="text3653"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3655"
+         x="904.72662"
+         y="204.65524">1986</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="251.01212"
+       id="text3657"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3659"
+         x="904.72662"
+         y="251.01212">1987</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="297.36893"
+       id="text3661"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3663"
+         x="904.72662"
+         y="297.36893">1988</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="343.72586"
+       id="text3665"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3667"
+         x="904.72662"
+         y="343.72586">1989</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="436.43961"
+       id="text3669"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3671"
+         x="904.72662"
+         y="436.43961">1991</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="529.15338"
+       id="text3673"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3675"
+         x="904.72662"
+         y="529.15338">1993</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="668.22394"
+       id="text3677"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3679"
+         x="904.72662"
+         y="668.22394">1996</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="714.58087"
+       id="text3681"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3683"
+         x="904.72662"
+         y="714.58087">1997</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="807.29462"
+       id="text3685"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3687"
+         x="904.72662"
+         y="807.29462">1999</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="1039.079"
+       id="text3689"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3691"
+         x="904.72662"
+         y="1039.079">2004</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="904.72662"
+       y="1131.7926"
+       id="text3693"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3695"
+         x="904.72662"
+         y="1131.7926">2006</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer" />
+</svg>
