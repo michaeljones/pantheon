@@ -13,6 +13,8 @@ void setup()
 // 0, 0 is top left.
 void draw()
 {
+    background(204);
+
     PVector eye = new PVector( width/2, height/2, 2000 );
     PVector centre = new PVector( width/2, height/2, 0 );
     PVector up = new PVector( 0, 1, 0 );
@@ -21,17 +23,7 @@ void draw()
     float cameraZ = (height/2.0) / tan(fov/2.0);
     perspective( fov, float(width)/float(height), cameraZ/10.0, cameraZ*10.0);
 
-  /*
-  camera(
-      eye.x, eye.y, eye.z,
-      centre.x, centre.y, centre.z,
-      up.x, up.y, up.z
-      );
-    */
-
     PVector pos = path.position();
-
-    // println( pos );
 
     translate( pos.x, pos.y, pos.z );
     ellipse( 400, 300, 5, 5 );
@@ -43,6 +35,10 @@ void keyPressed()
     {
         exit();
     }
+    else if ( key == ' ' )
+    {
+        path.trigger();
+    }
 }
 
 
@@ -50,11 +46,16 @@ class Path
 {
     ArrayList m_points;
     int m_index;
+    int m_time;
+    boolean m_active;
+
 
     Path()
     {
         m_points = new ArrayList();
         m_index = 0;
+        m_time = 0;
+        m_active = false;
     }
     
     void add( PVector point )
@@ -62,20 +63,39 @@ class Path
         m_points.add( point );
     }
 
+    void trigger()
+    {
+        if ( ! m_active )
+        {
+            m_active = true;
+            m_time = millis();
+        }
+    }
+
     PVector position()
     {
-        int m = millis();
+        if ( ! m_active )
+        {
+            return (PVector)m_points.get( m_index );
+        }
 
-        int index = m / 3000;
-        index = index % m_points.size();
+        int m = millis() - m_time;
 
-        int nextIndex = index + 1;
+        if ( m > 3000 )
+        {
+            m_active = false;
+            m_time = 0;
+            m_index += 1;
+            m_index = m_index % m_points.size();
+            return (PVector)m_points.get( m_index );
+        }
+
+        int nextIndex = m_index + 1;
         nextIndex = nextIndex % m_points.size();
 
-        float fraction = ( m % 3000 ) / 3000.0; 
+        float fraction = m / 3000.0;
 
-
-        PVector start = (PVector)m_points.get( index );
+        PVector start = (PVector)m_points.get( m_index );
         PVector end = (PVector)m_points.get( nextIndex );
 
         PVector pos = new PVector( start.x, start.y, start.z );
@@ -83,7 +103,6 @@ class Path
         dir.mult( fraction );
         pos.add( dir );
 
-        println( fraction + " " + index + " " + nextIndex + " " + pos );
         return pos;
     }
 }
