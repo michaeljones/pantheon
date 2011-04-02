@@ -4,7 +4,7 @@ PShape s;
 
 void setup()
 {
-    size( 800, 600, P3D );
+    size( 800, 600 );
 
     path.add( new PVector( 0, 0, 0 ) );
     path.add( new PVector( 0, 50, 0 ) );
@@ -25,12 +25,13 @@ void draw()
     
     float fov = PI/3.0;
     float cameraZ = (height/2.0) / tan(fov/2.0);
-    perspective( fov, float(width)/float(height), cameraZ/10.0, cameraZ*10.0);
+    //perspective( fov, float(width)/float(height), cameraZ/10.0, cameraZ*10.0);
 
     PVector pos = path.position();
 
-    translate( pos.x, pos.y, pos.z );
+    translate( pos.x, pos.y );
     ellipse( 400, 300, 5, 5 );
+    shape( s, 0, 0, width, height );
 }
 
 void keyPressed()
