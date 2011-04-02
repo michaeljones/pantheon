@@ -1,5 +1,6 @@
 
 Path path = new Path();
+PShape s;
 
 void setup()
 {
@@ -8,6 +9,9 @@ void setup()
     path.add( new PVector( 0, 0, 0 ) );
     path.add( new PVector( 0, 50, 0 ) );
     path.add( new PVector( 20, 10, 0 ) );
+
+    s = loadShape("/home/mike/projects/presentations/git/images/drawing_export_01.svg");
+    smooth();
 }
 
 // 0, 0 is top left.
@@ -74,7 +78,7 @@ class Path
 
     PVector position()
     {
-        if ( ! m_active )
+        if ( ! m_active ) 
         {
             return (PVector)m_points.get( m_index );
         }
@@ -93,7 +97,7 @@ class Path
         int nextIndex = m_index + 1;
         nextIndex = nextIndex % m_points.size();
 
-        float fraction = m / 3000.0;
+        float fraction = m / 3000.0; 
 
         PVector start = (PVector)m_points.get( m_index );
         PVector end = (PVector)m_points.get( nextIndex );
