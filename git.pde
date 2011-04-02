@@ -4,11 +4,11 @@ PShape s;
 
 void setup()
 {
-    size( 800, 600 );
+    size( screen.width, screen.height );
 
-    path.add( new PVector( 0, 0, 0 ) );
-    path.add( new PVector( 0, 50, 0 ) );
-    path.add( new PVector( 20, 10, 0 ) );
+    path.add( new PVector( -200, 100, 2 ) );
+    path.add( new PVector( 0, -450, 1 ) );
+    path.add( new PVector( 20, 10, 1 ) );
 
     s = loadShape("/home/mike/projects/presentations/git/images/drawing_export_01.svg");
     smooth();
@@ -19,19 +19,12 @@ void draw()
 {
     background(204);
 
-    PVector eye = new PVector( width/2, height/2, 2000 );
-    PVector centre = new PVector( width/2, height/2, 0 );
-    PVector up = new PVector( 0, 1, 0 );
-    
-    float fov = PI/3.0;
-    float cameraZ = (height/2.0) / tan(fov/2.0);
-    //perspective( fov, float(width)/float(height), cameraZ/10.0, cameraZ*10.0);
-
     PVector pos = path.position();
 
     translate( pos.x, pos.y );
-    ellipse( 400, 300, 5, 5 );
-    shape( s, 0, 0, width, height );
+    scale( pos.z, pos.z );
+
+    shape( s, 0, 0, width, width );
 }
 
 void keyPressed()
