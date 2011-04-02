@@ -1,6 +1,57 @@
 
+class Motion
+{
+    Path m_path;
+    PVector m_pos; 
+    String m_mode;
+
+    Motion( Path path )
+    {
+        m_path = path;
+        m_pos = new PVector( 0, 0, 1 );
+        m_mode = "path";
+    }
+
+    void trigger()
+    {
+        if ( m_mode == "path" )
+        {
+            m_path.trigger();
+        }
+    }
+
+    void freeMotion()
+    {
+        m_mode = "free";
+    }
+    
+    void pathMotion()
+    {
+        m_mode = "path";
+    }
+
+    void adjust( PVector diff )
+    {
+        m_pos.add( diff );
+    }
+
+    PVector position()
+    {
+        if ( m_mode == "path" )
+        {
+            return m_path.position();
+        }
+        else
+        {
+            return m_pos;
+        }
+    }
+}
+
 Path path = new Path();
+Motion motion = new Motion( path );
 PShape s;
+PVector mouse;
 
 void setup()
 {
@@ -19,12 +70,34 @@ void draw()
 {
     background(204);
 
-    PVector pos = path.position();
+    PVector pos = motion.position();
 
     translate( pos.x, pos.y );
     scale( pos.z, pos.z );
 
     shape( s, 0, 0, width, width );
+}
+
+void mousePressed()
+{
+    if ( mouseButton == LEFT )
+    {
+        cursor( HAND );
+    }
+}
+
+void mouseDragged()
+{
+    if ( mouseButton == LEFT )
+    {
+        PVector diff = new PVector( mouseX - pmouseX, mouseY - pmouseY, 0 );
+        motion.adjust( diff );
+    }
+}
+
+void mouseReleased()
+{
+    cursor( ARROW );
 }
 
 void keyPressed()
@@ -35,7 +108,15 @@ void keyPressed()
     }
     else if ( key == ' ' )
     {
-        path.trigger();
+        motion.trigger();
+    }
+    else if ( key == 'f' )
+    {
+        motion.freeMotion();
+    }
+    else if ( key == 'p' )
+    {
+        motion.pathMotion();
     }
 }
 
