@@ -85,6 +85,21 @@ class Path
         }
     }
 
+    float smoothStep( float fraction )
+    {
+        if ( fraction < 0 ) return 0;
+        if ( fraction > 1 ) return 1;
+
+        if ( fraction < 0.5 ) 
+            return ( fraction * 2 ) * ( fraction * 2 ) * 0.5;
+
+        // else ( fraction > 0.5 ) 
+        
+        // return 1 - ( ( fraction - 0.5 ) * 2 * ( fraction - 0.5 ) * 2 );
+        // return 1 - ( fraction - 1 ) * ( fraction - 1 );
+        return 1 - ( fraction - 1 ) * ( fraction * 2 - 2 );
+    }
+
     PVector position()
     {
         if ( ! m_active ) 
@@ -107,6 +122,7 @@ class Path
         nextIndex = nextIndex % m_points.size();
 
         float fraction = m / float( m_interval ); 
+        fraction = smoothStep( fraction );
 
         PVector start = (PVector)m_points.get( m_index );
         PVector end = (PVector)m_points.get( nextIndex );
