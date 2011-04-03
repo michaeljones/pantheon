@@ -1,15 +1,31 @@
 
+float smoothStep( float fraction )
+{
+    if ( fraction < 0 ) return 0;
+    if ( fraction > 1 ) return 1;
+
+    if ( fraction < 0.5 ) 
+        return ( fraction * 2 ) * ( fraction * 2 ) * 0.5;
+
+    return 1 - ( fraction - 1 ) * ( fraction * 2 - 2 );
+}
+
 class Motion
 {
     Path m_path;
     PVector m_pos; 
+    int m_time;
     String m_mode;
+    float m_speed;
+    int m_interval;
 
     Motion( Path path )
     {
         m_path = path;
         m_pos = new PVector( 0, 0, 1 );
         m_mode = "path";
+        m_speed = 0.5; // units per millisecond
+        m_interval = 0;
     }
 
     void trigger()
@@ -17,17 +33,35 @@ class Motion
         if ( m_mode == "path" )
         {
             m_path.trigger();
+            return;
         }
+        
+        m_mode = "restore";
+        m_time = millis();
+
+        PVector start = m_pos;
+        PVector end = m_path.position();
+
+        float distance = start.dist( end );
+        m_interval = round( distance / m_speed );
     }
 
     void freeMotion()
     {
-        m_mode = "free";
+        if ( m_mode != "free" )
+        {
+            m_mode = "free";
+            PVector position = m_path.position();
+            m_pos = new PVector( position.x, position.y, position.z );
+        }
     }
     
     void pathMotion()
     {
-        m_mode = "path";
+        if ( m_mode == "free" )
+        {
+            trigger();
+        }
     }
 
     void adjust( PVector diff )
@@ -41,10 +75,36 @@ class Motion
         {
             return m_path.position();
         }
-        else
+        else if ( m_mode == "restore" )
+        {
+            int m = millis() - m_time;
+
+            if ( m > m_interval )
+            {
+                m_time = 0;
+                m_mode = "path";
+                return m_path.position();
+            }
+
+            float fraction = m / float( m_interval ); 
+            fraction = smoothStep( fraction );
+
+            PVector start = m_pos;
+            PVector end = m_path.position();
+
+            PVector pos = new PVector( start.x, start.y, start.z );
+            PVector dir = new PVector( end.x - start.x, end.y - start.y, end.z - start.z );
+            dir.mult( fraction );
+            pos.add( dir );
+
+            return pos;
+        }
+        else if ( m_mode == "free" )
         {
             return m_pos;
         }
+
+        return new PVector();
     }
 }
 
@@ -137,7 +197,7 @@ class Path
         m_index = 0;
         m_time = 0;
         m_interval = 1000;
-        m_speed = 0.1; // units per millisecond
+        m_speed = 0.5; // units per millisecond
         m_active = false;
     }
     
@@ -162,23 +222,7 @@ class Path
             float distance = start.dist( end );
 
             m_interval = round( distance / m_speed );
-            println( m_interval + " " + distance +  " " + m_speed );
         }
-    }
-
-    float smoothStep( float fraction )
-    {
-        if ( fraction < 0 ) return 0;
-        if ( fraction > 1 ) return 1;
-
-        if ( fraction < 0.5 ) 
-            return ( fraction * 2 ) * ( fraction * 2 ) * 0.5;
-
-        // else ( fraction > 0.5 ) 
-        
-        // return 1 - ( ( fraction - 0.5 ) * 2 * ( fraction - 0.5 ) * 2 );
-        // return 1 - ( fraction - 1 ) * ( fraction - 1 );
-        return 1 - ( fraction - 1 ) * ( fraction * 2 - 2 );
     }
 
     PVector position()
