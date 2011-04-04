@@ -144,7 +144,7 @@ class Pivot
 
 
 Path path = new Path();
-Pivot pivot = new Pivot( new PVector( 0, 0 ), 1 );
+Pivot pivot;
 Motion motion = new Motion( path );
 PShape s;
 PVector mouse;
@@ -157,6 +157,9 @@ void setup()
     path.add( new PVector( 0, -450, 1 ) );
     path.add( new PVector( 20, 10, 1 ) );
 
+    PVector first = path.position();
+    pivot = new Pivot( new PVector( 0, 0 ), first.z );
+
     s = loadShape("/home/mike/projects/presentations/git/images/drawing_export_01.svg");
     smooth();
     shapeMode(CENTER);
@@ -168,16 +171,16 @@ void draw()
     background(204);
 
     PVector pos = motion.position();
-    PVector mouse = pivot.m_pivot;
+    PVector pivot_ = pivot.m_pivot;
     float scale_ = pivot.m_scale;
 
-    translate( mouse.x, mouse.y );
+    translate( pivot_.x, pivot_.y );
 
     scale( pos.z, pos.z );
 
-    translate( ( pos.x - mouse.x ) / scale_, ( pos.y - mouse.y ) / scale_ );
+    translate( ( pos.x - pivot_.x ) / scale_, ( pos.y - pivot_.y ) / scale_ );
 
-    // PVector shift = new PVector( mouse.x - pos.x, mouse.y - pos.y );
+    // PVector shift = new PVector( pivot_.x - pos.x, pivot_.y - pos.y );
     // translate( shift.x, shift.y );
     // translate( -shift.x, -shift.y );
 
@@ -194,6 +197,16 @@ void mousePressed()
     {
         println( mouseX +  " " + mouseY );
         PVector pos = motion.position();
+
+        PVector oldPivot = pivot.m_pivot;
+        float scale_ = pivot.m_scale;
+        PVector lastDrawn = new PVector(
+                oldPivot.x + ( ( ( pos.x - oldPivot.x ) / scale_ ) * pos.z ),
+                oldPivot.y + ( ( ( pos.y - oldPivot.y ) / scale_ ) * pos.z )
+                );
+        PVector diff = new PVector( lastDrawn.x - pos.x, lastDrawn.y - pos.y );
+        motion.adjust( diff );
+
         println( "Setting scale to " + pos.z + " " + mouseX + " " + mouseY );
         pivot = new Pivot( new PVector( mouseX, mouseY ), pos.z );
     }
