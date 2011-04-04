@@ -193,7 +193,7 @@ void mousePressed()
     {
         cursor( HAND );
     }
-    else if ( mouseButton == RIGHT )
+    //else if ( mouseButton == RIGHT )
     {
         println( mouseX +  " " + mouseY );
         PVector pos = motion.position();
