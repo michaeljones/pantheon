@@ -14,6 +14,7 @@ class Motion
 {
     Path m_path;
     PVector m_pos; 
+    PVector m_pivot;
     int m_time;
     String m_mode;
     float m_speed;
@@ -23,6 +24,7 @@ class Motion
     {
         m_path = path;
         m_pos = new PVector( 0, 0, 1 );
+        m_pivot = new PVector( 0, 0, 1 );
         m_mode = "path";
         m_speed = 0.5; // units per millisecond
         m_interval = 0;
@@ -68,6 +70,15 @@ class Motion
     {
         m_pos.add( diff );
     }
+    
+    void scale( float diff )
+    {
+        m_pos.z += diff;
+        if ( m_pos.z < 0.1 ) 
+        {
+            m_pos.z = 0.1;
+        }
+    }
 
     PVector position()
     {
@@ -108,7 +119,32 @@ class Motion
     }
 }
 
+class Pivot
+{
+    float m_scale;
+    PVector m_pivot;
+
+    Pivot( PVector pivot, float scale )
+    {
+        m_pivot = pivot;
+        m_scale = scale;
+    }
+
+    void setPivot( PVector pivot ) 
+    {
+        m_pivot = pivot;
+    }
+
+    PVector getPivot()
+    {
+        return m_pivot;
+    }
+
+}
+
+
 Path path = new Path();
+Pivot pivot = new Pivot( new PVector( 0, 0 ), 1 );
 Motion motion = new Motion( path );
 PShape s;
 PVector mouse;
@@ -123,6 +159,7 @@ void setup()
 
     s = loadShape("/home/mike/projects/presentations/git/images/drawing_export_01.svg");
     smooth();
+    shapeMode(CENTER);
 }
 
 // 0, 0 is top left.
@@ -131,9 +168,18 @@ void draw()
     background(204);
 
     PVector pos = motion.position();
+    PVector mouse = pivot.m_pivot;
+    float scale_ = pivot.m_scale;
 
-    translate( pos.x, pos.y );
+    translate( mouse.x, mouse.y );
+
     scale( pos.z, pos.z );
+
+    translate( ( pos.x - mouse.x ) / scale_, ( pos.y - mouse.y ) / scale_ );
+
+    // PVector shift = new PVector( mouse.x - pos.x, mouse.y - pos.y );
+    // translate( shift.x, shift.y );
+    // translate( -shift.x, -shift.y );
 
     shape( s, 0, 0, width, width );
 }
@@ -144,6 +190,13 @@ void mousePressed()
     {
         cursor( HAND );
     }
+    else if ( mouseButton == RIGHT )
+    {
+        println( mouseX +  " " + mouseY );
+        PVector pos = motion.position();
+        println( "Setting scale to " + pos.z + " " + mouseX + " " + mouseY );
+        pivot = new Pivot( new PVector( mouseX, mouseY ), pos.z );
+    }
 }
 
 void mouseDragged()
@@ -152,6 +205,11 @@ void mouseDragged()
     {
         PVector diff = new PVector( mouseX - pmouseX, mouseY - pmouseY, 0 );
         motion.adjust( diff );
+    }
+    else if ( mouseButton == RIGHT )
+    {
+        float diff = mouseX - pmouseX;
+        motion.scale( diff / 100.0 );
     }
 }
 
