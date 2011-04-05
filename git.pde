@@ -158,9 +158,13 @@ void setup()
 {
     size( screen.width, screen.height );
 
-    path.add( new PVector( -200, 100, 2 ) );
-    path.add( new PVector( 0, -450, 1 ) );
-    path.add( new PVector( 20, 10, 1 ) );
+    path.add( new PVector( 1307.8401, 1536.8, 1.6400002 ) );
+    path.add( new PVector( 833.7591, 340.87112, 1.0000008 ) );
+    path.add( new PVector( 645.54443, 735.9685, 3.7099988 ) );
+    path.add( new PVector( 1861.031, 200.65875, 2.57 ) );
+    path.add( new PVector( 115.01532, 39.956543, 2.42 ) );
+    path.add( new PVector( 774.5053, -829.63696, 2.7999997 ) );
+    path.add( new PVector( 840.2251, 567.4372, 0.54 ) );
 
     PVector first = path.position();
     pivot = new Pivot( new PVector( 0, 0 ), first.z );
@@ -176,6 +180,13 @@ void draw()
     background(204);
 
     PVector pos = motion.position();
+
+    if ( motion.m_mode != "free" )
+    {
+        pivot.m_pivot = new PVector( 0, 0 );
+        pivot.m_scale = pos.z;
+    }
+
     PVector pivot_ = pivot.m_pivot;
     float scale_ = pivot.m_scale;
 
@@ -200,7 +211,6 @@ void mousePressed()
     }
     //else if ( mouseButton == RIGHT )
     {
-        println( mouseX +  " " + mouseY );
         PVector pos = motion.position();
 
         PVector oldPivot = pivot.m_pivot;
@@ -212,7 +222,6 @@ void mousePressed()
         PVector diff = new PVector( lastDrawn.x - pos.x, lastDrawn.y - pos.y );
         motion.adjust( diff );
 
-        println( "Setting scale to " + pos.z + " " + mouseX + " " + mouseY );
         pivot = new Pivot( new PVector( mouseX, mouseY ), pos.z );
     }
 }
@@ -244,7 +253,7 @@ void keyPressed()
     }
     else if ( key == ' ' )
     {
-        // Reset motion position and scale to remove pivot
+        // Reset motion position and scale to remove pivot 
         //
         if ( motion.m_mode == "free" )
         {
@@ -255,7 +264,7 @@ void keyPressed()
                     oldPivot.x + ( ( ( pos.x - oldPivot.x ) / scale_ ) * pos.z ),
                     oldPivot.y + ( ( ( pos.y - oldPivot.y ) / scale_ ) * pos.z )
                     );
-
+            
             lastDrawn.z = pos.z;
 
             motion.setPosition( lastDrawn );
@@ -272,6 +281,20 @@ void keyPressed()
     else if ( key == 'p' )
     {
         motion.pathMotion();
+    }
+    else if ( key == 's' )
+    {
+        PVector pos = motion.position();
+        PVector oldPivot = pivot.m_pivot;
+        float scale_ = pivot.m_scale;
+        PVector lastDrawn = new PVector(
+                oldPivot.x + ( ( ( pos.x - oldPivot.x ) / scale_ ) * pos.z ),
+                oldPivot.y + ( ( ( pos.y - oldPivot.y ) / scale_ ) * pos.z )
+                );
+
+        lastDrawn.z = pos.z;
+
+        println( "Path point: " + lastDrawn );
     }
 }
 
