@@ -1,4 +1,7 @@
 
+//
+//   SmoothStepper
+//
 class SmoothStepper
 {
     SmoothStepper() {}
@@ -16,6 +19,9 @@ class SmoothStepper
 };
 
 
+//
+//  Motion
+//
 class Motion
 {
     Motion( Path path, SmoothStepper stepper )
@@ -133,13 +139,17 @@ class Motion
     private int m_interval;
 }
 
+
+//
+//  Path
+//
 class Path
 {
-    Path( SmoothStepper stepper )
+    Path( ArrayList points, SmoothStepper stepper )
     {
+        m_points = points;
         m_stepper = stepper;
 
-        m_points = new ArrayList();
         m_index = 0;
         m_time = 0;
         m_interval = 1000;
@@ -147,11 +157,6 @@ class Path
         m_active = false;
     }
     
-    void add( PVector point )
-    {
-        m_points.add( point );
-    }
-
     void trigger()
     {
         if ( ! m_active )
@@ -251,17 +256,21 @@ void setup()
 {
     size( screen.width, screen.height );
 
-    SmoothStepper stepper = new SmoothStepper();
-    Path path = new Path( stepper );
-    motion = new Motion( path, stepper );
+    //  Set up points
+    //
+    ArrayList points = new ArrayList();
+    points.add( new PVector( 1307.8401, 1536.8, 1.6400002 ) );
+    points.add( new PVector( 833.7591, 340.87112, 1.0000008 ) );
+    points.add( new PVector( 645.54443, 735.9685, 3.7099988 ) );
+    points.add( new PVector( 1861.031, 200.65875, 2.57 ) );
+    points.add( new PVector( 115.01532, 39.956543, 2.42 ) );
+    points.add( new PVector( 774.5053, -829.63696, 2.7999997 ) );
+    points.add( new PVector( 840.2251, 567.4372, 0.54 ) );
 
-    path.add( new PVector( 1307.8401, 1536.8, 1.6400002 ) );
-    path.add( new PVector( 833.7591, 340.87112, 1.0000008 ) );
-    path.add( new PVector( 645.54443, 735.9685, 3.7099988 ) );
-    path.add( new PVector( 1861.031, 200.65875, 2.57 ) );
-    path.add( new PVector( 115.01532, 39.956543, 2.42 ) );
-    path.add( new PVector( 774.5053, -829.63696, 2.7999997 ) );
-    path.add( new PVector( 840.2251, 567.4372, 0.54 ) );
+    // Setup motion class
+    SmoothStepper stepper = new SmoothStepper();
+    Path path = new Path( points, stepper );
+    motion = new Motion( path, stepper );
 
     PVector first = path.position();
     pivot = new Pivot( new PVector( 0, 0 ), first.z );
@@ -288,14 +297,8 @@ void draw()
     float scale_ = pivot.m_scale;
 
     translate( pivot_.x, pivot_.y );
-
     scale( pos.z, pos.z );
-
     translate( ( pos.x - pivot_.x ) / scale_, ( pos.y - pivot_.y ) / scale_ );
-
-    // PVector shift = new PVector( pivot_.x - pos.x, pivot_.y - pos.y );
-    // translate( shift.x, shift.y );
-    // translate( -shift.x, -shift.y );
 
     shape( s, 0, 0, width, width );
 }
@@ -306,7 +309,8 @@ void mousePressed()
     {
         cursor( HAND );
     }
-    //else if ( mouseButton == RIGHT )
+
+    if ( mouseButton == LEFT || mouseButton == RIGHT )
     {
         PVector pos = motion.position();
 
