@@ -1,28 +1,28 @@
 
-float smoothStep( float fraction )
+class SmoothStepper
 {
-    if ( fraction < 0 ) return 0;
-    if ( fraction > 1 ) return 1;
+    SmoothStepper() {}
 
-    if ( fraction < 0.5 ) 
-        return ( fraction * 2 ) * ( fraction * 2 ) * 0.5;
+    float step( float fraction )
+    {
+        if ( fraction < 0 ) return 0;
+        if ( fraction > 1 ) return 1;
+    
+        if ( fraction < 0.5 ) 
+            return ( fraction * 2 ) * ( fraction * 2 ) * 0.5;
+    
+        return 1 - ( fraction - 1 ) * ( fraction * 2 - 2 );
+    }
+};
 
-    return 1 - ( fraction - 1 ) * ( fraction * 2 - 2 );
-}
 
 class Motion
 {
-    Path m_path;
-    PVector m_pos; 
-    PVector m_pivot;
-    int m_time;
-    String m_mode;
-    float m_speed;
-    int m_interval;
-
-    Motion( Path path )
+    Motion( Path path, SmoothStepper stepper )
     {
         m_path = path;
+        m_stepper = stepper;
+
         m_pos = new PVector( 0, 0, 1 );
         m_pivot = new PVector( 0, 0, 1 );
         m_mode = "path";
@@ -103,7 +103,7 @@ class Motion
             }
 
             float fraction = m / float( m_interval ); 
-            fraction = smoothStep( fraction );
+            fraction = m_stepper.step( fraction );
 
             PVector start = m_pos;
             PVector end = m_path.position();
@@ -122,7 +122,101 @@ class Motion
 
         return new PVector();
     }
+
+    private Path m_path;
+    private SmoothStepper m_stepper;
+    private PVector m_pos; 
+    private PVector m_pivot;
+    private int m_time;
+    private String m_mode;
+    private float m_speed;
+    private int m_interval;
 }
+
+class Path
+{
+    Path( SmoothStepper stepper )
+    {
+        m_stepper = stepper;
+
+        m_points = new ArrayList();
+        m_index = 0;
+        m_time = 0;
+        m_interval = 1000;
+        m_speed = 0.5; // units per millisecond
+        m_active = false;
+    }
+    
+    void add( PVector point )
+    {
+        m_points.add( point );
+    }
+
+    void trigger()
+    {
+        if ( ! m_active )
+        {
+            m_active = true;
+            m_time = millis();
+            
+            int nextIndex = m_index + 1;
+            nextIndex = nextIndex % m_points.size();
+
+            PVector start = (PVector)m_points.get( m_index );
+            PVector end = (PVector)m_points.get( nextIndex );
+
+            float distance = start.dist( end );
+
+            m_interval = round( distance / m_speed );
+        }
+    }
+
+    PVector position()
+    {
+        if ( ! m_active ) 
+        {
+            return (PVector)m_points.get( m_index );
+        }
+
+        int m = millis() - m_time;
+
+        if ( m > m_interval )
+        {
+            m_active = false;
+            m_time = 0;
+            m_index += 1;
+            m_index = m_index % m_points.size();
+            return (PVector)m_points.get( m_index );
+        }
+
+        int nextIndex = m_index + 1;
+        nextIndex = nextIndex % m_points.size();
+
+        float fraction = m / float( m_interval ); 
+        fraction = m_stepper.step( fraction );
+
+        PVector start = (PVector)m_points.get( m_index );
+        PVector end = (PVector)m_points.get( nextIndex );
+
+        PVector pos = new PVector( start.x, start.y, start.z );
+        PVector dir = new PVector( end.x - start.x, end.y - start.y, end.z - start.z );
+        dir.mult( fraction );
+        pos.add( dir );
+
+        return pos;
+    }
+
+
+    private SmoothStepper m_stepper;
+    private ArrayList m_points;
+    private int m_index;
+    private int m_time;
+    private int m_interval;
+    private float m_speed;
+    private boolean m_active;
+
+}
+
 
 class Pivot
 {
@@ -148,15 +242,18 @@ class Pivot
 }
 
 
-Path path = new Path();
 Pivot pivot;
-Motion motion = new Motion( path );
+Motion motion;
 PShape s;
 PVector mouse;
 
 void setup()
 {
     size( screen.width, screen.height );
+
+    SmoothStepper stepper = new SmoothStepper();
+    Path path = new Path( stepper );
+    motion = new Motion( path, stepper );
 
     path.add( new PVector( 1307.8401, 1536.8, 1.6400002 ) );
     path.add( new PVector( 833.7591, 340.87112, 1.0000008 ) );
@@ -298,84 +395,4 @@ void keyPressed()
     }
 }
 
-
-class Path
-{
-    ArrayList m_points;
-    int m_index;
-    int m_time;
-    int m_interval;
-    float m_speed;
-    boolean m_active;
-
-
-    Path()
-    {
-        m_points = new ArrayList();
-        m_index = 0;
-        m_time = 0;
-        m_interval = 1000;
-        m_speed = 0.5; // units per millisecond
-        m_active = false;
-    }
-    
-    void add( PVector point )
-    {
-        m_points.add( point );
-    }
-
-    void trigger()
-    {
-        if ( ! m_active )
-        {
-            m_active = true;
-            m_time = millis();
-            
-            int nextIndex = m_index + 1;
-            nextIndex = nextIndex % m_points.size();
-
-            PVector start = (PVector)m_points.get( m_index );
-            PVector end = (PVector)m_points.get( nextIndex );
-
-            float distance = start.dist( end );
-
-            m_interval = round( distance / m_speed );
-        }
-    }
-
-    PVector position()
-    {
-        if ( ! m_active ) 
-        {
-            return (PVector)m_points.get( m_index );
-        }
-
-        int m = millis() - m_time;
-
-        if ( m > m_interval )
-        {
-            m_active = false;
-            m_time = 0;
-            m_index += 1;
-            m_index = m_index % m_points.size();
-            return (PVector)m_points.get( m_index );
-        }
-
-        int nextIndex = m_index + 1;
-        nextIndex = nextIndex % m_points.size();
-
-        float fraction = m / float( m_interval ); 
-        fraction = smoothStep( fraction );
-
-        PVector start = (PVector)m_points.get( m_index );
-        PVector end = (PVector)m_points.get( nextIndex );
-
-        PVector pos = new PVector( start.x, start.y, start.z );
-        PVector dir = new PVector( end.x - start.x, end.y - start.y, end.z - start.z );
-        dir.mult( fraction );
-        pos.add( dir );
-
-        return pos;
-    }
-}
 
