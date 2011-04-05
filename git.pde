@@ -70,6 +70,11 @@ class Motion
     {
         m_pos.add( diff );
     }
+
+    void setPosition( PVector pos )
+    {
+        m_pos = pos;
+    }
     
     void scale( float diff )
     {
@@ -239,6 +244,25 @@ void keyPressed()
     }
     else if ( key == ' ' )
     {
+        // Reset motion position and scale to remove pivot
+        //
+        if ( motion.m_mode == "free" )
+        {
+            PVector pos = motion.position();
+            PVector oldPivot = pivot.m_pivot;
+            float scale_ = pivot.m_scale;
+            PVector lastDrawn = new PVector(
+                    oldPivot.x + ( ( ( pos.x - oldPivot.x ) / scale_ ) * pos.z ),
+                    oldPivot.y + ( ( ( pos.y - oldPivot.y ) / scale_ ) * pos.z )
+                    );
+
+            lastDrawn.z = pos.z;
+
+            motion.setPosition( lastDrawn );
+            pivot.m_pivot = new PVector( 0, 0, 0 );
+            pivot.m_scale = pos.z;
+        }
+
         motion.trigger();
     }
     else if ( key == 'f' )
