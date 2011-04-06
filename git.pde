@@ -247,9 +247,63 @@ class Pivot
 }
 
 
+class Renderer
+{
+    Renderer( PShape shape, float minZoom, float maxZoom )
+    {
+        m_shape = shape;
+        m_min = minZoom;
+        m_max = maxZoom;
+    }
+
+    void render( float zoom )
+    {
+        if ( zoom < m_min )
+            return;
+
+        shape( m_shape, 0, 0, width, width );
+
+        if ( zoom < m_max )
+        {
+            SmoothStepper stepper = new SmoothStepper();
+            float p = ( zoom - m_min ) / ( m_max - m_min );
+            p = stepper.step( p );
+            int alpha = (int)( p * 255 );
+
+            fill( 204, alpha );
+            rect( 0, 0, width, width );
+        }
+    }
+
+    private PShape m_shape;
+    private float m_min;
+    private float m_max;
+};
+
+class RendererGroup
+{
+    RendererGroup( ArrayList renderers )
+    {
+        m_renderers = renderers;
+    }
+
+    void render( float zoom )
+    {
+        int length = m_renderers.size();
+
+        for ( int i=0; i<length; ++i )
+        {
+            Renderer renderer = (Renderer)m_renderers.get( i );
+            renderer.render( zoom );
+        }
+    }
+
+    private ArrayList m_renderers;
+};
+
 Pivot pivot;
 Motion motion;
-PShape s;
+RendererGroup rendererGroup;
 PVector mouse;
 
 void setup()
@@ -275,7 +329,24 @@ void setup()
     PVector first = path.position();
     pivot = new Pivot( new PVector( 0, 0 ), first.z );
 
-    s = loadShape("/home/mike/projects/presentations/git/images/drawing_export_01.svg");
+    ArrayList renderers = new ArrayList();
+    renderers.add(
+            new Renderer(
+                loadShape( "/home/mike/projects/presentations/git/layers/MainTitles.svg" ),
+                0, 
+                0
+                )
+            );
+    renderers.add(
+            new Renderer(
+                loadShape( "/home/mike/projects/presentations/git/layers/History.svg" ),
+                2, 
+                3
+                )
+            );
+    rendererGroup = new RendererGroup( renderers );
+
+    // Rendering settings
     smooth();
     shapeMode(CENTER);
 }
@@ -300,7 +371,8 @@ void draw()
     scale( pos.z, pos.z );
     translate( ( pos.x - pivot_.x ) / scale_, ( pos.y - pivot_.y ) / scale_ );
 
-    shape( s, 0, 0, width, width );
+    // shape( s, 0, 0, width, width );
+    rendererGroup.render( pos.z );
 }
 
 void mousePressed()
@@ -396,6 +468,11 @@ void keyPressed()
         lastDrawn.z = pos.z;
 
         println( "Path point: " + lastDrawn );
+    }
+    else if ( key == 'z' )
+    {
+        PVector pos = motion.position();
+        println( "Zoom point: " + pos.z );
     }
 }
 
