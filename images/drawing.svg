@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="1619.3547"
-     inkscape:cy="662.94949"
+     inkscape:zoom="1.979899"
+     inkscape:cx="496.11137"
+     inkscape:cy="705.47372"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -55,62 +55,6 @@
      id="layer1"
      transform="translate(0,-52.362183)"
      style="display:inline">
-    <text
-       xml:space="preserve"
-       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;text-align:start;line-height:125%;letter-spacing:1px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Impact;-inkscape-font-specification:Impact Condensed"
-       x="324.83835"
-       y="265.41849"
-       id="text2985"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan2987"
-         x="324.83835"
-         y="265.41849"
-         style="font-size:144px">git</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Impact;-inkscape-font-specification:Impact Condensed"
-       x="462.86526"
-       y="448.2807"
-       id="text2989"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan2991"
-         x="462.86526"
-         y="448.2807">history</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Impact;-inkscape-font-specification:Impact Condensed"
-       x="572.93909"
-       y="663.6709"
-       id="text2993"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan2995"
-         x="572.93909"
-         y="663.6709">strengths</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Impact;-inkscape-font-specification:Impact Condensed"
-       x="146.98274"
-       y="537.95667"
-       id="text2997"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="146.98274"
-         y="537.95667"
-         id="tspan3001">weaknesses</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Impact;-inkscape-font-specification:Impact Condensed"
-       x="330.52292"
-       y="808.39758"
-       id="text3006"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3008"
-         x="330.52292"
-         y="808.39758">conclusion</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 422.85714,275.64345 c 1.90477,0 3.80953,0 5.71429,0 3.80952,0 -0.47619,0.29184 1.42857,-0.87551 0.11471,-0.0703 6.01841,0 7.14286,0 0.52462,0 5.6568,0.0352 5.71428,0 0.33672,-0.20636 -0.33671,-0.66915 0,-0.87551 0.33672,-0.20636 0.95239,0 1.42858,0 2.38095,0 4.7619,0 7.14285,0 0.52463,0 5.6568,-0.0352 5.71429,0 0.33672,0.20636 -0.33672,0.66915 0,0.87551 0.67343,0.41272 2.18371,-0.41272 2.85714,0 0.33672,0.20635 -0.33672,0.66915 0,0.87551 0.67344,0.41272 2.18371,-0.41272 2.85714,0 0.33672,0.20637 -0.33671,0.66915 0,0.87552 0.33672,0.20636 1.09186,-0.20637 1.42858,0 0.33671,0.20636 -0.33672,0.66915 0,0.8755 0.33671,0.20637 1.09185,-0.20635 1.42857,0 0.33671,0.20637 -0.33672,0.66915 0,0.87552 0.33671,0.20636 1.09185,-0.20637 1.42857,0 0.33672,0.20636 0,0.58367 0,0.87551 0.47619,0 1.09185,-0.20636 1.42857,0 0.33672,0.20636 -0.21296,0.61449 0,0.87552 0.30117,0.36914 1.1274,0.50636 1.42857,0.87551 0.21738,0.26644 0,2.23224 0,2.62653 0,0.45783 0.18782,3.27185 0,3.50205 -0.30117,0.36915 -1.1274,0.50637 -1.42857,0.87552 -0.21296,0.26103 0.33672,0.66915 0,0.87551 -3.80952,0 0.47619,-0.29184 -1.42857,0.87551 -0.33672,0.20636 -1.09186,-0.20636 -1.42857,0 -0.67344,0.41272 0.67343,1.3383 0,1.75103 -0.33672,0.20636 -1.09186,-0.20636 -1.42857,0 -0.33672,0.20636 0.33671,0.66915 0,0.87551 -0.33672,0.20636 -1.09186,-0.20636 -1.42858,0 -0.67343,0.41271 0.67344,1.3383 0,1.75102 -0.33671,0.20637 -1.09185,-0.20636 -1.42857,0 -0.33671,0.20637 0.21296,0.61449 0,0.87552 -0.30117,0.36915 -1.1274,0.50636 -1.42857,0.87551 -0.21296,0.26102 0.33672,0.66914 0,0.87551 -0.33672,0.20636 -1.09185,-0.20637 -1.42857,0 -0.67343,0.41272 0.42592,1.22897 0,1.75103 -0.30117,0.36914 -1.1274,0.50636 -1.42857,0.87551 -0.42592,0.52205 0.67343,1.3383 0,1.75102 -0.33672,0.20636 -1.09186,-0.20636 -1.42857,0 -0.67344,0.41272 0.67343,1.33831 0,1.75102 -0.33672,0.20637 -1.09186,-0.20636 -1.42857,0 -0.67344,0.41273 0.67343,1.33831 0,1.75104 -0.33672,0.20635 -1.09186,-0.20637 -1.42858,0 -0.71428,0.43775 0.71429,2.18877 0,2.62653 -0.33671,0.20636 -1.09185,-0.20636 -1.42857,0 -0.33671,0.20636 0,0.58368 0,0.87551 0,1.45918 0,2.91838 0,4.37756 0,6.12859 0,12.25718 0,18.38577 0,2.62653 0,5.25307 0,7.87961 0,0.29183 0,0.58367 0,0.87551 0,0.29183 -0.33671,0.66915 0,0.87551 0.33672,0.20636 1.09186,-0.20636 1.42857,0 0.0575,0.0353 0,3.18054 0,3.50205 0,3.21021 0,6.42043 0,9.63064 0,0.29184 0,0.58368 0,0.87551 0,0.29184 -0.33671,0.66915 0,0.87551 0.33672,0.20636 1.09186,-0.20636 1.42858,0 0.33671,0.20636 0,0.58368 0,0.87552 0,1.75102 0,3.50205 0,5.25307 0,0.29184 -0.33672,0.66915 0,0.87551 0.33671,0.20636 1.09185,-0.20636 1.42857,0 0.0459,0.0281 0,2.41421 0,2.62653 0,2.33471 -0.47619,-0.29183 1.42857,0.87553 0.50146,0.30731 -0.49338,3.77281 0,4.37755 0.30117,0.36915 1.1274,0.50637 1.42857,0.87551 0.21296,0.26103 -0.33672,0.66916 0,0.87552 0.33672,0.20636 1.09185,-0.20636 1.42857,0 0.67344,0.41272 -0.67343,1.3383 0,1.75102 0.33672,0.20636 1.09186,-0.20636 1.42857,0 0.33672,0.20636 0,0.58368 0,0.87552 0,1.75102 0,3.50205 0,5.25307 0,0.29184 -0.33671,0.66915 0,0.87551 0.33672,0.20637 1.09186,-0.20636 1.42857,0 0.0648,0.0397 0,3.96476 0,4.37757 0,3.21021 0,6.42042 0,9.63063 0,0.45783 0.18782,3.27184 0,3.50205 -0.30116,0.36915 -1.1274,0.50636 -1.42857,0.87551 -0.21296,0.26103 0,0.58368 0,0.87552 0,0.29183 0,0.58367 0,0.87551 0,1.45918 0,2.91838 0,4.37756"
@@ -134,17 +78,6 @@
        transform="translate(0,52.362183)" />
     <text
        xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="18.571428"
-       y="410.93359"
-       id="text3519"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3521"
-         x="18.571428"
-         y="410.93359">User Interface</tspan></text>
-    <text
-       xml:space="preserve"
        style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
        x="78.571426"
        y="625.71429"
@@ -157,201 +90,6 @@
          y="625.71429" /></text>
     <text
        xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="44.285717"
-       y="432.36215"
-       id="text3527"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3529"
-         x="44.285717"
-         y="432.36215">Internally inconsistent</tspan><tspan
-         sodipodi:role="line"
-         x="44.285717"
-         y="449.86215"
-         id="tspan3531">Externally inconsistent</tspan><tspan
-         sodipodi:role="line"
-         x="44.285717"
-         y="467.36215"
-         id="tspan3533">Error messages assume domain knowledge</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="95.714287"
-       y="588.07648"
-       id="text3535"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3537"
-         x="95.714287"
-         y="588.07648">Binary Files</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="94.285713"
-       y="613.79077"
-       id="text3539"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3541"
-         x="94.285713"
-         y="613.79077">Windows support</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="97.14286"
-       y="640.93359"
-       id="text3543"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3545"
-         x="97.14286"
-         y="640.93359">SHA1 revision numbers</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="904.72662"
-       y="-396.20917"
-       id="text3547"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3549"
-         x="904.72662"
-         y="-396.20917">1972 - SCCS: Source Code Control System</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="904.72662"
-       y="67.35939"
-       id="text3551"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3553"
-         x="904.72662"
-         y="67.35939">1982 - RCS: Revision Control System</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="904.72662"
-       y="206.43007"
-       id="text3555"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3557"
-         x="904.72662"
-         y="206.43007">1985 - PVCS: Polytron Version Control System</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="904.72662"
-       y="438.21442"
-       id="text3559"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3561"
-         x="904.72662"
-         y="438.21442">1990 - CVS: Concurrent Versions System</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="904.72662"
-       y="906.43549"
-       id="text3563"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3565"
-         x="904.72662"
-         y="906.43549">2000 - SVN: Subversion</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="904.72662"
-       y="535.58051"
-       id="text3567"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3569"
-         x="904.72662"
-         y="535.58051">1992 - ClearCase</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="904.72662"
-       y="628.29425"
-       id="text3571"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3573"
-         x="904.72662"
-         y="628.29425">1994 - Visual Source Safe</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="904.72662"
-       y="674.65112"
-       id="text3575"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3577"
-         x="904.72662"
-         y="674.65112">1995 - Perforce</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="904.72662"
-       y="952.79236"
-       id="text3579"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3581"
-         x="904.72662"
-         y="952.79236">2001 - GNU Arch</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="904.72662"
-       y="994.49689"
-       id="text3583"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3585"
-         x="904.72662"
-         y="994.49689">2002 - Darcs</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="904.72662"
-       y="809.0694"
-       id="text3587"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3589"
-         x="904.72662"
-         y="809.0694">1998 - BitKeeper</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="904.72662"
-       y="1045.0842"
-       id="text3591"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3593"
-         x="904.72662"
-         y="1045.0842">2003 - Monotone</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="904.72662"
-       y="1135.7706"
-       id="text3595"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3597"
-         x="904.72662"
-         y="1135.7706">2005 - Git, Mercuial, Bazaar</tspan></text>
-    <text
-       xml:space="preserve"
        style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
        x="1365.7144"
        y="1198.5714"
@@ -362,17 +100,6 @@
          id="tspan3601"
          x="1365.7144"
          y="1198.5714" /></text>
-    <text
-       xml:space="preserve"
-       style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="904.72662"
-       y="1230.9336"
-       id="text3603"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3605"
-         x="904.72662"
-         y="1230.9336">2007 - Fossil</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -629,5 +356,341 @@
   <g
      inkscape:groupmode="layer"
      id="layer2"
-     inkscape:label="Layer" />
+     inkscape:label="MainTitles"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;text-align:start;line-height:125%;letter-spacing:1px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Impact;-inkscape-font-specification:Impact Condensed"
+       x="324.83835"
+       y="213.0563"
+       id="text2985"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2987"
+         x="324.83835"
+         y="213.0563"
+         style="font-size:144px">git</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Impact;-inkscape-font-specification:Impact Condensed"
+       x="463.93674"
+       y="330.91852"
+       id="text2989"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2991"
+         x="463.93674"
+         y="330.91852">history</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Impact;-inkscape-font-specification:Impact Condensed"
+       x="572.93909"
+       y="611.30878"
+       id="text2993"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2995"
+         x="572.93909"
+         y="611.30878">strengths</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Impact;-inkscape-font-specification:Impact Condensed"
+       x="146.98274"
+       y="485.59448"
+       id="text2997"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="146.98274"
+         y="485.59448"
+         id="tspan3001">weaknesses</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Impact;-inkscape-font-specification:Impact Condensed"
+       x="330.52292"
+       y="756.03546"
+       id="text3006"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3008"
+         x="330.52292"
+         y="756.03546">conclusion</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="History"
+     style="display:none">
+    <g
+       style="display:inline"
+       id="g3174"
+       transform="matrix(0.5653681,0,0,0.5653681,204.9508,80.371921)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text3547"
+         y="466.03983"
+         x="470.43094"
+         style="font-size:3.78610682px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+         xml:space="preserve"><tspan
+           y="466.03983"
+           x="470.43094"
+           id="tspan3549"
+           sodipodi:role="line">1972 - SCCS: Source Code Control System</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3551"
+         y="509.91776"
+         x="470.43094"
+         style="font-size:3.78610682px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+         xml:space="preserve"><tspan
+           y="509.91776"
+           x="470.43094"
+           id="tspan3553"
+           sodipodi:role="line">1982 - RCS: Revision Control System</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3555"
+         y="523.08118"
+         x="470.43094"
+         style="font-size:3.78610682px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+         xml:space="preserve"><tspan
+           y="523.08118"
+           x="470.43094"
+           id="tspan3557"
+           sodipodi:role="line">1985 - PVCS: Polytron Version Control System</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3559"
+         y="545.02014"
+         x="470.43094"
+         style="font-size:3.78610682px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+         xml:space="preserve"><tspan
+           y="545.02014"
+           x="470.43094"
+           id="tspan3561"
+           sodipodi:role="line">1990 - CVS: Concurrent Versions System</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3563"
+         y="589.3385"
+         x="470.43094"
+         style="font-size:3.78610682px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+         xml:space="preserve"><tspan
+           y="589.3385"
+           x="470.43094"
+           id="tspan3565"
+           sodipodi:role="line">2000 - SVN: Subversion</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3567"
+         y="554.23608"
+         x="470.43094"
+         style="font-size:3.78610682px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+         xml:space="preserve"><tspan
+           y="554.23608"
+           x="470.43094"
+           id="tspan3569"
+           sodipodi:role="line">1992 - ClearCase</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3571"
+         y="563.01172"
+         x="470.43094"
+         style="font-size:3.78610682px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+         xml:space="preserve"><tspan
+           y="563.01172"
+           x="470.43094"
+           id="tspan3573"
+           sodipodi:role="line">1994 - Visual Source Safe</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3575"
+         y="567.39954"
+         x="470.43094"
+         style="font-size:3.78610682px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+         xml:space="preserve"><tspan
+           y="567.39954"
+           x="470.43094"
+           id="tspan3577"
+           sodipodi:role="line">1995 - Perforce</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3579"
+         y="593.72632"
+         x="470.43094"
+         style="font-size:3.78610682px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+         xml:space="preserve"><tspan
+           y="593.72632"
+           x="470.43094"
+           id="tspan3581"
+           sodipodi:role="line">2001 - GNU Arch</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3583"
+         y="597.67383"
+         x="470.43094"
+         style="font-size:3.78610682px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+         xml:space="preserve"><tspan
+           y="597.67383"
+           x="470.43094"
+           id="tspan3585"
+           sodipodi:role="line">2002 - Darcs</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3587"
+         y="580.12256"
+         x="470.43094"
+         style="font-size:3.78610682px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+         xml:space="preserve"><tspan
+           y="580.12256"
+           x="470.43094"
+           id="tspan3589"
+           sodipodi:role="line">1998 - BitKeeper</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3591"
+         y="602.46204"
+         x="470.43094"
+         style="font-size:3.78610682px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+         xml:space="preserve"><tspan
+           y="602.46204"
+           x="470.43094"
+           id="tspan3593"
+           sodipodi:role="line">2003 - Monotone</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3595"
+         y="611.04578"
+         x="470.43094"
+         style="font-size:3.78610682px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+         xml:space="preserve"><tspan
+           y="611.04578"
+           x="470.43094"
+           id="tspan3597"
+           sodipodi:role="line">2005 - Git, Mercuial, Bazaar</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3603"
+         y="620.05322"
+         x="470.43094"
+         style="font-size:3.78610682px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+         xml:space="preserve"><tspan
+           y="620.05322"
+           x="470.43094"
+           id="tspan3605"
+           sodipodi:role="line">2007 - Fossil</tspan></text>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Weaknesses"
+     style="display:none">
+    <text
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:AlArabiya;-inkscape-font-specification:AlArabiya"
+       x="121.42858"
+       y="412.14279"
+       id="text3519"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3521"
+         x="121.42858"
+         y="412.14279">User Interface</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:AlArabiya;-inkscape-font-specification:AlArabiya"
+       x="23.928576"
+       y="483.57147"
+       id="text3535"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3537"
+         x="23.928576"
+         y="483.57147">Binary Files</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:AlArabiya;-inkscape-font-specification:AlArabiya"
+       x="124.64286"
+       y="550.35712"
+       id="text3539"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3541"
+         x="124.64286"
+         y="550.35712">Windows support</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="UI"
+     style="display:none">
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Verdana;-inkscape-font-specification:Verdana"
+       x="17.616394"
+       y="372.42819"
+       id="text3527"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3529"
+         x="17.616394"
+         y="372.42819">Internally inconsistent</tspan><tspan
+         sodipodi:role="line"
+         x="17.616394"
+         y="382.42819"
+         id="tspan3531" /><tspan
+         sodipodi:role="line"
+         x="17.616394"
+         y="392.42819"
+         id="tspan3533" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Verdana;-inkscape-font-specification:Verdana"
+       x="187.70486"
+       y="334.0257"
+       id="text3543"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3545"
+         x="187.70486"
+         y="334.0257">SHA1 revision numbers</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Verdana;-inkscape-font-specification:Verdana"
+       x="67.762123"
+       y="322.65164"
+       id="text3527-2"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3529-9"
+         x="67.762123"
+         y="322.65164" /><tspan
+         sodipodi:role="line"
+         x="67.762123"
+         y="332.65164"
+         id="tspan3531-6">Externally inconsistent</tspan><tspan
+         sodipodi:role="line"
+         x="67.762123"
+         y="342.65164"
+         id="tspan3533-5" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Verdana;-inkscape-font-specification:Verdana"
+       x="221.97168"
+       y="353.9892"
+       id="text3527-2-2"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3529-9-8"
+         x="221.97168"
+         y="353.9892" /><tspan
+         sodipodi:role="line"
+         x="221.97168"
+         y="363.9892"
+         id="tspan3531-6-8" /><tspan
+         sodipodi:role="line"
+         x="221.97168"
+         y="373.9892"
+         id="tspan3533-5-7">Error messages assume domain knowledge</tspan></text>
+  </g>
 </svg>
