@@ -246,10 +246,19 @@ class Pivot
 
 }
 
-
 class Renderer
 {
-    Renderer( PShape shape, float minZoom, float maxZoom )
+    Renderer() {}
+
+    void render( float zoom )
+    {
+        // Base class
+    }
+};
+
+class ShapeRenderer extends Renderer
+{
+    ShapeRenderer( PShape shape, float minZoom, float maxZoom )
     {
         m_shape = shape;
         m_min = minZoom;
@@ -278,6 +287,30 @@ class Renderer
     private PShape m_shape;
     private float m_min;
     private float m_max;
+};
+
+class PathRenderer extends Renderer
+{
+    PathRenderer( ArrayList points )
+    {
+        m_points = points;
+    }
+
+    void render( float zoom )
+    {
+        int length = m_points.size();
+
+        for ( int i=0; i<length; ++i )
+        {
+            PVector start = (PVector)m_points.get( i );
+            int ni = ( i + 1 ) % m_points.size();
+            PVector end = (PVector)m_points.get( ni );
+
+            line( start.x, start.y, end.x, end.y );
+        }
+    }
+
+    private ArrayList m_points;
 };
 
 class RendererGroup
@@ -331,18 +364,21 @@ void setup()
 
     ArrayList renderers = new ArrayList();
     renderers.add(
-            new Renderer(
+            new ShapeRenderer(
                 loadShape( "/home/mike/projects/presentations/git/layers/MainTitles.svg" ),
                 0, 
                 0
                 )
             );
     renderers.add(
-            new Renderer(
+            new ShapeRenderer(
                 loadShape( "/home/mike/projects/presentations/git/layers/History.svg" ),
                 2, 
                 3
                 )
+            );
+    renderers.add(
+            new PathRenderer( points )
             );
     rendererGroup = new RendererGroup( renderers );
 
