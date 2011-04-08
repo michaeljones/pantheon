@@ -279,12 +279,14 @@ class ShapeRenderer extends Renderer
             p = stepper.step( p );
             int alpha = (int)( p * 255 );
 
+            /*
             pushStyle();
 
             fill( 204, alpha );
             rect( 0, 0, 1000, 1000 );
 
             popStyle();
+            */
         }
     }
 
@@ -445,6 +447,12 @@ class Context
     {
         PVector pos = m_motion.position();
 
+        if ( m_motion.m_mode != "free" )
+        {
+            m_pivot.m_pivot = new PVector( 0, 0 );
+            m_pivot.m_scale = pos.z;
+        }
+
         PVector pivot_ = m_pivot.m_pivot;
         float scale_ = m_pivot.m_scale;
 
@@ -483,7 +491,7 @@ void setup()
     //  Set up points
     //
     ArrayList points = new ArrayList();
-    points.add( new PVector( -0.15966797, 258.8003, 1.6400002 ) );
+    points.add( new PVector( -86.8288, 171.32855, 3.049998 ) );
     points.add( new PVector( -144.73273, -346.91296, 1.2100008 ) );
     // points.add( new PVector( 1307.8401, 1536.8, 1.6400002 ) );
     // points.add( new PVector( 833.7591, 340.87112, 1.0000008 ) );
