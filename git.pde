@@ -506,6 +506,7 @@ class Context
 
     void adjust( PVector diff )
     {
+        diff.div( m_motion.position().z );
         m_motion.adjust( diff );
     }
 
@@ -603,7 +604,7 @@ void mouseDragged()
 {
     if ( mouseButton == LEFT )
     {
-        PVector diff = new PVector( mouseX - pmouseX, mouseY - pmouseY, 0 );
+        PVector diff = new PVector( pmouseX - mouseX, pmouseY - mouseY, 0 );
         context.adjust( diff );
     }
     else if ( mouseButton == RIGHT )
