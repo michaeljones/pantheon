@@ -25,11 +25,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="4"
-     inkscape:cx="877.04017"
-     inkscape:cy="835.51069"
+     inkscape:zoom="1"
+     inkscape:cx="476.02072"
+     inkscape:cy="613.28293"
      inkscape:document-units="px"
-     inkscape:current-layer="layer5"
+     inkscape:current-layer="layer2"
      showgrid="false"
      width="744.09px"
      inkscape:showpageshadow="false"
@@ -58,14 +58,14 @@
     <text
        xml:space="preserve"
        style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;text-align:start;line-height:125%;letter-spacing:1px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Impact;-inkscape-font-specification:Impact Condensed"
-       x="431.71146"
-       y="86.418961"
+       x="412.71146"
+       y="259.41895"
        id="text2985"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan2987"
-         x="431.71146"
-         y="86.418961"
+         x="412.71146"
+         y="259.41895"
          style="font-size:144px">git</tspan></text>
     <text
        xml:space="preserve"
@@ -1595,5 +1595,120 @@
        inkscape:connection-start-point="d4"
        inkscape:connection-end="#g4617-6"
        inkscape:connection-end-point="d4" />
+    <text
+       xml:space="preserve"
+       style="font-size:6px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="210.75"
+       y="44.000004"
+       id="text4662"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="210.75"
+         y="44.000004"
+         id="tspan4666">tree 033de5726df826ef1b9bd23e8d33bb8f668e915d</tspan><tspan
+         sodipodi:role="line"
+         x="210.75"
+         y="51.500004"
+         id="tspan4668">author Michael Jones &lt;mjones@fake.com&gt; 1302118632 +1200</tspan><tspan
+         sodipodi:role="line"
+         x="210.75"
+         y="59.000004"
+         id="tspan4670">committer Michael Jones &lt;mjones@fake.com&gt; 1302118632 +1200</tspan><tspan
+         sodipodi:role="line"
+         x="210.75"
+         y="66.5"
+         id="tspan4672" /><tspan
+         sodipodi:role="line"
+         x="210.75"
+         y="74"
+         id="tspan4674">This is your commit message</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="-64"
+       y="397"
+       id="text4678"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4680"
+         x="-64"
+         y="397">git commit --amend</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="-131"
+       y="429"
+       id="text4682"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4684"
+         x="-131"
+         y="429">git rebase</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="-112"
+       y="497"
+       id="text4686"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4688"
+         x="-112"
+         y="497">git rebase -i</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="5"
+       y="517"
+       id="text4690"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4692"
+         x="5"
+         y="517">git init</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="27"
+       y="587"
+       id="text4694"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4696"
+         x="27"
+         y="587">git add -p </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="85"
+       y="630"
+       id="text4698"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4700"
+         x="85"
+         y="630">gitk </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="172"
+       y="641"
+       id="text4702"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4704"
+         x="172"
+         y="641">git cherry-pick</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="256"
+       y="613"
+       id="text4706"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4708"
+         x="256"
+         y="613">git biscet</tspan></text>
   </g>
 </svg>
