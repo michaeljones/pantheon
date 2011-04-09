@@ -18,125 +18,30 @@ class SmoothStepper
     }
 };
 
-
 //
-//  Motion
+//  Pivot
 //
-class Motion
+class Pivot
 {
-    Motion( Path path, SmoothStepper stepper )
-    {
-        m_path = path;
-        m_stepper = stepper;
+    float m_scale;
+    PVector m_pivot;
 
-        m_pos = new PVector( 0, 0, 1 );
-        m_pivot = new PVector( 0, 0, 1 );
-        m_mode = "path";
-        m_speed = 0.5; // units per millisecond
-        m_interval = 0;
+    Pivot( PVector pivot, float scale )
+    {
+        m_pivot = pivot;
+        m_scale = scale;
     }
 
-    void trigger()
+    void setPivot( PVector pivot ) 
     {
-        if ( m_mode == "path" )
-        {
-            m_path.trigger();
-            return;
-        }
-        
-        m_mode = "restore";
-        m_time = millis();
-
-        PVector start = m_pos;
-        PVector end = m_path.position();
-
-        float distance = start.dist( end );
-        m_interval = round( distance / m_speed );
+        m_pivot = pivot;
     }
 
-    void freeMotion()
+    PVector getPivot()
     {
-        if ( m_mode != "free" )
-        {
-            m_mode = "free";
-            PVector position = m_path.position();
-            m_pos = new PVector( position.x, position.y, position.z );
-        }
-    }
-    
-    void pathMotion()
-    {
-        if ( m_mode == "free" )
-        {
-            trigger();
-        }
+        return m_pivot;
     }
 
-    void adjust( PVector diff )
-    {
-        m_pos.add( diff );
-    }
-
-    void setPosition( PVector pos )
-    {
-        m_pos = pos;
-    }
-    
-    void scale( float diff )
-    {
-        m_pos.z += diff;
-        if ( m_pos.z < 0.1 ) 
-        {
-            m_pos.z = 0.1;
-        }
-    }
-
-    PVector position()
-    {
-        if ( m_mode == "path" )
-        {
-            return m_path.position();
-        }
-        else if ( m_mode == "restore" )
-        {
-            int m = millis() - m_time;
-
-            if ( m > m_interval )
-            {
-                m_time = 0;
-                m_mode = "path";
-                return m_path.position();
-            }
-
-            float fraction = m / float( m_interval ); 
-            fraction = m_stepper.step( fraction );
-
-            PVector start = m_pos;
-            PVector end = m_path.position();
-
-            PVector pos = new PVector( start.x, start.y, start.z );
-            PVector dir = new PVector( end.x - start.x, end.y - start.y, end.z - start.z );
-            dir.mult( fraction );
-            pos.add( dir );
-
-            return pos;
-        }
-        else if ( m_mode == "free" )
-        {
-            return m_pos;
-        }
-
-        return new PVector();
-    }
-
-    private Path m_path;
-    private SmoothStepper m_stepper;
-    private PVector m_pos; 
-    private PVector m_pivot;
-    private int m_time;
-    private String m_mode;
-    private float m_speed;
-    private int m_interval;
 }
 
 
@@ -222,29 +127,244 @@ class Path
 
 }
 
-
-class Pivot
+//
+//  Motion
+//
+class Motion
 {
-    float m_scale;
-    PVector m_pivot;
-
-    Pivot( PVector pivot, float scale )
+    Motion( Path path, SmoothStepper stepper, Pivot pivot )
     {
+        m_path = path;
+        m_stepper = stepper;
         m_pivot = pivot;
-        m_scale = scale;
+
+        m_pos = new PVector( 0, 0, 1 );
+        m_mode = "path";
+        m_speed = 0.5; // units per millisecond
+        m_interval = 0;
     }
 
-    void setPivot( PVector pivot ) 
+    void trigger()
     {
-        m_pivot = pivot;
+        if ( m_mode == "path" )
+        {
+            m_path.trigger();
+            return;
+        }
+        
+        m_mode = "restore";
+        m_time = millis();
+
+        PVector start = m_pos;
+        PVector end = m_path.position();
+
+        float distance = start.dist( end );
+        m_interval = round( distance / m_speed );
     }
 
-    PVector getPivot()
+    void free()
     {
-        return m_pivot;
+        if ( m_mode != "free" )
+        {
+            m_mode = "free";
+            PVector position = m_path.position();
+            m_pos = new PVector( position.x, position.y, position.z );
+        }
+    }
+    
+    void path()
+    {
+        if ( m_mode == "free" )
+        {
+            trigger();
+        }
     }
 
+    void adjust( PVector diff )
+    {
+        diff.div( position().z );
+        m_pos.add( diff );
+    }
+
+    void setPosition( PVector pos )
+    {
+        m_pos = pos;
+    }
+    
+    void scale_( float diff )
+    {
+        m_pos.z += diff;
+        if ( m_pos.z < 0.1 ) 
+        {
+            m_pos.z = 0.1;
+        }
+    }
+
+    PVector position()
+    {
+        if ( m_mode == "path" )
+        {
+            return m_path.position();
+        }
+        else if ( m_mode == "restore" )
+        {
+            int m = millis() - m_time;
+
+            if ( m > m_interval )
+            {
+                m_time = 0;
+                m_mode = "path";
+                return m_path.position();
+            }
+
+            float fraction = m / float( m_interval ); 
+            fraction = m_stepper.step( fraction );
+
+            PVector start = m_pos;
+            PVector end = m_path.position();
+
+            PVector pos = new PVector( start.x, start.y, start.z );
+            PVector dir = new PVector( end.x - start.x, end.y - start.y, end.z - start.z );
+            dir.mult( fraction );
+            pos.add( dir );
+
+            return pos;
+        }
+        else if ( m_mode == "free" )
+        {
+            return m_pos;
+        }
+
+        return new PVector();
+    }
+
+    void setPivot( float x, float y )
+    {
+        PVector pos = position();
+        m_pivot = new Pivot( new PVector( x, y ), pos.z );
+    }
+
+    void transform()
+    {
+        PVector pos = position();
+
+        translate( width * 0.5 - pos.x, height * 0.5 - pos.y );
+        translate( pos.x, pos.y );
+        scale( pos.z, pos.z );
+        translate( - pos.x, - pos.y );
+    }
+
+
+    private Path m_path;
+    private SmoothStepper m_stepper;
+    private Pivot m_pivot;
+
+    private PVector m_pos; 
+    private int m_time;
+    private String m_mode;
+    private float m_speed;
+    private int m_interval;
 }
+
+
+
+
+
+// //
+// //  Context
+// //
+// class Context
+// {
+//     Context( Motion motion, Pivot pivot )
+//     {
+//         m_motion = motion;
+//         m_pivot = pivot;
+//     }
+// 
+//     PVector position()
+//     {
+//         return m_motion.position();
+//         /*
+//         PVector pos = m_motion.position();
+//         PVector oldPivot = m_pivot.m_pivot;
+//         float scale_ = m_pivot.m_scale;
+//         PVector lastDrawn = new PVector(
+//                 oldPivot.x + ( ( ( pos.x - oldPivot.x ) / scale_ ) * pos.z ),
+//                 oldPivot.y + ( ( ( pos.y - oldPivot.y ) / scale_ ) * pos.z )
+//                 );
+// 
+//         lastDrawn.z = pos.z;
+// 
+//         return lastDrawn;
+//         */
+//     }
+// 
+//     void reset()
+//     {
+//         if ( m_motion.m_mode == "free" )
+//         {
+//             PVector pos = position();
+//             m_motion.setPosition( pos );
+// 
+//             m_pivot.m_pivot = new PVector( 0, 0, 0 );
+//             m_pivot.m_scale = pos.z;
+//         }
+//     }
+// 
+//     void trigger()
+//     {
+//         m_motion.trigger();
+//     }
+// 
+//     void freeMotion()
+//     {
+//         m_motion.freeMotion();
+//     }
+// 
+//     void pathMotion()
+//     {
+//         m_motion.pathMotion();
+//     }
+// 
+//     void setPivot( float x, float y )
+//     {
+//         reset();
+// 
+//         PVector pos = position();
+// 
+//         m_pivot = new Pivot( new PVector( x, y ), pos.z );
+//     }
+// 
+//     void resetPivot()
+//     {
+//         if ( m_motion.m_mode != "free" )
+//         {
+//             m_pivot.m_pivot = new PVector( 0, 0 );
+//             PVector pos = position();
+//             m_pivot.m_scale = pos.z;
+//         }
+//     }
+// 
+//     float scale_()
+//     {
+//         return m_motion.position().z;
+//     }
+// 
+//     void scale_( float scale )
+//     {
+//         m_motion.scale( scale );
+//     }
+// 
+//     void adjust( PVector diff )
+//     {
+//         diff.div( m_motion.position().z );
+//         m_motion.adjust( diff );
+//     }
+// 
+//     private Motion m_motion;
+//     private Pivot m_pivot;
+// 
+// };
 
 class Renderer
 {
@@ -338,7 +458,6 @@ class PathRenderer extends Renderer
             */
 
             ellipse( start.x, start.y, 100, 100 );
-
         }
     }
 
@@ -392,130 +511,7 @@ class RendererGroup
     private ArrayList m_renderers;
 };
 
-
-//
-//  Context
-//
-class Context
-{
-    Context( Motion motion, Pivot pivot )
-    {
-        m_motion = motion;
-        m_pivot = pivot;
-    }
-
-    PVector position()
-    {
-        return m_motion.position();
-        /*
-        PVector pos = m_motion.position();
-        PVector oldPivot = m_pivot.m_pivot;
-        float scale_ = m_pivot.m_scale;
-        PVector lastDrawn = new PVector(
-                oldPivot.x + ( ( ( pos.x - oldPivot.x ) / scale_ ) * pos.z ),
-                oldPivot.y + ( ( ( pos.y - oldPivot.y ) / scale_ ) * pos.z )
-                );
-
-        lastDrawn.z = pos.z;
-
-        return lastDrawn;
-        */
-    }
-
-    void reset()
-    {
-        if ( m_motion.m_mode == "free" )
-        {
-            PVector pos = position();
-            m_motion.setPosition( pos );
-
-            m_pivot.m_pivot = new PVector( 0, 0, 0 );
-            m_pivot.m_scale = pos.z;
-        }
-    }
-
-    void trigger()
-    {
-        m_motion.trigger();
-    }
-
-    void freeMotion()
-    {
-        m_motion.freeMotion();
-    }
-
-    void pathMotion()
-    {
-        m_motion.pathMotion();
-    }
-
-    void setPivot( float x, float y )
-    {
-        reset();
-
-        PVector pos = position();
-
-        m_pivot = new Pivot( new PVector( x, y ), pos.z );
-    }
-
-    void resetPivot()
-    {
-        if ( m_motion.m_mode != "free" )
-        {
-            m_pivot.m_pivot = new PVector( 0, 0 );
-            PVector pos = position();
-            m_pivot.m_scale = pos.z;
-        }
-    }
-
-    void transform()
-    {
-        PVector pos = m_motion.position();
-
-        // translate( pos.x, pos.y );
-        translate( width * 0.5 - pos.x, height * 0.5 - pos.y );
-        translate( pos.x, pos.y );
-        scale( pos.z, pos.z );
-        translate( - pos.x, - pos.y );
-
-        /*
-        if ( m_motion.m_mode != "free" )
-        {
-            m_pivot.m_pivot = new PVector( 0, 0 );
-            m_pivot.m_scale = pos.z;
-        }
-
-        PVector pivot_ = m_pivot.m_pivot;
-        float scale_ = m_pivot.m_scale;
-
-        translate( pivot_.x, pivot_.y );
-        scale( pos.z, pos.z );
-        translate( ( pos.x - pivot_.x ) / scale_, ( pos.y - pivot_.y ) / scale_ );
-        */
-    }
-
-    float scale_()
-    {
-        return m_motion.position().z;
-    }
-
-    void scale_( float scale )
-    {
-        m_motion.scale( scale );
-    }
-
-    void adjust( PVector diff )
-    {
-        diff.div( m_motion.position().z );
-        m_motion.adjust( diff );
-    }
-
-    private Motion m_motion;
-    private Pivot m_pivot;
-
-};
-
-Context context;
+Motion motion;
 RendererGroup rendererGroup;
 
 void setup()
@@ -539,12 +535,11 @@ void setup()
     // Setup motion class
     SmoothStepper stepper = new SmoothStepper();
     Path path = new Path( points, stepper );
-    Motion motion = new Motion( path, stepper );
 
     PVector first = path.position();
     Pivot pivot = new Pivot( new PVector( 0, 0 ), first.z );
 
-    context = new Context( motion, pivot );
+    motion = new Motion( path, stepper, pivot );
 
     ArrayList renderers = new ArrayList();
     renderers.add(
@@ -580,23 +575,19 @@ void draw()
 
     // ellipse( 0, 0, 50, 50 );
 
-    context.transform();
+    motion.transform();
 
     // ellipse( 0, 0, 50, 50 );
 
-    rendererGroup.render( context.position() );
+    rendererGroup.render( motion.position() );
 }
 
 void mousePressed()
 {
-    if ( mouseButton == LEFT )
-    {
-        cursor( HAND );
-    }
-
     if ( mouseButton == LEFT || mouseButton == RIGHT )
     {
-        context.setPivot( mouseX, mouseY );
+        cursor( HAND );
+        motion.setPivot( mouseX, mouseY );
     }
 }
 
@@ -605,12 +596,12 @@ void mouseDragged()
     if ( mouseButton == LEFT )
     {
         PVector diff = new PVector( pmouseX - mouseX, pmouseY - mouseY, 0 );
-        context.adjust( diff );
+        motion.adjust( diff );
     }
     else if ( mouseButton == RIGHT )
     {
         float diff = mouseX - pmouseX;
-        context.scale_( diff / 100.0 );
+        motion.scale_( diff / 100.0 );
     }
 }
 
@@ -629,25 +620,25 @@ void keyPressed()
     {
         // Reset motion position and scale to remove pivot 
         //
-        context.reset();
-        context.trigger();
+        // motion.reset();
+        motion.trigger();
     }
     else if ( key == 'f' )
     {
-        context.freeMotion();
+        motion.free();
     }
     else if ( key == 'p' )
     {
-        context.pathMotion();
+        motion.path();
     }
     else if ( key == 's' )
     {
-        PVector lastDrawn = context.position();
+        PVector lastDrawn = motion.position();
         println( "Path point: " + lastDrawn );
     }
     else if ( key == 'z' )
     {
-        PVector pos = context.position();
+        PVector pos = motion.position();
         println( "Zoom point: " + pos.z );
     }
 }
