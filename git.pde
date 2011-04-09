@@ -396,7 +396,7 @@ class ShapeRenderer extends Renderer
         if ( pos.z < m_min )
             return;
 
-        shape( m_shape, 0, 0, 1000, 1000 );
+        shape( m_shape, 0, 0, 1300, 700 );
 
         if ( pos.z < m_max )
         {
@@ -440,6 +440,11 @@ class PathRenderer extends Renderer
         {
             PVector start = (PVector)m_points.get( i );
 
+            int ni = ( i + 1 ) % m_points.size();
+            PVector end = (PVector)m_points.get( ni );
+
+            line( start.x, start.y, end.x, end.y );
+
             // PVector scaledStart = new PVector( ((width*0.5) - start.x ) / start.z, ((height*0.5) - start.y) / start.z );
 
             /*
@@ -463,7 +468,7 @@ class PathRenderer extends Renderer
             // scaledStart.div( start.z );
             */
 
-            ellipse( start.x, start.y, 100, 100 );
+            ellipse( start.x, start.y, 10, 10 );
         }
     }
 
@@ -483,7 +488,7 @@ class BoxRenderer extends Renderer
         noFill();
         // From prior knowledge of the image size
         //
-        rect( 0, 0, 1000, 1000 );
+        rect( 0, 0, 1300, 700 );
         popStyle();
     }
 
@@ -527,16 +532,35 @@ void setup()
     //  Set up points
     //
     ArrayList points = new ArrayList();
-    points.add( new PVector( 500, 700, 2 ) );
-    points.add( new PVector( 750, 250, 1 ) );
-
-    // points.add( new PVector( 1307.8401, 1536.8, 1.6400002 ) );
-    // points.add( new PVector( 833.7591, 340.87112, 1.0000008 ) );
-    // points.add( new PVector( 645.54443, 735.9685, 3.7099988 ) );
-    // points.add( new PVector( 1861.031, 200.65875, 2.57 ) );
-    // points.add( new PVector( 115.01532, 39.956543, 2.42 ) );
-    // points.add( new PVector( 774.5053, -829.63696, 2.7999997 ) );
-    // points.add( new PVector( 840.2251, 567.4372, 0.54 ) );
+    points.add( new PVector( 685.61896, 425.41565, 1.680002 ) );
+    points.add( new PVector( 696.79114, 378.42313, 8.520003 ) );
+    points.add( new PVector( 668.59937, 420.08487, 13.430008 ) );
+    points.add( new PVector( 664.57837, 464.83505, 14.37003 ) );
+    points.add( new PVector( 647.5173, 509.6207, 22.659988 ) );
+    points.add( new PVector( 646.85535, 533.8915, 22.659988 ) );
+    points.add( new PVector( 643.79565, 557.2828, 28.770012 ) );
+    points.add( new PVector( 961.0682, 493.00897, 4.809995 ) );
+    points.add( new PVector( 1026.3641, 452.95395, 3.1999934 ) );
+    points.add( new PVector( 1007.879, 352.9385, 3.159989 ) );
+    points.add( new PVector( 858.6685, 359.65283, 10.0399885 ) );
+    points.add( new PVector( 923.0111, 303.87592, 10.0399885 ) );
+    points.add( new PVector( 1069.6257, 303.47742, 10.0399885 ) );
+    points.add( new PVector( 1149.7898, 366.66336, 8.369962 ) );
+    points.add( new PVector( 1165.8252, 509.99844, 7.1899567 ) );
+    points.add( new PVector( 955.94965, 553.948, 7.1899567 ) );
+    points.add( new PVector( 399.71906, 450.54413, 4.9899526 ) );
+    points.add( new PVector( 313.02524, 446.65668, 3.5799475 ) );
+    points.add( new PVector( 262.937, 324.4504, 9.639954 ) );
+    points.add( new PVector( 229.63808, 300.07257, 9.639954 ) );
+    points.add( new PVector( 227.35577, 255.2591, 9.639954 ) );
+    points.add( new PVector( 250.59225, 203.70271, 9.639954 ) );
+    points.add( new PVector( 394.3395, 248.79552, 8.649942 ) );
+    points.add( new PVector( 287.92484, 140.04407, 11.389942 ) );
+    points.add( new PVector( 393.59293, 234.21753, 8.759929 ) );
+    points.add( new PVector( 332.0628, 90.49504, 8.759929 ) );
+    points.add( new PVector( 411.5864, 209.46683, 6.309916 ) );
+    points.add( new PVector( 493.7483, 59.024517, 6.4999185 ) );
+    points.add( new PVector( 417.771, 193.51091, 5.45991 ) );
 
     // Setup motion class
     SmoothStepper stepper = new SmoothStepper();
@@ -548,20 +572,15 @@ void setup()
     motion = new Motion( path, stepper, pivot );
 
     ArrayList renderers = new ArrayList();
-    renderers.add(
-            new ShapeRenderer(
-                loadShape( "/home/mike/projects/presentations/git/layers/MainTitles.svg" ),
-                0, 
-                0
-                )
-            );
-    renderers.add(
-            new ShapeRenderer(
-                loadShape( "/home/mike/projects/presentations/git/layers/History.svg" ),
-                2, 
-                3
-                )
-            );
+    renderers.add( new ShapeRenderer( loadShape( "/home/mike/projects/presentations/git/layers/Git.svg" ), 0, 0) );
+    renderers.add( new ShapeRenderer( loadShape( "/home/mike/projects/presentations/git/layers/MainTitles.svg" ), 0, 0) );
+    renderers.add( new ShapeRenderer( loadShape( "/home/mike/projects/presentations/git/layers/History.svg" ), 2, 3 ) );
+    renderers.add( new ShapeRenderer( loadShape( "/home/mike/projects/presentations/git/layers/Weaknesses.svg" ), 0, 0) );
+    renderers.add( new ShapeRenderer( loadShape( "/home/mike/projects/presentations/git/layers/UI.svg" ), 2, 3 ) );
+    renderers.add( new ShapeRenderer( loadShape( "/home/mike/projects/presentations/git/layers/Strengths.svg" ), 2, 3 ) );
+    renderers.add( new ShapeRenderer( loadShape( "/home/mike/projects/presentations/git/layers/InternalStructure.svg" ), 2, 3 ) );
+    renderers.add( new ShapeRenderer( loadShape( "/home/mike/projects/presentations/git/layers/EditHistory.svg" ), 2, 3 ) );
+    renderers.add( new ShapeRenderer( loadShape( "/home/mike/projects/presentations/git/layers/UsefulCommands.svg" ), 2, 3 ) );
     renderers.add( new BoxRenderer() );
     renderers.add(
             new PathRenderer( points )
@@ -640,7 +659,7 @@ void keyPressed()
     else if ( key == 's' )
     {
         PVector lastDrawn = motion.position();
-        println( "Path point: " + lastDrawn );
+        println( "points.add( new PVector( " + lastDrawn.x + ", " + lastDrawn.y + ", " + lastDrawn.z + " ) );" );
     }
     else if ( key == 'z' )
     {
