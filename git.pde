@@ -56,6 +56,7 @@ class Path
         m_stepper = stepper;
 
         m_index = 0;
+        m_nextIndex = 1;
         m_time = 0;
         m_interval = 1000;
         m_speed = 0.5; // units per millisecond
@@ -69,11 +70,35 @@ class Path
             m_active = true;
             m_time = millis();
             
-            int nextIndex = m_index + 1;
-            nextIndex = nextIndex % m_points.size();
+            m_nextIndex = m_index + 1;
+            m_nextIndex = m_nextIndex % m_points.size();
 
             PVector start = (PVector)m_points.get( m_index );
-            PVector end = (PVector)m_points.get( nextIndex );
+            PVector end = (PVector)m_points.get( m_nextIndex );
+
+            float distance = start.dist( end );
+
+            m_interval = round( distance / m_speed );
+        }
+    }
+
+    void goback()
+    {
+        if ( ! m_active )
+        {
+            m_active = true;
+            m_time = millis();
+
+            m_nextIndex = m_index - 1;
+            while ( m_nextIndex < 0 )
+            {
+                m_nextIndex = m_points.size() + m_nextIndex;
+            }
+
+            m_nextIndex = m_nextIndex % m_points.size();
+
+            PVector start = (PVector)m_points.get( m_index );
+            PVector end = (PVector)m_points.get( m_nextIndex );
 
             float distance = start.dist( end );
 
@@ -94,19 +119,16 @@ class Path
         {
             m_active = false;
             m_time = 0;
-            m_index += 1;
-            m_index = m_index % m_points.size();
+            m_index = m_nextIndex;
+            m_progress = m_index;
             return (PVector)m_points.get( m_index );
         }
-
-        int nextIndex = m_index + 1;
-        nextIndex = nextIndex % m_points.size();
 
         float fraction = m / float( m_interval ); 
         fraction = m_stepper.step( fraction );
 
         PVector start = (PVector)m_points.get( m_index );
-        PVector end = (PVector)m_points.get( nextIndex );
+        PVector end = (PVector)m_points.get( m_nextIndex );
 
         PVector pos = new PVector( start.x, start.y, start.z );
         PVector dir = new PVector( end.x - start.x, end.y - start.y, end.z - start.z );
@@ -120,6 +142,7 @@ class Path
     private SmoothStepper m_stepper;
     private ArrayList m_points;
     private int m_index;
+    private int m_nextIndex;
     private int m_time;
     private int m_interval;
     private float m_speed;
@@ -152,6 +175,24 @@ class Motion
             return;
         }
         
+        m_mode = "restore";
+        m_time = millis();
+
+        PVector start = m_pos;
+        PVector end = m_path.position();
+
+        float distance = start.dist( end );
+        m_interval = round( distance / m_speed );
+    }
+
+    void goback()
+    {
+        if ( m_mode == "path" )
+        {
+            m_path.goback();
+            return;
+        }
+
         m_mode = "restore";
         m_time = millis();
 
@@ -637,34 +678,45 @@ void mouseReleased()
 
 void keyPressed()
 {
-    if ( key == 'q' )
+    if ( key == CODED )
     {
-        exit();
+
     }
-    else if ( key == ' ' )
+    else
     {
-        // Reset motion position and scale to remove pivot 
-        //
-        // motion.reset();
-        motion.trigger();
-    }
-    else if ( key == 'f' )
-    {
-        motion.free();
-    }
-    else if ( key == 'p' )
-    {
-        motion.path();
-    }
-    else if ( key == 's' )
-    {
-        PVector lastDrawn = motion.position();
-        println( "points.add( new PVector( " + lastDrawn.x + ", " + lastDrawn.y + ", " + lastDrawn.z + " ) );" );
-    }
-    else if ( key == 'z' )
-    {
-        PVector pos = motion.position();
-        println( "Zoom point: " + pos.z );
+        if ( key == 'q' )
+        {
+            exit();
+        }
+        else if ( key == ' ' )
+        {
+            // Reset motion position and scale to remove pivot
+            //
+            // motion.reset();
+            motion.trigger();
+        }
+        else if ( key == 'b' )
+        {
+            motion.goback();
+        }
+        else if ( key == 'f' )
+        {
+            motion.free();
+        }
+        else if ( key == 'p' )
+        {
+            motion.path();
+        }
+        else if ( key == 's' )
+        {
+            PVector lastDrawn = motion.position();
+            println( "points.add( new PVector( " + lastDrawn.x + ", " + lastDrawn.y + ", " + lastDrawn.z + " ) );" );
+        }
+        else if ( key == 'z' )
+        {
+            PVector pos = motion.position();
+            println( "Zoom point: " + pos.z );
+        }
     }
 }
 
