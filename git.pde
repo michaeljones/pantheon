@@ -57,6 +57,7 @@ class Path
 
         m_index = 0;
         m_nextIndex = 1;
+        m_progress = m_index;
         m_time = 0;
         m_interval = 1000;
         m_speed = 0.5; // units per millisecond
@@ -88,7 +89,7 @@ class Path
         {
             m_active = true;
             m_time = millis();
-
+            
             m_nextIndex = m_index - 1;
             while ( m_nextIndex < 0 )
             {
@@ -135,7 +136,14 @@ class Path
         dir.mult( fraction );
         pos.add( dir );
 
+        m_progress = m_index + fraction;
+
         return pos;
+    }
+
+    float progress()
+    {
+        return m_progress;
     }
 
 
@@ -146,6 +154,7 @@ class Path
     private int m_time;
     private int m_interval;
     private float m_speed;
+    private float m_progress;
     private boolean m_active;
 
 }
@@ -192,7 +201,7 @@ class Motion
             m_path.goback();
             return;
         }
-
+        
         m_mode = "restore";
         m_time = millis();
 
@@ -277,6 +286,11 @@ class Motion
         }
 
         return new PVector();
+    }
+
+    float progress()
+    {
+        return m_path.progress();
     }
 
     void setPivot( float x, float y )
@@ -417,7 +431,7 @@ class Renderer
 {
     Renderer() {}
 
-    void render( PVector pos )
+    void render( PVector pos, float progress )
     {
         // Base class
     }
@@ -432,7 +446,7 @@ class ShapeRenderer extends Renderer
         m_max = maxZoom;
     }
 
-    void render( PVector pos )
+    void render( PVector pos, float progress )
     {
         if ( pos.z < m_min )
             return;
@@ -473,7 +487,7 @@ class PathRenderer extends Renderer
         m_points = points;
     }
 
-    void render( PVector pos )
+    void render( PVector pos, float progress )
     {
         int length = m_points.size();
 
@@ -483,6 +497,7 @@ class PathRenderer extends Renderer
 
             int ni = ( i + 1 ) % m_points.size();
             PVector end = (PVector)m_points.get( ni );
+
 
             line( start.x, start.y, end.x, end.y );
 
@@ -510,6 +525,7 @@ class PathRenderer extends Renderer
             */
 
             ellipse( start.x, start.y, 10, 10 );
+            text( i, start.x + 10, start.y + 5 );
         }
     }
 
@@ -523,7 +539,7 @@ class BoxRenderer extends Renderer
     {
     }
 
-    void render( PVector pos )
+    void render( PVector pos, float progress )
     {
         pushStyle();
         noFill();
@@ -538,6 +554,30 @@ class BoxRenderer extends Renderer
 
 };
 
+class ProgressRenderer extends Renderer
+{
+    ProgressRenderer( Renderer renderer, float start, float end )
+    {
+        m_renderer = renderer;
+        m_start = start;
+        m_end = end;
+
+    }
+
+    void render( PVector pos, float progress )
+    {
+        if ( progress >= m_start && progress < m_end )
+        {
+            m_renderer.render( pos, progress );
+        }
+    }
+
+    private Renderer m_renderer;
+    private float m_start;
+    private float m_end;
+
+}
+
 
 //
 //  RendererGroup
@@ -549,14 +589,14 @@ class RendererGroup
         m_renderers = renderers;
     }
 
-    void render( PVector pos )
+    void render( PVector pos, float progress )
     {
         int length = m_renderers.size();
 
         for ( int i=0; i<length; ++i )
         {
             Renderer renderer = (Renderer)m_renderers.get( i );
-            renderer.render( pos );
+            renderer.render( pos, progress );
         }
     }
 
@@ -573,6 +613,7 @@ void setup()
     //  Set up points
     //
     ArrayList points = new ArrayList();
+    points.add( new PVector( 623.5175, 224.72202, 4.329994 ) );
     points.add( new PVector( 685.61896, 425.41565, 1.680002 ) );
     points.add( new PVector( 696.79114, 378.42313, 8.520003 ) );
     points.add( new PVector( 668.59937, 420.08487, 13.430008 ) );
@@ -612,20 +653,20 @@ void setup()
 
     motion = new Motion( path, stepper, pivot );
 
+    String root = "/home/mike/projects/presentations/git/layers/";
+
     ArrayList renderers = new ArrayList();
-    renderers.add( new ShapeRenderer( loadShape( "/home/mike/projects/presentations/git/layers/Git.svg" ), 0, 0) );
-    renderers.add( new ShapeRenderer( loadShape( "/home/mike/projects/presentations/git/layers/MainTitles.svg" ), 0, 0) );
-    renderers.add( new ShapeRenderer( loadShape( "/home/mike/projects/presentations/git/layers/History.svg" ), 2, 3 ) );
-    renderers.add( new ShapeRenderer( loadShape( "/home/mike/projects/presentations/git/layers/Weaknesses.svg" ), 0, 0) );
-    renderers.add( new ShapeRenderer( loadShape( "/home/mike/projects/presentations/git/layers/UI.svg" ), 2, 3 ) );
-    renderers.add( new ShapeRenderer( loadShape( "/home/mike/projects/presentations/git/layers/Strengths.svg" ), 2, 3 ) );
-    renderers.add( new ShapeRenderer( loadShape( "/home/mike/projects/presentations/git/layers/InternalStructure.svg" ), 2, 3 ) );
-    renderers.add( new ShapeRenderer( loadShape( "/home/mike/projects/presentations/git/layers/EditHistory.svg" ), 2, 3 ) );
-    renderers.add( new ShapeRenderer( loadShape( "/home/mike/projects/presentations/git/layers/UsefulCommands.svg" ), 2, 3 ) );
-    renderers.add( new BoxRenderer() );
-    renderers.add(
-            new PathRenderer( points )
-            );
+    renderers.add( new ProgressRenderer( new ShapeRenderer( loadShape( root + "Git.svg" ), 0, 0 ), 0, 1 ) );
+    renderers.add( new ProgressRenderer( new ShapeRenderer( loadShape( root + "MainTitles.svg" ), 0, 0 ), 1, 1000 ) );
+    renderers.add( new ProgressRenderer( new ShapeRenderer( loadShape( root + "History.svg" ), 0, 0 ), 2, 8 ) );
+    renderers.add( new ProgressRenderer( new ShapeRenderer( loadShape( root + "Weaknesses.svg" ), 0, 0), 9, 17 ) );
+    renderers.add( new ProgressRenderer( new ShapeRenderer( loadShape( root + "UI.svg" ), 0, 0 ), 10, 15 ) );
+    renderers.add( new ProgressRenderer( new ShapeRenderer( loadShape( root + "Strengths.svg" ), 0, 0 ), 18, 1000 ) );
+    renderers.add( new ProgressRenderer( new ShapeRenderer( loadShape( root + "InternalStructure.svg" ), 0, 0 ), 19, 1000 ) );
+    renderers.add( new ProgressRenderer( new ShapeRenderer( loadShape( root + "EditHistory.svg" ), 0, 0 ), 19, 1000 ) );
+    renderers.add( new ProgressRenderer( new ShapeRenderer( loadShape( root + "UsefulCommands.svg" ), 0, 0 ), 19, 1000 ) );
+    renderers.add( new ProgressRenderer( new BoxRenderer(), 0, 1000 ) );
+    renderers.add( new ProgressRenderer( new PathRenderer( points ), 0, 1000 ) );
     rendererGroup = new RendererGroup( renderers );
 
     // Rendering settings
@@ -643,9 +684,11 @@ void draw()
 
     motion.transform();
 
+    float progress = motion.progress();
+
     // ellipse( 0, 0, 50, 50 );
 
-    rendererGroup.render( motion.position() );
+    rendererGroup.render( motion.position(), progress );
 }
 
 void mousePressed()
@@ -690,7 +733,7 @@ void keyPressed()
         }
         else if ( key == ' ' )
         {
-            // Reset motion position and scale to remove pivot
+            // Reset motion position and scale to remove pivot 
             //
             // motion.reset();
             motion.trigger();
