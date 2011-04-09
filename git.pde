@@ -24,22 +24,22 @@ class SmoothStepper
 class Pivot
 {
     float m_scale;
-    PVector m_pivot;
+    PVector m_pos;
 
-    Pivot( PVector pivot, float scale )
+    Pivot( PVector pos, float scale )
     {
-        m_pivot = pivot;
+        m_pos = pos;
         m_scale = scale;
     }
 
-    void setPivot( PVector pivot ) 
+    void setPos( PVector pos ) 
     {
-        m_pivot = pivot;
+        m_pos = pos;
     }
 
-    PVector getPivot()
+    PVector getPos()
     {
-        return m_pivot;
+        return m_pos;
     }
 
 }
@@ -248,7 +248,13 @@ class Motion
     {
         PVector pos = position();
 
+        // Translate the desired point to the centre of the screen
+        // 
         translate( width * 0.5 - pos.x, height * 0.5 - pos.y );
+
+        // Scale it appropriately
+        //
+        // translate( m_pivot.m_pos.x, m_pivot.m_pos.y );
         translate( pos.x, pos.y );
         scale( pos.z, pos.z );
         translate( - pos.x, - pos.y );
