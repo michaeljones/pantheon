@@ -50,7 +50,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -871,7 +871,7 @@
            y="183.53769"
            x="192.87563"
            id="tspan3982-2-8"
-           sodipodi:role="line">dec5c1...</tspan></text>
+           sodipodi:role="line">033de5...</tspan></text>
     </g>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline"
@@ -1755,6 +1755,6 @@
          sodipodi:role="line"
          id="tspan4708"
          x="440.66895"
-         y="620.75195">git biscet</tspan></text>
+         y="620.75195">git bisect</tspan></text>
   </g>
 </svg>
