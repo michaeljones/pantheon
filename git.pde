@@ -250,7 +250,7 @@ class Renderer
 {
     Renderer() {}
 
-    void render( float zoom )
+    void render( PVector pos )
     {
         // Base class
     }
@@ -265,17 +265,17 @@ class ShapeRenderer extends Renderer
         m_max = maxZoom;
     }
 
-    void render( float zoom )
+    void render( PVector pos )
     {
-        if ( zoom < m_min )
+        if ( pos.z < m_min )
             return;
 
         shape( m_shape, 0, 0, 1000, 1000 );
 
-        if ( zoom < m_max )
+        if ( pos.z < m_max )
         {
             SmoothStepper stepper = new SmoothStepper();
-            float p = ( zoom - m_min ) / ( m_max - m_min );
+            float p = ( pos.z - m_min ) / ( m_max - m_min );
             p = stepper.step( p );
             int alpha = (int)( p * 255 );
 
@@ -306,17 +306,31 @@ class PathRenderer extends Renderer
         m_points = points;
     }
 
-    void render( float zoom )
+    void render( PVector pos )
     {
         int length = m_points.size();
 
         for ( int i=0; i<length; ++i )
         {
             PVector start = (PVector)m_points.get( i );
-            int ni = ( i + 1 ) % m_points.size();
-            PVector end = (PVector)m_points.get( ni );
+            PVector scaledStart = new PVector( - start.x, - start.y, start.z );
 
-            line( start.x, start.y, end.x, end.y );
+            println( "1: " + scaledStart );
+
+            scaledStart.div( pos.z );
+            // scaledStart.add( new PVector( - pos.x, - pos.y ) );
+
+            println( "2: " + scaledStart );
+
+            scaledStart.add( new PVector( ( width * 0.5 ) / pos.z, ( height * 0.5 )/ pos.z )  );
+
+            println( "3: " + scaledStart );
+            // scaledStart.add( new PVector( 500, 500 ) );
+            // scaledStart.div( start.z );
+
+            ellipse( scaledStart.x, scaledStart.y, 100, 100 );
+
+            break;
         }
     }
 
@@ -330,7 +344,7 @@ class BoxRenderer extends Renderer
     {
     }
 
-    void render( float zoom )
+    void render( PVector pos )
     {
         pushStyle();
         noFill();
@@ -356,14 +370,14 @@ class RendererGroup
         m_renderers = renderers;
     }
 
-    void render( float zoom )
+    void render( PVector pos )
     {
         int length = m_renderers.size();
 
         for ( int i=0; i<length; ++i )
         {
             Renderer renderer = (Renderer)m_renderers.get( i );
-            renderer.render( zoom );
+            renderer.render( pos );
         }
     }
 
@@ -491,8 +505,7 @@ void setup()
     //  Set up points
     //
     ArrayList points = new ArrayList();
-    points.add( new PVector( -86.8288, 171.32855, 3.049998 ) );
-    points.add( new PVector( -144.73273, -346.91296, 1.2100008 ) );
+    points.add( new PVector( 200, 300, 2 ) );
     // points.add( new PVector( 1307.8401, 1536.8, 1.6400002 ) );
     // points.add( new PVector( 833.7591, 340.87112, 1.0000008 ) );
     // points.add( new PVector( 645.54443, 735.9685, 3.7099988 ) );
@@ -543,9 +556,13 @@ void draw()
 {
     background(204);
 
+    ellipse( 0, 0, 50, 50 );
+
     context.transform();
 
-    rendererGroup.render( context.scale_() );
+    ellipse( 0, 0, 50, 50 );
+
+    rendererGroup.render( context.position() );
 }
 
 void mousePressed()
