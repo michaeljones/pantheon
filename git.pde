@@ -314,11 +314,13 @@ class PathRenderer extends Renderer
         {
             PVector start = (PVector)m_points.get( i );
 
-            PVector scaledStart = new PVector( ((width*0.5) - start.x ) / start.z, ((height*0.5) - start.y) / start.z );
+            // PVector scaledStart = new PVector( ((width*0.5) - start.x ) / start.z, ((height*0.5) - start.y) / start.z );
 
+            /*
             println( "size: " + width + " " + height );
             println( "start: " + start );
             println( "scaledStart: " + scaledStart );
+            */
 
             /*
             println( "1: " + scaledStart );
@@ -335,7 +337,7 @@ class PathRenderer extends Renderer
             // scaledStart.div( start.z );
             */
 
-            ellipse( scaledStart.x, scaledStart.y, 100, 100 );
+            ellipse( start.x, start.y, 100, 100 );
 
         }
     }
@@ -404,6 +406,8 @@ class Context
 
     PVector position()
     {
+        return m_motion.position();
+        /*
         PVector pos = m_motion.position();
         PVector oldPivot = m_pivot.m_pivot;
         float scale_ = m_pivot.m_scale;
@@ -415,6 +419,7 @@ class Context
         lastDrawn.z = pos.z;
 
         return lastDrawn;
+        */
     }
 
     void reset()
@@ -467,6 +472,13 @@ class Context
     {
         PVector pos = m_motion.position();
 
+        // translate( pos.x, pos.y );
+        translate( width * 0.5 - pos.x, height * 0.5 - pos.y );
+        translate( pos.x, pos.y );
+        scale( pos.z, pos.z );
+        translate( - pos.x, - pos.y );
+
+        /*
         if ( m_motion.m_mode != "free" )
         {
             m_pivot.m_pivot = new PVector( 0, 0 );
@@ -479,6 +491,7 @@ class Context
         translate( pivot_.x, pivot_.y );
         scale( pos.z, pos.z );
         translate( ( pos.x - pivot_.x ) / scale_, ( pos.y - pivot_.y ) / scale_ );
+        */
     }
 
     float scale_()
@@ -511,8 +524,9 @@ void setup()
     //  Set up points
     //
     ArrayList points = new ArrayList();
-    points.add( new PVector( 200, 300, 1 ) );
-    points.add( new PVector( 400, 100, 1 ) );
+    points.add( new PVector( 500, 700, 2 ) );
+    points.add( new PVector( 750, 250, 1 ) );
+
     // points.add( new PVector( 1307.8401, 1536.8, 1.6400002 ) );
     // points.add( new PVector( 833.7591, 340.87112, 1.0000008 ) );
     // points.add( new PVector( 645.54443, 735.9685, 3.7099988 ) );
@@ -563,11 +577,11 @@ void draw()
 {
     background(204);
 
-    ellipse( 0, 0, 50, 50 );
+    // ellipse( 0, 0, 50, 50 );
 
     context.transform();
 
-    ellipse( 0, 0, 50, 50 );
+    // ellipse( 0, 0, 50, 50 );
 
     rendererGroup.render( context.position() );
 }
