@@ -313,8 +313,14 @@ class PathRenderer extends Renderer
         for ( int i=0; i<length; ++i )
         {
             PVector start = (PVector)m_points.get( i );
-            PVector scaledStart = new PVector( - start.x, - start.y, start.z );
 
+            PVector scaledStart = new PVector( ((width*0.5) - start.x ) / start.z, ((height*0.5) - start.y) / start.z );
+
+            println( "size: " + width + " " + height );
+            println( "start: " + start );
+            println( "scaledStart: " + scaledStart );
+
+            /*
             println( "1: " + scaledStart );
 
             scaledStart.div( pos.z );
@@ -327,10 +333,10 @@ class PathRenderer extends Renderer
             println( "3: " + scaledStart );
             // scaledStart.add( new PVector( 500, 500 ) );
             // scaledStart.div( start.z );
+            */
 
             ellipse( scaledStart.x, scaledStart.y, 100, 100 );
 
-            break;
         }
     }
 
@@ -505,7 +511,8 @@ void setup()
     //  Set up points
     //
     ArrayList points = new ArrayList();
-    points.add( new PVector( 200, 300, 2 ) );
+    points.add( new PVector( 200, 300, 1 ) );
+    points.add( new PVector( 400, 100, 1 ) );
     // points.add( new PVector( 1307.8401, 1536.8, 1.6400002 ) );
     // points.add( new PVector( 833.7591, 340.87112, 1.0000008 ) );
     // points.add( new PVector( 645.54443, 735.9685, 3.7099988 ) );
