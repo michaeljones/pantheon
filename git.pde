@@ -327,106 +327,6 @@ class Motion
     private int m_interval;
 }
 
-
-
-
-
-// //
-// //  Context
-// //
-// class Context
-// {
-//     Context( Motion motion, Pivot pivot )
-//     {
-//         m_motion = motion;
-//         m_pivot = pivot;
-//     }
-// 
-//     PVector position()
-//     {
-//         return m_motion.position();
-//         /*
-//         PVector pos = m_motion.position();
-//         PVector oldPivot = m_pivot.m_pivot;
-//         float scale_ = m_pivot.m_scale;
-//         PVector lastDrawn = new PVector(
-//                 oldPivot.x + ( ( ( pos.x - oldPivot.x ) / scale_ ) * pos.z ),
-//                 oldPivot.y + ( ( ( pos.y - oldPivot.y ) / scale_ ) * pos.z )
-//                 );
-// 
-//         lastDrawn.z = pos.z;
-// 
-//         return lastDrawn;
-//         */
-//     }
-// 
-//     void reset()
-//     {
-//         if ( m_motion.m_mode == "free" )
-//         {
-//             PVector pos = position();
-//             m_motion.setPosition( pos );
-// 
-//             m_pivot.m_pivot = new PVector( 0, 0, 0 );
-//             m_pivot.m_scale = pos.z;
-//         }
-//     }
-// 
-//     void trigger()
-//     {
-//         m_motion.trigger();
-//     }
-// 
-//     void freeMotion()
-//     {
-//         m_motion.freeMotion();
-//     }
-// 
-//     void pathMotion()
-//     {
-//         m_motion.pathMotion();
-//     }
-// 
-//     void setPivot( float x, float y )
-//     {
-//         reset();
-// 
-//         PVector pos = position();
-// 
-//         m_pivot = new Pivot( new PVector( x, y ), pos.z );
-//     }
-// 
-//     void resetPivot()
-//     {
-//         if ( m_motion.m_mode != "free" )
-//         {
-//             m_pivot.m_pivot = new PVector( 0, 0 );
-//             PVector pos = position();
-//             m_pivot.m_scale = pos.z;
-//         }
-//     }
-// 
-//     float scale_()
-//     {
-//         return m_motion.position().z;
-//     }
-// 
-//     void scale_( float scale )
-//     {
-//         m_motion.scale( scale );
-//     }
-// 
-//     void adjust( PVector diff )
-//     {
-//         diff.div( m_motion.position().z );
-//         m_motion.adjust( diff );
-//     }
-// 
-//     private Motion m_motion;
-//     private Pivot m_pivot;
-// 
-// };
-
 class Renderer
 {
     Renderer() {}
@@ -459,15 +359,6 @@ class ShapeRenderer extends Renderer
             float p = ( pos.z - m_min ) / ( m_max - m_min );
             p = stepper.step( p );
             int alpha = (int)( p * 255 );
-
-            /*
-            pushStyle();
-
-            fill( 204, alpha );
-            rect( 0, 0, 1000, 1000 );
-
-            popStyle();
-            */
         }
     }
 
@@ -498,32 +389,7 @@ class PathRenderer extends Renderer
             int ni = ( i + 1 ) % m_points.size();
             PVector end = (PVector)m_points.get( ni );
 
-
             line( start.x, start.y, end.x, end.y );
-
-            // PVector scaledStart = new PVector( ((width*0.5) - start.x ) / start.z, ((height*0.5) - start.y) / start.z );
-
-            /*
-            println( "size: " + width + " " + height );
-            println( "start: " + start );
-            println( "scaledStart: " + scaledStart );
-            */
-
-            /*
-            println( "1: " + scaledStart );
-
-            scaledStart.div( pos.z );
-            // scaledStart.add( new PVector( - pos.x, - pos.y ) );
-
-            println( "2: " + scaledStart );
-
-            scaledStart.add( new PVector( ( width * 0.5 ) / pos.z, ( height * 0.5 )/ pos.z )  );
-
-            println( "3: " + scaledStart );
-            // scaledStart.add( new PVector( 500, 500 ) );
-            // scaledStart.div( start.z );
-            */
-
             ellipse( start.x, start.y, 10, 10 );
             text( i, start.x + 10, start.y + 5 );
         }
