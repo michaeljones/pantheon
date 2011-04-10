@@ -41,21 +41,44 @@ def calculate_bounding_box( node, bbox ):
         current_y = 0
         last_key = ""
         force_absolute = 1
+        skip = 0
+        skip_every = 0
 
         for i, token in enumerate( tokens ):
 
             if len( token ) == 1:
-
                 last_key = token
+
+                if token in ("C", "c"):
+                    skip = 3
+                    skip_every = 3
+                else:
+                    skip_every = 0
+                    skip = 0
 
             if last_key == "m":
                 mode = "rel"
             elif last_key == "C":
                 mode = "abs"
-            elif last_key == "c" or last_key == "l":
+            elif last_key == "c":
                 mode = "rel"
+            elif last_key == "l":
+                mode = "rel"
+            elif last_key == "z":
+                pass
+            else:
+                print "Unknown token: ", last_key
 
             if len( token ) > 1:
+
+                if skip:
+                    print "Skipping", token, skip
+                    skip -= 1
+                    if skip == 1:
+                        skip = skip_every
+                    else:
+                        continue
+
 
                 x, y = [float(v) for v in token.split(",")]
 
@@ -136,14 +159,13 @@ def main( args ):
 
                     remove_fill_opacity( node )
 
-                    if label == "Git":
-                        bbox = BoundingBox()
-                        calculate_bounding_box( node, bbox )
+                    bbox = BoundingBox()
+                    calculate_bounding_box( node, bbox )
 
-                        node.setAttribute( "pantheon:bbox_minx", "%s" % bbox.min_[0] )
-                        node.setAttribute( "pantheon:bbox_miny", "%s" % bbox.min_[1] )
-                        node.setAttribute( "pantheon:bbox_maxx", "%s" % bbox.max_[0] )
-                        node.setAttribute( "pantheon:bbox_maxy", "%s" % bbox.max_[1] )
+                    node.setAttribute( "pantheon:bbox_minx", "%s" % bbox.min_[0] )
+                    node.setAttribute( "pantheon:bbox_miny", "%s" % bbox.min_[1] )
+                    node.setAttribute( "pantheon:bbox_maxx", "%s" % bbox.max_[0] )
+                    node.setAttribute( "pantheon:bbox_maxy", "%s" % bbox.max_[1] )
                     
 
         output_file = open( "layers/%s.svg" % group, "w" )
