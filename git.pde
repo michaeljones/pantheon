@@ -60,7 +60,7 @@ class Path
         m_progress = m_index;
         m_time = 0;
         m_interval = 1000;
-        m_speed = 0.5; // units per millisecond
+        m_speed = 0.1; // units per millisecond
         m_active = false;
     }
     
@@ -131,12 +131,14 @@ class Path
         PVector start = (PVector)m_points.get( m_index );
         PVector end = (PVector)m_points.get( m_nextIndex );
 
+        int sign = m_index < m_nextIndex ? 1 : -1;
+
         PVector pos = new PVector( start.x, start.y, start.z );
         PVector dir = new PVector( end.x - start.x, end.y - start.y, end.z - start.z );
         dir.mult( fraction );
         pos.add( dir );
 
-        m_progress = m_index + fraction;
+        m_progress = m_index + sign * fraction;
 
         return pos;
     }
@@ -331,7 +333,7 @@ class Renderer
 {
     Renderer() {}
 
-    void render( PVector pos, float progress )
+    void render( PVector pos, float progress, float opacity )
     {
         // Base class
     }
@@ -339,30 +341,43 @@ class Renderer
 
 class ShapeRenderer extends Renderer
 {
-    ShapeRenderer( PShape shape, float minZoom, float maxZoom )
+    ShapeRenderer( String name, XMLElement root, float minZoom, float maxZoom )
     {
-        m_shape = shape;
+        m_name = name;
+        m_root = root;
         m_min = minZoom;
         m_max = maxZoom;
     }
 
-    void render( PVector pos, float progress )
+    void render( PVector pos, float progress, float opacity )
     {
+        /*
         if ( pos.z < m_min )
+        {
             return;
+        }
 
-        shape( m_shape, 0, 0, 1300, 700 );
+        float opacity = 1.0;
 
         if ( pos.z < m_max )
         {
             SmoothStepper stepper = new SmoothStepper();
             float p = ( pos.z - m_min ) / ( m_max - m_min );
             p = stepper.step( p );
-            int alpha = (int)( p * 255 );
+            opacity = p;
         }
+        */
+
+        XMLElement group = m_root.getChild( "g" );
+
+        group.setAttribute( "style", "display:inline;opacity:" + opacity );
+
+        PShapeSVG sh = new PShapeSVG( m_root );
+        shape( sh, 0, 0, 1300, 700 );
     }
 
-    private PShape m_shape;
+    private String m_name;
+    private XMLElement m_root;
     private float m_min;
     private float m_max;
 };
@@ -378,7 +393,7 @@ class PathRenderer extends Renderer
         m_points = points;
     }
 
-    void render( PVector pos, float progress )
+    void render( PVector pos, float progress, float opacity )
     {
         int length = m_points.size();
 
@@ -405,7 +420,7 @@ class BoxRenderer extends Renderer
     {
     }
 
-    void render( PVector pos, float progress )
+    void render( PVector pos, float progress, float opacity )
     {
         pushStyle();
         noFill();
@@ -430,17 +445,61 @@ class ProgressRenderer extends Renderer
 
     }
 
-    void render( PVector pos, float progress )
+    void render( PVector pos, float progress, float opacity )
     {
-        if ( progress >= m_start && progress < m_end )
+        if ( progress > m_start - 1 && progress < m_end + 1 )
         {
-            m_renderer.render( pos, progress );
+            if ( progress < m_start )
+            {
+                opacity *= 1 - ( m_start - progress );
+            }
+            else if ( progress > m_end )
+            {
+                opacity *= 1 - ( progress - m_end );
+            }
+
+            // Rendering with very small values eg. 1.2E-7 seems to ignore the
+            // opacity (ie. use 1.0 instead) which is possibly due to how svg
+            // expects small numbers to be expressed. So we skip small numbers,
+            // seems to look smooth enough
+            //
+            if ( opacity > 0.01 )
+            {
+                m_renderer.render( pos, progress, opacity );
+            }
         }
     }
 
     private Renderer m_renderer;
     private float m_start;
     private float m_end;
+
+}
+
+class RendererFactory
+{
+    RendererFactory( PApplet applet )
+    {
+        m_applet = applet;
+    }
+
+    Renderer create( String name, String dir, float start, float end )
+    {
+        XMLElement rootElement = new XMLElement( m_applet, dir + name + ".svg" );
+
+        return new ProgressRenderer(
+                new ShapeRenderer(
+                    name,
+                    rootElement,
+                    0,
+                    0 
+                    ),
+                start,
+                end
+                );
+    }
+
+    private PApplet m_applet;
 
 }
 
@@ -455,19 +514,21 @@ class RendererGroup
         m_renderers = renderers;
     }
 
-    void render( PVector pos, float progress )
+    void render( PVector pos, float progress, float opacity )
     {
         int length = m_renderers.size();
 
         for ( int i=0; i<length; ++i )
         {
             Renderer renderer = (Renderer)m_renderers.get( i );
-            renderer.render( pos, progress );
+            renderer.render( pos, progress, opacity );
         }
     }
 
     private ArrayList m_renderers;
 };
+
+
 
 Motion motion;
 RendererGroup rendererGroup;
@@ -522,15 +583,16 @@ void setup()
     String root = "/home/mike/projects/presentations/git/layers/";
 
     ArrayList renderers = new ArrayList();
-    renderers.add( new ProgressRenderer( new ShapeRenderer( loadShape( root + "Git.svg" ), 0, 0 ), 0, 1 ) );
-    renderers.add( new ProgressRenderer( new ShapeRenderer( loadShape( root + "MainTitles.svg" ), 0, 0 ), 1, 1000 ) );
-    renderers.add( new ProgressRenderer( new ShapeRenderer( loadShape( root + "History.svg" ), 0, 0 ), 2, 8 ) );
-    renderers.add( new ProgressRenderer( new ShapeRenderer( loadShape( root + "Weaknesses.svg" ), 0, 0), 9, 17 ) );
-    renderers.add( new ProgressRenderer( new ShapeRenderer( loadShape( root + "UI.svg" ), 0, 0 ), 10, 15 ) );
-    renderers.add( new ProgressRenderer( new ShapeRenderer( loadShape( root + "Strengths.svg" ), 0, 0 ), 18, 1000 ) );
-    renderers.add( new ProgressRenderer( new ShapeRenderer( loadShape( root + "InternalStructure.svg" ), 0, 0 ), 19, 1000 ) );
-    renderers.add( new ProgressRenderer( new ShapeRenderer( loadShape( root + "EditHistory.svg" ), 0, 0 ), 19, 1000 ) );
-    renderers.add( new ProgressRenderer( new ShapeRenderer( loadShape( root + "UsefulCommands.svg" ), 0, 0 ), 19, 1000 ) );
+    RendererFactory rendererFactory = new RendererFactory( this );
+    renderers.add( rendererFactory.create( "Git", root, 0, 0 ) );
+    renderers.add( rendererFactory.create( "MainTitles", root, 1, 2 ) );
+    renderers.add( rendererFactory.create( "History", root, 2, 8 ) );
+    // renderers.add( new ProgressRenderer( new ShapeRenderer( "Weaknesses", loadShape( root + "Weaknesses.svg" ), 0, 0), 9, 17 ) );
+    // renderers.add( new ProgressRenderer( new ShapeRenderer( "UI", loadShape( root + "UI.svg" ), 0, 0 ), 10, 15 ) );
+    // renderers.add( new ProgressRenderer( new ShapeRenderer( "Strengths", loadShape( root + "Strengths.svg" ), 0, 0 ), 18, 1000 ) );
+    // renderers.add( new ProgressRenderer( new ShapeRenderer( "InternalStructure", loadShape( root + "InternalStructure.svg" ), 0, 0 ), 19, 1000 ) );
+    // renderers.add( new ProgressRenderer( new ShapeRenderer( "EditHistory", loadShape( root + "EditHistory.svg" ), 0, 0 ), 19, 1000 ) );
+    // renderers.add( new ProgressRenderer( new ShapeRenderer( "UsefulCommands", loadShape( root + "UsefulCommands.svg" ), 0, 0 ), 19, 1000 ) );
     renderers.add( new ProgressRenderer( new BoxRenderer(), 0, 1000 ) );
     renderers.add( new ProgressRenderer( new PathRenderer( points ), 0, 1000 ) );
     rendererGroup = new RendererGroup( renderers );
@@ -554,7 +616,7 @@ void draw()
 
     // ellipse( 0, 0, 50, 50 );
 
-    rendererGroup.render( motion.position(), progress );
+    rendererGroup.render( motion.position(), progress, 1.0 );
 }
 
 void mousePressed()

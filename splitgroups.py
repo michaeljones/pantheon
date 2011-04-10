@@ -3,6 +3,22 @@ from xml.dom.minidom import parse
 
 import sys
 
+def remove_fill_opacity( node ):
+
+    if hasattr( node, "hasAttribute" ):
+        if node.hasAttribute( "style" ):
+
+
+            style = node.getAttribute( "style" )
+            print "Style", style
+            style = style.replace( "fill-opacity:1;", "" )
+
+            print "Style", style
+            node.setAttribute( "style", style )
+
+    for child in node.childNodes:
+
+        remove_fill_opacity( child )
 
 def main( args ):
 
@@ -41,6 +57,13 @@ def main( args ):
 
                     old_child = root.removeChild( node )
                     old_child.unlink()
+
+                else:
+
+                    node.setAttribute( "id", label )
+
+                    remove_fill_opacity( node )
+                    
 
         output_file = open( "layers/%s.svg" % group, "w" )
         dom.writexml( output_file )
