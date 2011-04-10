@@ -341,12 +341,12 @@ class Renderer
 
 class ShapeRenderer extends Renderer
 {
-    ShapeRenderer( String name, XMLElement root, float minZoom, float maxZoom )
+    ShapeRenderer( String name, PShape shape, PVector min, PVector max )
     {
         m_name = name;
-        m_root = root;
-        m_min = minZoom;
-        m_max = maxZoom;
+        m_shape = shape;
+        m_min = min;
+        m_max = max;
     }
 
     void render( PVector pos, float progress, float opacity )
@@ -357,29 +357,24 @@ class ShapeRenderer extends Renderer
             return;
         }
 
-        float opacity = 1.0;
-
-        if ( pos.z < m_max )
-        {
-            SmoothStepper stepper = new SmoothStepper();
-            float p = ( pos.z - m_min ) / ( m_max - m_min );
-            p = stepper.step( p );
-            opacity = p;
-        }
         */
 
-        XMLElement group = m_root.getChild( "g" );
+        shape( m_shape, 0, 0, 1300, 700 );
 
-        group.setAttribute( "style", "display:inline;opacity:" + opacity );
-
-        PShapeSVG sh = new PShapeSVG( m_root );
-        shape( sh, 0, 0, 1300, 700 );
+        if ( opacity < 1.0 )
+        {
+            pushStyle();
+            noStroke();
+            fill( 204, ( 1 - opacity ) * 255 );
+            rect( m_min.x, m_min.y, m_max.x-m_min.x, m_max.y-m_min.y );
+            popStyle();
+        }
     }
 
     private String m_name;
-    private XMLElement m_root;
-    private float m_min;
-    private float m_max;
+    private PShape m_shape;
+    private PVector m_min;
+    private PVector m_max;
 };
 
 
@@ -487,12 +482,17 @@ class RendererFactory
     {
         XMLElement rootElement = new XMLElement( m_applet, dir + name + ".svg" );
 
+        XMLElement group = rootElement.getChild( "g" );
+
+        PVector min = new PVector( group.getFloatAttribute( "pantheon:bbox_minx" ), group.getFloatAttribute( "pantheon:bbox_miny" ) );
+        PVector max = new PVector( group.getFloatAttribute( "pantheon:bbox_maxx" ), group.getFloatAttribute( "pantheon:bbox_maxy" ) );
+
         return new ProgressRenderer(
                 new ShapeRenderer(
                     name,
-                    rootElement,
-                    0,
-                    0 
+                    loadShape( dir + name + ".svg" ),
+                    min,
+                    max
                     ),
                 start,
                 end
