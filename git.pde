@@ -55,7 +55,7 @@ class Path
         m_points = points;
         m_stepper = stepper;
 
-        m_index = 20;
+        m_index = 0;
         m_nextIndex = m_index + 1;
         m_progress = m_index;
         m_time = 0;
@@ -580,6 +580,19 @@ void setup()
     /* 34 */ points.add( new PVector( 1022.5326, 132.80426, 5.099945 ) );
     /* 35 */ points.add( new PVector( 1022.5326, 132.80426, 5.099945 ) );
 
+    points.add( new PVector( 214.43503, 444.9296, 7.5941863 ) );
+    points.add( new PVector( 149.58963, 402.8285, 16.554186 ) );
+    points.add( new PVector( 69.428474, 435.20712, 16.554186 ) );
+    points.add( new PVector( 92.20217, 502.5614, 16.554186 ) );
+    points.add( new PVector( 206.81107, 443.43393, 6.9241886 ) );
+    points.add( new PVector( 391.09256, 523.58765, 6.9241886 ) );
+    points.add( new PVector( 201.76584, 522.6061, 15.3441925 ) );
+    points.add( new PVector( 229.87027, 592.23364, 13.414194 ) );
+    points.add( new PVector( 279.07193, 633.8318, 15.0142 ) );
+    points.add( new PVector( 378.71066, 646.6857, 15.0142 ) );
+    points.add( new PVector( 455.09586, 616.63806, 16.084202 ) );
+    points.add( new PVector( 673.52435, 319.73032, 1.0542002 ) );
+
     // Setup motion class
     SmoothStepper stepper = new SmoothStepper();
     Path path = new Path( points, stepper );
@@ -629,8 +642,8 @@ void setup()
     renderers.add( rendererFactory.create( "Branches2", root, 34, 100 ) );
     renderers.add( rendererFactory.create( "Tags", root, 35, 100 ) );
 
-    renderers.add( new ProgressRenderer( new BoxRenderer(), 0, 1000 ) );
-    renderers.add( new ProgressRenderer( new PathRenderer( points ), 0, 1000 ) );
+    // renderers.add( new ProgressRenderer( new BoxRenderer(), 0, 1000 ) );
+    // renderers.add( new ProgressRenderer( new PathRenderer( points ), 0, 1000 ) );
     rendererGroup = new RendererGroup( renderers );
 
     // Rendering settings
