@@ -50,12 +50,12 @@ class Pivot
 //
 class Path
 {
-    Path( ArrayList points, SmoothStepper stepper )
+    Path( ArrayList points, SmoothStepper stepper, int startIndex )
     {
         m_points = points;
         m_stepper = stepper;
 
-        m_index = 0;
+        m_index = startIndex;
         m_nextIndex = m_index + 1;
         m_progress = m_index;
         m_time = 0;
@@ -595,7 +595,7 @@ void setup()
 
     // Setup motion class
     SmoothStepper stepper = new SmoothStepper();
-    Path path = new Path( points, stepper );
+    Path path = new Path( points, stepper, 0 );
 
     PVector first = path.position();
     Pivot pivot = new Pivot( new PVector( 0, 0 ), first.z );
@@ -609,7 +609,7 @@ void setup()
     renderers.add( rendererFactory.create( "History", root, 2, 8 ) );
     renderers.add( rendererFactory.create( "UI", root, 10, 15 ) );
     renderers.add( rendererFactory.create( "Weaknesses", root, 9, 17 ) );
-    renderers.add( rendererFactory.create( "InternalStructure", root, 19, 1000 ) );
+    renderers.add( rendererFactory.create( "InternalStructure", root, 19, 28 ) );
     renderers.add( rendererFactory.create( "EditHistory", root, 19, 1000 ) );
     renderers.add( rendererFactory.create( "UsefulCommands", root, 19, 1000 ) );
     renderers.add( rendererFactory.create( "Strengths", root, 18, 1000 ) );
@@ -635,12 +635,12 @@ void setup()
     renderers.add( rendererFactory.create( "NBTextCommit1", root, 28, 28 ) );
 
     renderers.add( rendererFactory.create( "NodeBuildingCommit2", root, 29, 100 ) );
-    renderers.add( rendererFactory.create( "GraphBuilding1", root, 30, 100 ) );
-    renderers.add( rendererFactory.create( "GraphBuilding2", root, 31, 100 ) );
-    renderers.add( rendererFactory.create( "GraphBuilding3", root, 32, 100 ) );
-    renderers.add( rendererFactory.create( "Branches1", root, 33, 100 ) );
-    renderers.add( rendererFactory.create( "Branches2", root, 34, 100 ) );
     renderers.add( rendererFactory.create( "Tags", root, 35, 100 ) );
+    renderers.add( rendererFactory.create( "Branches2", root, 34, 100 ) );
+    renderers.add( rendererFactory.create( "Branches1", root, 33, 100 ) );
+    renderers.add( rendererFactory.create( "GraphBuilding3", root, 32, 100 ) );
+    renderers.add( rendererFactory.create( "GraphBuilding2", root, 31, 100 ) );
+    renderers.add( rendererFactory.create( "GraphBuilding1", root, 30, 100 ) );
 
     // renderers.add( new ProgressRenderer( new BoxRenderer(), 0, 1000 ) );
     // renderers.add( new ProgressRenderer( new PathRenderer( points ), 0, 1000 ) );
