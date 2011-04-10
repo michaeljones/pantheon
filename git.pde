@@ -55,8 +55,8 @@ class Path
         m_points = points;
         m_stepper = stepper;
 
-        m_index = 0;
-        m_nextIndex = 1;
+        m_index = 20;
+        m_nextIndex = m_index + 1;
         m_progress = m_index;
         m_time = 0;
         m_interval = 1000;
@@ -563,14 +563,22 @@ void setup()
     points.add( new PVector( 262.937, 324.4504, 9.639954 ) );
     points.add( new PVector( 229.63808, 300.07257, 9.639954 ) );
     points.add( new PVector( 227.35577, 255.2591, 9.639954 ) );
-    points.add( new PVector( 250.59225, 203.70271, 9.639954 ) );
-    points.add( new PVector( 394.3395, 248.79552, 8.649942 ) );
-    points.add( new PVector( 287.92484, 140.04407, 11.389942 ) );
-    points.add( new PVector( 393.59293, 234.21753, 8.759929 ) );
-    points.add( new PVector( 332.0628, 90.49504, 8.759929 ) );
-    points.add( new PVector( 411.5864, 209.46683, 6.309916 ) );
-    points.add( new PVector( 493.7483, 59.024517, 6.4999185 ) );
-    points.add( new PVector( 417.771, 193.51091, 5.45991 ) );
+
+    // Node Building
+    /* 22 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
+    /* 23 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
+    /* 24 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
+    /* 25 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
+    /* 26 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
+    /* 27 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
+    /* 28 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
+    /* 29 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
+    /* 30 */ points.add( new PVector( 664.4871, 133.19649, 5.099945 ) );
+    /* 31 */ points.add( new PVector( 730.56696, 133.00035, 5.099945 ) );
+    /* 32 */ points.add( new PVector( 834.0974, 131.43175, 5.099945 ) );
+    /* 33 */ points.add( new PVector( 1022.5326, 132.80426, 5.099945 ) );
+    /* 34 */ points.add( new PVector( 1022.5326, 132.80426, 5.099945 ) );
+    /* 35 */ points.add( new PVector( 1022.5326, 132.80426, 5.099945 ) );
 
     // Setup motion class
     SmoothStepper stepper = new SmoothStepper();
@@ -594,6 +602,33 @@ void setup()
     renderers.add( rendererFactory.create( "Strengths", root, 18, 1000 ) );
     renderers.add( rendererFactory.create( "MainTitles", root, 1, 1000 ) );
     renderers.add( rendererFactory.create( "Git", root, 0, 0 ) );
+
+    renderers.add( rendererFactory.create( "NodeBuildingBlob1", root, 23, 100 ) );
+    renderers.add( rendererFactory.create( "NBTextBlob1", root, 23, 23 ) );
+
+    renderers.add( rendererFactory.create( "NodeBuildingBlob2", root, 24, 100 ) );
+    renderers.add( rendererFactory.create( "NBTextBlob2", root, 24, 24 ) );
+
+    renderers.add( rendererFactory.create( "NodeBuildingTree1", root, 25, 100 ) );
+    renderers.add( rendererFactory.create( "NBTextTree1", root, 25, 25 ) );
+
+    renderers.add( rendererFactory.create( "NodeBuildingBlob3", root, 26, 100 ) );
+    renderers.add( rendererFactory.create( "NBTextBlob3", root, 26, 26 ) );
+
+    renderers.add( rendererFactory.create( "NodeBuildingTree2", root, 27, 100 ) );
+    renderers.add( rendererFactory.create( "NBTextTree2", root, 27, 27 ) );
+
+    renderers.add( rendererFactory.create( "NodeBuildingCommit1", root, 28, 100 ) );
+    renderers.add( rendererFactory.create( "NBTextCommit1", root, 28, 28 ) );
+
+    renderers.add( rendererFactory.create( "NodeBuildingCommit2", root, 29, 100 ) );
+    renderers.add( rendererFactory.create( "GraphBuilding1", root, 30, 100 ) );
+    renderers.add( rendererFactory.create( "GraphBuilding2", root, 31, 100 ) );
+    renderers.add( rendererFactory.create( "GraphBuilding3", root, 32, 100 ) );
+    renderers.add( rendererFactory.create( "Branches1", root, 33, 100 ) );
+    renderers.add( rendererFactory.create( "Branches2", root, 34, 100 ) );
+    renderers.add( rendererFactory.create( "Tags", root, 35, 100 ) );
+
     renderers.add( new ProgressRenderer( new BoxRenderer(), 0, 1000 ) );
     renderers.add( new ProgressRenderer( new PathRenderer( points ), 0, 1000 ) );
     rendererGroup = new RendererGroup( renderers );

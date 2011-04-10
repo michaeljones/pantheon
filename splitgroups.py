@@ -7,8 +7,8 @@ class BoundingBox( object ):
 
     def __init__( self ):
 
-        self.min_ = [ None, None ]
-        self.max_ = [ None, None ]
+        self.min_ = [ 0, 0 ]
+        self.max_ = [ 0, 0 ]
 
         self.initialised = False
 
@@ -58,6 +58,8 @@ def calculate_bounding_box( node, bbox ):
 
             if last_key == "m":
                 mode = "rel"
+            elif last_key == "M":
+                mode = "abs"
             elif last_key == "C":
                 mode = "abs"
             elif last_key == "c":
