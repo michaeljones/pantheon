@@ -72,7 +72,6 @@ def calculate_bounding_box( node, bbox ):
             if len( token ) > 1:
 
                 if skip:
-                    print "Skipping", token, skip
                     skip -= 1
                     if skip == 1:
                         skip = skip_every

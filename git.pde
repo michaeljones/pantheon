@@ -361,12 +361,12 @@ class ShapeRenderer extends Renderer
 
         shape( m_shape, 0, 0, 1300, 700 );
 
-        // if ( opacity < 1.0 )
+        if ( opacity < 1.0 )
         {
             pushStyle();
-            // noStroke();
-            noFill();
-            // fill( 204, ( 1 - opacity ) * 255 );
+            noStroke();
+            // noFill();
+            fill( 204, ( 1 - opacity ) * 255 );
             rect( m_min.x, m_min.y, m_max.x-m_min.x, m_max.y-m_min.y );
             popStyle();
         }
@@ -461,9 +461,9 @@ class ProgressRenderer extends Renderer
             //
             if ( opacity > 0.01 )
             {
+                m_renderer.render( pos, progress, opacity );
             }
         }
-        m_renderer.render( pos, progress, opacity );
     }
 
     private Renderer m_renderer;
@@ -586,15 +586,14 @@ void setup()
     ArrayList renderers = new ArrayList();
     RendererFactory rendererFactory = new RendererFactory( this );
     renderers.add( rendererFactory.create( "History", root, 2, 8 ) );
-    renderers.add( rendererFactory.create( "Weaknesses", root, 9, 17 ) );
     renderers.add( rendererFactory.create( "UI", root, 10, 15 ) );
-    renderers.add( rendererFactory.create( "Strengths", root, 18, 1000 ) );
+    renderers.add( rendererFactory.create( "Weaknesses", root, 9, 17 ) );
     renderers.add( rendererFactory.create( "InternalStructure", root, 19, 1000 ) );
     renderers.add( rendererFactory.create( "EditHistory", root, 19, 1000 ) );
     renderers.add( rendererFactory.create( "UsefulCommands", root, 19, 1000 ) );
+    renderers.add( rendererFactory.create( "Strengths", root, 18, 1000 ) );
     renderers.add( rendererFactory.create( "MainTitles", root, 1, 1000 ) );
     renderers.add( rendererFactory.create( "Git", root, 0, 0 ) );
-    renderers.add( rendererFactory.create( "Test", root, 0, 1000 ) );
     renderers.add( new ProgressRenderer( new BoxRenderer(), 0, 1000 ) );
     renderers.add( new ProgressRenderer( new PathRenderer( points ), 0, 1000 ) );
     rendererGroup = new RendererGroup( renderers );
