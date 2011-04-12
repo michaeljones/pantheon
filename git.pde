@@ -715,7 +715,7 @@ void setup()
 
     // Setup motion class
     SmoothStepper stepper = new SmoothStepper();
-    Path path = new Path( points, stepper, 50 );
+    Path path = new Path( points, stepper, 0 );
 
     PVector first = path.position();
     Pivot pivot = new Pivot( new PVector( 0, 0 ), first.z );
@@ -740,10 +740,10 @@ void setup()
 
     renderers.add( rendererFactory.create( "History", root, 3, 7 ) );
     renderers.add( rendererFactory.create( "UI", root, 10, 14 ) );
-    renderers.add( rendererFactory.create( "Weaknesses", root, 9, 16 ) );
+    renderers.add( rendererFactory.create( "Weaknesses", root, 9, 15 ) );
     renderers.add( rendererFactory.create( "InternalStructure", root, 21, 30 ) );
-    renderers.add( rendererFactory.create( "EditHistory", root, 19, 52 ) );
-    renderers.add( rendererFactory.create( "UsefulCommands", root, 19, 62 ) );
+    renderers.add( rendererFactory.create( "EditHistory", root, 44, 52 ) );
+    renderers.add( rendererFactory.create( "UsefulCommands", root, 54, 62 ) );
     renderers.add( rendererFactory.create( "Strengths", root, 17, 62 ) );
     renderers.add( rendererFactory.create( "MainTitles", root, 1, 63 ) );
     renderers.add( rendererFactory.create( "Git", root, 0, 0 ) );
@@ -781,7 +781,7 @@ void setup()
     renderers.add( rendererFactory.create( "GraphBuilding1", root, 32, 45 ) );
 
     // renderers.add( new ProgressRenderer( new BoxRenderer(), 0, 1000 ) );
-    renderers.add( new ProgressRenderer( new PathRenderer( points ), 0, 1000 ) );
+    // renderers.add( new ProgressRenderer( new PathRenderer( points ), 0, 1000 ) );
     rendererGroup = new RendererGroup( renderers );
 
     // Rendering settings
