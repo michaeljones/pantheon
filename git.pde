@@ -616,8 +616,8 @@ void setup()
     points.add( new PVector( 107.93087, 442.11414, 14.050512 ) );
 
     // Rebase 46
-    points.add( new PVector( 39.036545, 509.51398, 14.050512 ) );
-    points.add( new PVector( 39.036545, 509.51398, 14.050512 ) );
+    points.add( new PVector( 39.10782, 518.8512, 14.030513 ) );
+    points.add( new PVector( 39.10782, 518.8512, 14.030513 ) );
 
     // Rebase -i 48
     points.add( new PVector( 110.460976, 591.8779, 12.70049 ) ); 
@@ -631,12 +631,30 @@ void setup()
 
     // Userful Command 54
     points.add( new PVector( 435.62344, 539.23126, 7.5605044 ) );
+
+    // Init 55
     points.add( new PVector( 283.70743, 572.94055, 12.980504 ) );
+    points.add( new PVector( 283.70743, 572.94055, 12.980504 ) );
+
+    // Add -P 57
     points.add( new PVector( 324.0758, 632.64514, 12.980504 ) );
+    points.add( new PVector( 286.08682, 645.0898, 9.560483 ) );
+    
+    // Gitk 59
     points.add( new PVector( 404.04178, 665.6942, 13.930511 ) );
-    points.add( new PVector( 500.44843, 646.9581, 13.930511 ) );
+
+    // CherryPick 60
+    points.add( new PVector( 500.95087, 654.63837, 13.930511 ) );
+    points.add( new PVector( 500.95087, 654.63837, 13.930511 ) );
+
+    // Bisect 62
     points.add( new PVector( 547.25183, 595.1302, 13.930511 ) );
-    points.add( new PVector( 610.9089, 230.55424, 6.9805126 ) );
+
+    // All 63
+    points.add( new PVector( 697.2315, 435.7925, 1.7100239 ) );
+    
+    // Git 64
+    points.add( new PVector( 623.5175, 224.72202, 4.329994 ) );
 
 
     /*
@@ -697,7 +715,7 @@ void setup()
 
     // Setup motion class
     SmoothStepper stepper = new SmoothStepper();
-    Path path = new Path( points, stepper, 40 );
+    Path path = new Path( points, stepper, 50 );
 
     PVector first = path.position();
     Pivot pivot = new Pivot( new PVector( 0, 0 ), first.z );
@@ -708,6 +726,10 @@ void setup()
 
     ArrayList renderers = new ArrayList();
     RendererFactory rendererFactory = new RendererFactory( this );
+
+    renderers.add( rendererFactory.create( "Init", root, 56, 56 ) );
+    renderers.add( rendererFactory.create( "AddP", root, 58, 58 ) );
+    renderers.add( rendererFactory.create( "CherryPick", root, 61, 61 ) );
 
     renderers.add( rendererFactory.create( "CommitAmend", root, 45, 45 ) );
     renderers.add( rendererFactory.create( "Rebase1", root, 47, 47 ) );
@@ -720,42 +742,43 @@ void setup()
     renderers.add( rendererFactory.create( "UI", root, 10, 14 ) );
     renderers.add( rendererFactory.create( "Weaknesses", root, 9, 16 ) );
     renderers.add( rendererFactory.create( "InternalStructure", root, 21, 30 ) );
-    renderers.add( rendererFactory.create( "EditHistory", root, 19, 1000 ) );
-    renderers.add( rendererFactory.create( "UsefulCommands", root, 19, 1000 ) );
-    renderers.add( rendererFactory.create( "Strengths", root, 17, 1000 ) );
-    renderers.add( rendererFactory.create( "MainTitles", root, 1, 1000 ) );
+    renderers.add( rendererFactory.create( "EditHistory", root, 19, 52 ) );
+    renderers.add( rendererFactory.create( "UsefulCommands", root, 19, 62 ) );
+    renderers.add( rendererFactory.create( "Strengths", root, 17, 62 ) );
+    renderers.add( rendererFactory.create( "MainTitles", root, 1, 63 ) );
     renderers.add( rendererFactory.create( "Git", root, 0, 0 ) );
+    renderers.add( rendererFactory.create( "Git", root, 64, 64 ) );
 
     renderers.add( rendererFactory.create( "Distributed", root, 19, 19 ) );
 
-    renderers.add( rendererFactory.create( "NodeBuildingBlob1", root, 25, 100 ) );
+    renderers.add( rendererFactory.create( "NodeBuildingBlob1", root, 25, 45 ) );
     renderers.add( rendererFactory.create( "NBTextBlob1", root, 25, 25 ) );
 
-    renderers.add( rendererFactory.create( "NodeBuildingBlob2", root, 26, 100 ) );
+    renderers.add( rendererFactory.create( "NodeBuildingBlob2", root, 26, 45 ) );
     renderers.add( rendererFactory.create( "NBTextBlob2", root, 26, 26 ) );
 
-    renderers.add( rendererFactory.create( "NodeBuildingTree1", root, 27, 100 ) );
+    renderers.add( rendererFactory.create( "NodeBuildingTree1", root, 27, 45 ) );
     renderers.add( rendererFactory.create( "NBTextTree1", root, 27, 27 ) );
 
-    renderers.add( rendererFactory.create( "NodeBuildingBlob3", root, 28, 100 ) );
+    renderers.add( rendererFactory.create( "NodeBuildingBlob3", root, 28, 45 ) );
     renderers.add( rendererFactory.create( "NBTextBlob3", root, 28, 28 ) );
 
-    renderers.add( rendererFactory.create( "NodeBuildingTree2", root, 29, 100 ) );
+    renderers.add( rendererFactory.create( "NodeBuildingTree2", root, 29, 45 ) );
     renderers.add( rendererFactory.create( "NBTextTree2", root, 29, 29 ) );
 
-    renderers.add( rendererFactory.create( "NodeBuildingCommit1", root, 30, 100 ) );
+    renderers.add( rendererFactory.create( "NodeBuildingCommit1", root, 30, 45 ) );
     renderers.add( rendererFactory.create( "NBTextCommit1", root, 30, 30 ) );
 
-    renderers.add( rendererFactory.create( "NodeBuildingCommit2", root, 31, 100 ) );
+    renderers.add( rendererFactory.create( "NodeBuildingCommit2", root, 31, 45 ) );
     renderers.add( rendererFactory.create( "Tags2", root, 40, 41 ) );
     renderers.add( rendererFactory.create( "Tags", root, 39, 41 ) );
     renderers.add( rendererFactory.create( "Branches4", root, 38, 38 ) );
     renderers.add( rendererFactory.create( "Branches3", root, 37, 37 ) );
     renderers.add( rendererFactory.create( "Branches2", root, 36, 41 ) );
     renderers.add( rendererFactory.create( "Branches1", root, 35, 41 ) );
-    renderers.add( rendererFactory.create( "GraphBuilding3", root, 34, 100 ) );
-    renderers.add( rendererFactory.create( "GraphBuilding2", root, 33, 100 ) );
-    renderers.add( rendererFactory.create( "GraphBuilding1", root, 32, 100 ) );
+    renderers.add( rendererFactory.create( "GraphBuilding3", root, 34, 45 ) );
+    renderers.add( rendererFactory.create( "GraphBuilding2", root, 33, 45 ) );
+    renderers.add( rendererFactory.create( "GraphBuilding1", root, 32, 45 ) );
 
     // renderers.add( new ProgressRenderer( new BoxRenderer(), 0, 1000 ) );
     renderers.add( new ProgressRenderer( new PathRenderer( points ), 0, 1000 ) );
