@@ -533,6 +533,7 @@ class RendererGroup
 
 Motion motion;
 RendererGroup rendererGroup;
+float progress;
 
 void setup()
 {
@@ -661,11 +662,16 @@ void draw()
 
     motion.transform();
 
-    float progress = motion.progress();
+    float progress_ = motion.progress();
+
+    if ( motion.m_mode == "free" )
+    {
+        progress_ = progress;
+    }
 
     // ellipse( 0, 0, 50, 50 );
 
-    rendererGroup.render( motion.position(), progress, 1.0 );
+    rendererGroup.render( motion.position(), progress_, 1.0 );
 }
 
 void mousePressed()
@@ -688,6 +694,11 @@ void mouseDragged()
     {
         float diff = mouseX - pmouseX;
         motion.scale_( diff / 100.0 );
+    }
+    else if ( mouseButton == CENTER )
+    {
+        float diff = mouseX - pmouseX;
+        progress += diff / 50.0;
     }
 }
 
@@ -722,6 +733,7 @@ void keyPressed()
         else if ( key == 'f' )
         {
             motion.free();
+            progress = motion.progress();
         }
         else if ( key == 'p' )
         {
