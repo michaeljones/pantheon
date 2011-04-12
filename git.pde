@@ -542,6 +542,104 @@ void setup()
     //  Set up points
     //
     ArrayList points = new ArrayList();
+
+    // Git 0 
+    points.add( new PVector( 623.5175, 224.72202, 4.329994 ) );
+    points.add( new PVector( 693.69226, 428.95862, 1.5999943 ) );
+
+    // History 2
+    points.add( new PVector( 700.58875, 380.68277, 7.829997 ) );
+    points.add( new PVector( 670.9445, 416.68527, 13.379998 ) );
+    points.add( new PVector( 670.09064, 461.60898, 13.980008 ) );
+    points.add( new PVector( 649.7766, 509.32263, 23.160019 ) );
+    points.add( new PVector( 646.45276, 540.4964, 23.160019 ) );
+    points.add( new PVector( 644.5981, 574.9941, 23.160019 ) );
+
+    // All 8 
+    points.add( new PVector( 697.2315, 435.7925, 1.7100239 ) );
+
+    // Weakness 9
+    points.add( new PVector( 1061.3906, 463.08224, 3.2000227 ) );
+    points.add( new PVector( 847.0228, 332.4834, 11.40001 ) );
+    points.add( new PVector( 910.5204, 255.41368, 9.95001 ) );
+    points.add( new PVector( 1115.3451, 261.14224, 9.95001 ) );
+    points.add( new PVector( 1192.3401, 358.20825, 7.3699975 ) );
+    points.add( new PVector( 1195.3258, 518.3166, 7.3699975 ) );
+    points.add( new PVector( 946.0718, 556.3085, 7.3699975 ) );
+
+    // All 16
+    points.add( new PVector( 697.2315, 435.7925, 1.7100239 ) );
+
+    // Strengths 17
+    points.add( new PVector( 335.9829, 444.58264, 3.359994 ) );
+
+    // Distributed 18
+    points.add( new PVector( 485.9002, 371.31708, 10.300017 ) );
+    points.add( new PVector( 519.94635, 310.7871, 17.410007 ) );
+
+    // Internal Stucture 20
+    points.add( new PVector( 258.05603, 364.0658, 8.770002 ) );
+    points.add( new PVector( 161.88809, 293.78592, 9.179997 ) );
+    points.add( new PVector( 148.37703, 213.91788, 13.250006 ) );
+    points.add( new PVector( 227.07912, 140.75266, 11.900001 ) );
+    points.add( new PVector( 449.41953, 187.99435, 5.2300034 ) );
+    points.add( new PVector( 449.41953, 187.99435, 5.2300034 ) );
+    points.add( new PVector( 449.41953, 187.99435, 5.2300034 ) );
+    points.add( new PVector( 449.41953, 187.99435, 5.2300034 ) );
+    points.add( new PVector( 449.41953, 187.99435, 5.2300034 ) );
+    points.add( new PVector( 449.41953, 187.99435, 5.2300034 ) );
+    points.add( new PVector( 449.41953, 187.99435, 5.2300034 ) );
+    points.add( new PVector( 449.41953, 187.99435, 5.2300034 ) );
+
+    // Graph 32
+    points.add( new PVector( 645.07623, 128.98013, 5.9600134 ) );
+    points.add( new PVector( 735.34485, 127.30228, 5.9600134 ) );
+    points.add( new PVector( 844.4055, 127.80563, 5.9600134 ) );
+    points.add( new PVector( 1052.9537, 126.93085, 4.869995 ) );
+    points.add( new PVector( 1052.9537, 126.93085, 4.869995 ) );
+    points.add( new PVector( 1052.9537, 126.93085, 4.869995 ) );
+    points.add( new PVector( 1052.9537, 126.93085, 4.869995 ) );
+    points.add( new PVector( 1052.9537, 126.93085, 4.869995 ) );
+    points.add( new PVector( 1052.9537, 126.93085, 4.869995 ) );
+
+    // Back to tree 41
+    points.add( new PVector( 449.41953, 187.99435, 5.2300034 ) );
+
+    // Strengths 42
+    points.add( new PVector( 353.12164, 444.95206, 3.430493 ) );
+
+    // Edit History 43
+    points.add( new PVector( 209.4329, 499.5155, 8.820501 ) );
+
+    // Commit --amend 44
+    points.add( new PVector( 107.93087, 442.11414, 14.050512 ) );
+    points.add( new PVector( 107.93087, 442.11414, 14.050512 ) );
+
+    // Rebase 46
+    points.add( new PVector( 39.036545, 509.51398, 14.050512 ) );
+    points.add( new PVector( 39.036545, 509.51398, 14.050512 ) );
+
+    // Rebase -i 48
+    points.add( new PVector( 110.460976, 591.8779, 12.70049 ) ); 
+    points.add( new PVector( 110.460976, 591.8779, 12.70049 ) ); 
+    points.add( new PVector( 110.460976, 591.8779, 12.70049 ) ); 
+    points.add( new PVector( 110.460976, 591.8779, 12.70049 ) ); 
+    points.add( new PVector( 110.460976, 591.8779, 12.70049 ) ); 
+
+    // Strengths 53
+    points.add( new PVector( 334.5667, 447.57346, 3.4005084 ) );
+
+    // Userful Command 54
+    points.add( new PVector( 435.62344, 539.23126, 7.5605044 ) );
+    points.add( new PVector( 283.70743, 572.94055, 12.980504 ) );
+    points.add( new PVector( 324.0758, 632.64514, 12.980504 ) );
+    points.add( new PVector( 404.04178, 665.6942, 13.930511 ) );
+    points.add( new PVector( 500.44843, 646.9581, 13.930511 ) );
+    points.add( new PVector( 547.25183, 595.1302, 13.930511 ) );
+    points.add( new PVector( 610.9089, 230.55424, 6.9805126 ) );
+
+
+    /*
     points.add( new PVector( 623.5175, 224.72202, 4.329994 ) );
     points.add( new PVector( 685.61896, 425.41565, 1.680002 ) );
     points.add( new PVector( 696.79114, 378.42313, 8.520003 ) );
@@ -564,23 +662,25 @@ void setup()
     points.add( new PVector( 262.937, 324.4504, 9.639954 ) );
     points.add( new PVector( 229.63808, 300.07257, 9.639954 ) );
     points.add( new PVector( 227.35577, 255.2591, 9.639954 ) );
+    */
 
     // Node Building
-    /* 22 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
-    /* 23 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
-    /* 24 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
-    /* 25 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
-    /* 26 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
-    /* 27 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
-    /* 28 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
-    /* 29 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
-    /* 30 */ points.add( new PVector( 664.4871, 133.19649, 5.099945 ) );
-    /* 31 */ points.add( new PVector( 730.56696, 133.00035, 5.099945 ) );
-    /* 32 */ points.add( new PVector( 834.0974, 131.43175, 5.099945 ) );
-    /* 33 */ points.add( new PVector( 1022.5326, 132.80426, 5.099945 ) );
-    /* 34 */ points.add( new PVector( 1022.5326, 132.80426, 5.099945 ) );
-    /* 35 */ points.add( new PVector( 1022.5326, 132.80426, 5.099945 ) );
+    // /* 22 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
+    // /* 23 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
+    // /* 24 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
+    // /* 25 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
+    // /* 26 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
+    // /* 27 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
+    // /* 28 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
+    // /* 29 */ points.add( new PVector( 471.15045, 178.68713, 5.099945 ) );
+    // /* 30 */ points.add( new PVector( 664.4871, 133.19649, 5.099945 ) );
+    // /* 31 */ points.add( new PVector( 730.56696, 133.00035, 5.099945 ) );
+    // /* 32 */ points.add( new PVector( 834.0974, 131.43175, 5.099945 ) );
+    // /* 33 */ points.add( new PVector( 1022.5326, 132.80426, 5.099945 ) );
+    // /* 34 */ points.add( new PVector( 1022.5326, 132.80426, 5.099945 ) );
+    // /* 35 */ points.add( new PVector( 1022.5326, 132.80426, 5.099945 ) );
 
+    /*
     points.add( new PVector( 214.43503, 444.9296, 7.5941863 ) );
     points.add( new PVector( 149.58963, 402.8285, 16.554186 ) );
     points.add( new PVector( 69.428474, 435.20712, 16.554186 ) );
@@ -593,10 +693,11 @@ void setup()
     points.add( new PVector( 378.71066, 646.6857, 15.0142 ) );
     points.add( new PVector( 455.09586, 616.63806, 16.084202 ) );
     points.add( new PVector( 673.52435, 319.73032, 1.0542002 ) );
+    */
 
     // Setup motion class
     SmoothStepper stepper = new SmoothStepper();
-    Path path = new Path( points, stepper, 0 );
+    Path path = new Path( points, stepper, 40 );
 
     PVector first = path.position();
     Pivot pivot = new Pivot( new PVector( 0, 0 ), first.z );
@@ -607,44 +708,57 @@ void setup()
 
     ArrayList renderers = new ArrayList();
     RendererFactory rendererFactory = new RendererFactory( this );
-    renderers.add( rendererFactory.create( "History", root, 2, 8 ) );
-    renderers.add( rendererFactory.create( "UI", root, 10, 15 ) );
-    renderers.add( rendererFactory.create( "Weaknesses", root, 9, 17 ) );
-    renderers.add( rendererFactory.create( "InternalStructure", root, 19, 28 ) );
+
+    renderers.add( rendererFactory.create( "CommitAmend", root, 45, 45 ) );
+    renderers.add( rendererFactory.create( "Rebase1", root, 47, 47 ) );
+    renderers.add( rendererFactory.create( "RebaseI4", root, 52, 52 ) );
+    renderers.add( rendererFactory.create( "RebaseI3", root, 51, 52 ) );
+    renderers.add( rendererFactory.create( "RebaseI2", root, 50, 50 ) );
+    renderers.add( rendererFactory.create( "RebaseI1", root, 49, 52 ) );
+
+    renderers.add( rendererFactory.create( "History", root, 3, 7 ) );
+    renderers.add( rendererFactory.create( "UI", root, 10, 14 ) );
+    renderers.add( rendererFactory.create( "Weaknesses", root, 9, 16 ) );
+    renderers.add( rendererFactory.create( "InternalStructure", root, 21, 30 ) );
     renderers.add( rendererFactory.create( "EditHistory", root, 19, 1000 ) );
     renderers.add( rendererFactory.create( "UsefulCommands", root, 19, 1000 ) );
-    renderers.add( rendererFactory.create( "Strengths", root, 18, 1000 ) );
+    renderers.add( rendererFactory.create( "Strengths", root, 17, 1000 ) );
     renderers.add( rendererFactory.create( "MainTitles", root, 1, 1000 ) );
     renderers.add( rendererFactory.create( "Git", root, 0, 0 ) );
 
-    renderers.add( rendererFactory.create( "NodeBuildingBlob1", root, 23, 100 ) );
-    renderers.add( rendererFactory.create( "NBTextBlob1", root, 23, 23 ) );
+    renderers.add( rendererFactory.create( "Distributed", root, 19, 19 ) );
 
-    renderers.add( rendererFactory.create( "NodeBuildingBlob2", root, 24, 100 ) );
-    renderers.add( rendererFactory.create( "NBTextBlob2", root, 24, 24 ) );
+    renderers.add( rendererFactory.create( "NodeBuildingBlob1", root, 25, 100 ) );
+    renderers.add( rendererFactory.create( "NBTextBlob1", root, 25, 25 ) );
 
-    renderers.add( rendererFactory.create( "NodeBuildingTree1", root, 25, 100 ) );
-    renderers.add( rendererFactory.create( "NBTextTree1", root, 25, 25 ) );
+    renderers.add( rendererFactory.create( "NodeBuildingBlob2", root, 26, 100 ) );
+    renderers.add( rendererFactory.create( "NBTextBlob2", root, 26, 26 ) );
 
-    renderers.add( rendererFactory.create( "NodeBuildingBlob3", root, 26, 100 ) );
-    renderers.add( rendererFactory.create( "NBTextBlob3", root, 26, 26 ) );
+    renderers.add( rendererFactory.create( "NodeBuildingTree1", root, 27, 100 ) );
+    renderers.add( rendererFactory.create( "NBTextTree1", root, 27, 27 ) );
 
-    renderers.add( rendererFactory.create( "NodeBuildingTree2", root, 27, 100 ) );
-    renderers.add( rendererFactory.create( "NBTextTree2", root, 27, 27 ) );
+    renderers.add( rendererFactory.create( "NodeBuildingBlob3", root, 28, 100 ) );
+    renderers.add( rendererFactory.create( "NBTextBlob3", root, 28, 28 ) );
 
-    renderers.add( rendererFactory.create( "NodeBuildingCommit1", root, 28, 100 ) );
-    renderers.add( rendererFactory.create( "NBTextCommit1", root, 28, 28 ) );
+    renderers.add( rendererFactory.create( "NodeBuildingTree2", root, 29, 100 ) );
+    renderers.add( rendererFactory.create( "NBTextTree2", root, 29, 29 ) );
 
-    renderers.add( rendererFactory.create( "NodeBuildingCommit2", root, 29, 100 ) );
-    renderers.add( rendererFactory.create( "Tags", root, 35, 100 ) );
-    renderers.add( rendererFactory.create( "Branches2", root, 34, 100 ) );
-    renderers.add( rendererFactory.create( "Branches1", root, 33, 100 ) );
-    renderers.add( rendererFactory.create( "GraphBuilding3", root, 32, 100 ) );
-    renderers.add( rendererFactory.create( "GraphBuilding2", root, 31, 100 ) );
-    renderers.add( rendererFactory.create( "GraphBuilding1", root, 30, 100 ) );
+    renderers.add( rendererFactory.create( "NodeBuildingCommit1", root, 30, 100 ) );
+    renderers.add( rendererFactory.create( "NBTextCommit1", root, 30, 30 ) );
+
+    renderers.add( rendererFactory.create( "NodeBuildingCommit2", root, 31, 100 ) );
+    renderers.add( rendererFactory.create( "Tags2", root, 40, 41 ) );
+    renderers.add( rendererFactory.create( "Tags", root, 39, 41 ) );
+    renderers.add( rendererFactory.create( "Branches4", root, 38, 38 ) );
+    renderers.add( rendererFactory.create( "Branches3", root, 37, 37 ) );
+    renderers.add( rendererFactory.create( "Branches2", root, 36, 41 ) );
+    renderers.add( rendererFactory.create( "Branches1", root, 35, 41 ) );
+    renderers.add( rendererFactory.create( "GraphBuilding3", root, 34, 100 ) );
+    renderers.add( rendererFactory.create( "GraphBuilding2", root, 33, 100 ) );
+    renderers.add( rendererFactory.create( "GraphBuilding1", root, 32, 100 ) );
 
     // renderers.add( new ProgressRenderer( new BoxRenderer(), 0, 1000 ) );
-    // renderers.add( new ProgressRenderer( new PathRenderer( points ), 0, 1000 ) );
+    renderers.add( new ProgressRenderer( new PathRenderer( points ), 0, 1000 ) );
     rendererGroup = new RendererGroup( renderers );
 
     // Rendering settings
