@@ -15,6 +15,8 @@ body {
     margin: 0;
     text-align: center;
     color: #293c4b;
+
+    overflow: hidden;
 }
 
 * {
@@ -34,9 +36,19 @@ img {
     position: relative;
 }
 
-.layer-image {
+.layer-group {
     position: absolute;
 
+    width: 2000px;
+    height: 2000px;
+
+    top: 0;
+    left: 0;
+
+    transition: all 1s ease 0s;
+}
+
+.layer-image {
     /* top: attr(data-offset-y); */
     /* left: attr(data-offset-x); */
 

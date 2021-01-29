@@ -14,9 +14,15 @@ import SelectList exposing (SelectList)
 
 
 type alias Model =
-    { layers : SelectList String
+    { layers : SelectList Slide
     , offset : Point
     , dragState : DragState
+    }
+
+
+type alias Slide =
+    { path : String
+    , position : Point
     }
 
 
@@ -33,9 +39,9 @@ init : ( Model, Cmd Msg )
 init =
     ( { layers =
             SelectList.fromLists []
-                "/layers/mt.svg"
-                [ "/layers/openweb.svg"
-                , "/layers/openid.svg"
+                { path = "/layers/mt.svg", position = { x = 50, y = 50 } }
+                [ { path = "/layers/openweb.svg", position = { x = 500, y = 500 } }
+                , { path = "/layers/openid.svg", position = { x = 0, y = 500 } }
                 ]
       , offset = { x = 0, y = 0 }
       , dragState = Static
@@ -64,10 +70,38 @@ update msg model =
                     Keyboard.update keyboardMsg []
             in
             if List.member Keyboard.ArrowLeft keys || List.member (Keyboard.Character "S") keys then
-                ( { model | layers = SelectList.selectBy -1 model.layers |> Maybe.withDefault model.layers }, Cmd.none )
+                let
+                    newLayers =
+                        SelectList.selectBy -1 model.layers
+
+                    newOffset =
+                        Maybe.map SelectList.selected newLayers
+                            |> Maybe.map (\layer -> layer.position)
+                            |> Maybe.withDefault model.offset
+                in
+                ( { model
+                    | layers = newLayers |> Maybe.withDefault model.layers
+                    , offset = newOffset
+                  }
+                , Cmd.none
+                )
 
             else if List.member Keyboard.ArrowRight keys || List.member (Keyboard.Character "F") keys then
-                ( { model | layers = SelectList.selectBy 1 model.layers |> Maybe.withDefault model.layers }, Cmd.none )
+                let
+                    newLayers =
+                        SelectList.selectBy 1 model.layers
+
+                    newOffset =
+                        Maybe.map SelectList.selected newLayers
+                            |> Maybe.map (\layer -> layer.position)
+                            |> Maybe.withDefault model.offset
+                in
+                ( { model
+                    | layers = newLayers |> Maybe.withDefault model.layers
+                    , offset = newOffset
+                  }
+                , Cmd.none
+                )
 
             else
                 ( model, Cmd.none )
@@ -118,14 +152,17 @@ view model =
             List.concat
                 [ SelectList.listBefore model.layers
                     |> List.map
-                        (\path -> img [ class "layer-image layer-past", src path, offsetX, offsetY ] [])
+                        (\{ path } -> img [ class "layer-image layer-past", src path ] [])
                 , [ SelectList.selected model.layers ]
-                    |> List.map (\path -> img [ class "layer-image layer-current", src path, offsetX, offsetY ] [])
+                    |> List.map (\{ path } -> img [ class "layer-image layer-current", src path ] [])
                 , SelectList.listAfter model.layers
-                    |> List.map (\path -> img [ class "layer-image", src path, offsetX, offsetY ] [])
+                    |> List.map (\{ path } -> img [ class "layer-image", src path ] [])
                 ]
     in
-    div [ class "layer-holder" ] layers
+    div [ class "layer-holder" ]
+        [ div [ class "layer-group", offsetX, offsetY ]
+            layers
+        ]
 
 
 
