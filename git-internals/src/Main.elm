@@ -158,9 +158,17 @@ view model =
                 , SelectList.listAfter model.layers
                     |> List.map (\{ path } -> img [ class "layer-image", src path ] [])
                 ]
+
+        transitionOverride =
+            case model.dragState of
+                Moving _ ->
+                    [ style "transition-duration" "0s" ]
+
+                Static ->
+                    []
     in
     div [ class "layer-holder" ]
-        [ div [ class "layer-group", offsetX, offsetY ]
+        [ div (List.append [ class "layer-group", offsetX, offsetY ] transitionOverride)
             layers
         ]
 
