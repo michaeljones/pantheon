@@ -39,8 +39,8 @@ img {
 .layer-group {
     position: absolute;
 
-    width: 2000px;
-    height: 2000px;
+    width: 4000px;
+    height: 4000px;
 
     top: 0;
     left: 0;
@@ -49,13 +49,12 @@ img {
 }
 
 .layer-image {
-    /* top: attr(data-offset-y); */
-    /* left: attr(data-offset-x); */
+    position: absolute;
 
     display: none;
 
-    width: 2000px;
-    height: 2000px;
+    width: 4000px;
+    height: 4000px;
 }
 
 .layer-past {
