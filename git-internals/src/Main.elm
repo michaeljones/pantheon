@@ -76,7 +76,7 @@ update msg model =
 
                     newOffset =
                         Maybe.map SelectList.selected newLayers
-                            |> Maybe.map (\layer -> layer.position)
+                            |> Maybe.map (\layer -> { x = -layer.position.x, y = -layer.position.y })
                             |> Maybe.withDefault model.offset
                 in
                 ( { model
@@ -93,7 +93,7 @@ update msg model =
 
                     newOffset =
                         Maybe.map SelectList.selected newLayers
-                            |> Maybe.map (\layer -> layer.position)
+                            |> Maybe.map (\layer -> { x = -layer.position.x, y = -layer.position.y })
                             |> Maybe.withDefault model.offset
                 in
                 ( { model
@@ -155,8 +155,6 @@ view model =
                         (\{ path } -> img [ class "layer-image layer-past", src path ] [])
                 , [ SelectList.selected model.layers ]
                     |> List.map (\{ path } -> img [ class "layer-image layer-current", src path ] [])
-                , SelectList.listAfter model.layers
-                    |> List.map (\{ path } -> img [ class "layer-image", src path ] [])
                 ]
 
         transitionOverride =
