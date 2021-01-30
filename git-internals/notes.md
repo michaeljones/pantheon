@@ -4,6 +4,7 @@
 ## Notes
 
 - Source Code Control System (SCCS) - 1973
+- Revision Control System (RCS) - 1982
 - Concurrent Versions System - 1990
 - ClearCase - 1992
 - BitKeeper - 2000
@@ -22,25 +23,35 @@
 - Reverse engineered bitkeeper
 - Linus Torvalds create git
 
+## Checkout of Git to show history
+
+- Highlight README
+
 ## Not the best interface
 
 - Inconsisent
 - Poorly named
 - Confusing
+  - git rm <file>
+  - git remote rm <name>
+  - git branch -d
+  - git checkout <file>
+  - git checkout <branch>
 
 - Some recent attempts to improve it
+  - git switch
 
 - Originally designed as a tool kit to create version control systems rather than a version control
   system itself
+  - Plumbing vs Porcelian commands
 
-- Arguably largely popularised by Github's success
-
-- Not great for binary data
-- Not great for computer games & game assets
-- Generally does a full repository clone - better to keep repositories manageable in size
-- Significant work by big companies to make it scale for huge repositories but generally not used
-  for mega-mono-repos
-- 
+// - Arguably largely popularised by Github's success
+//
+// - Not great for binary data
+// - Not great for computer games & game assets
+// - Generally does a full repository clone - better to keep repositories manageable in size
+// - Significant work by big companies to make it scale for huge repositories but generally not used
+//   for mega-mono-repos
 
 ## Internals
 
@@ -53,6 +64,24 @@
 - Recurse up the tree.
 - Create a text file that references the SHA1 of the top of that tree and the SHA1 of any preceeding
   commits and hash that to get the SHA1 of the commit
+
+- Referred to as a Merkle Tree
+  - used in many different bits of software including mercurial
+  - Also bitcoin
+
+- Cryptographic integrity of the graph
+
+## Demo of source repository from scratch
+
+- README.md
+- src/index.js
+- src/utils.js
+
+## Commands
+
+- git cat-file -p <SHA1>
+
+  To pretty print the contents of a git object.
 
 ## Progression
 
@@ -73,7 +102,7 @@
 
 - Having a history makes things feel safer
 
-- The old reason we have source control, which is a history of our files, is so that we can be more
+- The reason we have source control, which is a history of our files, is so that we can be more
   confident in the changes we make. We can see what has changed and we can roll back if we're
   unhappy.
 
@@ -95,7 +124,7 @@
   remove. A variable that could have an a clearer name. A commit message that doesn't include an
   extra piece of information that clarifies that change you made right down the bottom.
 
-  - Why do this? We do this have a clean history and to safe our colleages that might be reviewing
+  - Why do this? We do this have a clean history and to save our colleages that might be reviewing
     our large change a commit at a time and you don't want them to have to point out typos and
     mistakes if you can avoid it.
 
@@ -118,12 +147,6 @@
     ones get out of our way. They don't interrupt our flow. Everything else gives us pause for
     thought. Gives us a reason not to do that thing we're about to do because of the effort and
     trouble or slowness.
-
-## Commands
-
-- git cat-file -p <SHA1>
-
-  To pretty print the contents of a git object.
 
 ## Talks
 

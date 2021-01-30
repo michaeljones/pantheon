@@ -39,8 +39,8 @@ init : ( Model, Cmd Msg )
 init =
     ( { layers =
             SelectList.fromLists []
-                { path = "/layers/mt.svg", position = { x = 50, y = 50 } }
-                [ { path = "/layers/openweb.svg", position = { x = 500, y = 500 } }
+                { path = "/layers/0-git.svg", position = { x = 50, y = 50 } }
+                [ { path = "/layers/1-timeline.svg", position = { x = 500, y = 500 } }
                 , { path = "/layers/openid.svg", position = { x = 0, y = 500 } }
                 ]
       , offset = { x = 0, y = 0 }
