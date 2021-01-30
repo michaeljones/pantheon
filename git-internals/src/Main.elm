@@ -3,6 +3,7 @@ module Main exposing (..)
 import Array exposing (Array)
 import Browser
 import Browser.Events
+import Dict
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Json.Decode as Decode
@@ -40,12 +41,50 @@ type DragState
 
 init : ( Model, Cmd Msg )
 init =
-    ( { layers =
-            Array.fromList
-                [ { path = "/layers/layer_1.svg", position = { x = 0, y = 0 } }
-                , { path = "/layers/layer_3.svg", position = { x = 1000, y = 100 } }
-                , { path = "/layers/layer_3.svg", position = { x = 2000, y = 100 } }
+    let
+        positions =
+            Dict.fromList
+                [ ( "git", { x = 601, y = 301 } )
+                , ( "content-addressable", { x = 1115, y = 1980 } )
+                , ( "timeline", { x = 1995, y = 554 } )
+                , ( "tarballs", { x = 3066, y = 1040 } )
+                , ( "git-in-git", { x = 2381, y = 1085 } )
+                , ( "inconsistency", { x = 1662, y = 1199 } )
+                , ( "plumbing", { x = 667, y = 1117 } )
+                , ( "data-store", { x = 744, y = 1621 } )
                 ]
+
+        slides =
+            [ "git"
+            , "timeline"
+            , "timeline"
+            , "tarballs"
+            , "git-in-git"
+            , "inconsistency"
+            , "plumbing"
+            , "data-store"
+            , "content-addressable"
+            ]
+
+        screenX =
+            1440 / 2
+
+        screenY =
+            800 / 2
+
+        offset { x, y } =
+            { x = screenX - x, y = screenY - y }
+
+        layers =
+            slides
+                |> List.filterMap
+                    (\name ->
+                        Dict.get name positions
+                            |> Maybe.map (\pos -> { path = "/layers/" ++ name ++ ".svg", position = offset pos })
+                    )
+                |> Array.fromList
+    in
+    ( { layers = layers
       , currentIndex = 0
       , farthestIndex = 0
       , fresh = False
@@ -85,7 +124,7 @@ update msg model =
 
                     newOffset =
                         Array.get newIndex model.layers
-                            |> Maybe.map (\layer -> { x = -layer.position.x, y = -layer.position.y })
+                            |> Maybe.map (\layer -> { x = layer.position.x, y = layer.position.y })
                             |> Maybe.withDefault model.offset
                 in
                 ( { model
@@ -106,7 +145,7 @@ update msg model =
 
                     newOffset =
                         Array.get newIndex model.layers
-                            |> Maybe.map (\layer -> { x = -layer.position.x, y = -layer.position.y })
+                            |> Maybe.map (\layer -> { x = layer.position.x, y = layer.position.y })
                             |> Maybe.withDefault model.offset
                 in
                 ( { model
