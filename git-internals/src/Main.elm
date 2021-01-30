@@ -1,12 +1,12 @@
 module Main exposing (..)
 
+import Array exposing (Array)
 import Browser
 import Browser.Events
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Json.Decode as Decode
 import Keyboard
-import SelectList exposing (SelectList)
 
 
 
@@ -14,7 +14,10 @@ import SelectList exposing (SelectList)
 
 
 type alias Model =
-    { layers : SelectList Slide
+    { layers : Array Slide
+    , currentIndex : Int
+    , farthestIndex : Int
+    , fresh : Bool
     , offset : Point
     , dragState : DragState
     }
@@ -38,11 +41,14 @@ type DragState
 init : ( Model, Cmd Msg )
 init =
     ( { layers =
-            SelectList.fromLists []
-                { path = "/layers/0-git.svg", position = { x = 50, y = 50 } }
-                [ { path = "/layers/1-timeline.svg", position = { x = 500, y = 500 } }
-                , { path = "/layers/openid.svg", position = { x = 0, y = 500 } }
+            Array.fromList
+                [ { path = "/layers/layer_1.svg", position = { x = 0, y = 0 } }
+                , { path = "/layers/layer_3.svg", position = { x = 1000, y = 100 } }
+                , { path = "/layers/layer_3.svg", position = { x = 2000, y = 100 } }
                 ]
+      , currentIndex = 0
+      , farthestIndex = 0
+      , fresh = False
       , offset = { x = 0, y = 0 }
       , dragState = Static
       }
@@ -71,33 +77,42 @@ update msg model =
             in
             if List.member Keyboard.ArrowLeft keys || List.member (Keyboard.Character "S") keys then
                 let
-                    newLayers =
-                        SelectList.selectBy -1 model.layers
+                    numLayers =
+                        Array.length model.layers
+
+                    newIndex =
+                        clamp 0 numLayers (model.currentIndex - 1)
 
                     newOffset =
-                        Maybe.map SelectList.selected newLayers
+                        Array.get newIndex model.layers
                             |> Maybe.map (\layer -> { x = -layer.position.x, y = -layer.position.y })
                             |> Maybe.withDefault model.offset
                 in
                 ( { model
-                    | layers = newLayers |> Maybe.withDefault model.layers
+                    | currentIndex = newIndex
                     , offset = newOffset
+                    , fresh = False
                   }
                 , Cmd.none
                 )
 
             else if List.member Keyboard.ArrowRight keys || List.member (Keyboard.Character "F") keys then
                 let
-                    newLayers =
-                        SelectList.selectBy 1 model.layers
+                    numLayers =
+                        Array.length model.layers
+
+                    newIndex =
+                        clamp 0 numLayers (model.currentIndex + 1)
 
                     newOffset =
-                        Maybe.map SelectList.selected newLayers
+                        Array.get newIndex model.layers
                             |> Maybe.map (\layer -> { x = -layer.position.x, y = -layer.position.y })
                             |> Maybe.withDefault model.offset
                 in
                 ( { model
-                    | layers = newLayers |> Maybe.withDefault model.layers
+                    | currentIndex = newIndex
+                    , farthestIndex = Basics.max newIndex model.farthestIndex
+                    , fresh = newIndex > model.farthestIndex
                     , offset = newOffset
                   }
                 , Cmd.none
@@ -149,13 +164,20 @@ view model =
             style "top" (String.fromFloat y ++ "px")
 
         layers =
-            List.concat
-                [ SelectList.listBefore model.layers
-                    |> List.map
-                        (\{ path } -> img [ class "layer-image layer-past", src path ] [])
-                , [ SelectList.selected model.layers ]
-                    |> List.map (\{ path } -> img [ class "layer-image layer-current", src path ] [])
-                ]
+            Array.toList model.layers
+                |> List.take (model.farthestIndex + 1)
+                |> List.indexedMap
+                    (\index { path } ->
+                        if index == model.currentIndex then
+                            if model.fresh then
+                                img [ class "layer-image layer-current", src path ] []
+
+                            else
+                                img [ class "layer-image layer-past", src path ] []
+
+                        else
+                            img [ class "layer-image layer-past", src path ] []
+                    )
 
         transitionOverride =
             case model.dragState of
