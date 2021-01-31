@@ -40,7 +40,7 @@ type DragState
 
 
 init : Flags -> ( Model, Cmd Msg )
-init { windowWidth, windowHeight } =
+init { windowWidth, windowHeight, names } =
     let
         positions =
             Dict.fromList
@@ -55,16 +55,7 @@ init { windowWidth, windowHeight } =
                 ]
 
         slides =
-            [ "git"
-            , "timeline"
-            , "timeline"
-            , "tarballs"
-            , "git-in-git"
-            , "inconsistency"
-            , "plumbing"
-            , "data-store"
-            , "content-addressable"
-            ]
+            names
 
         screenX =
             toFloat windowWidth / 2.0
@@ -239,6 +230,7 @@ view model =
 type alias Flags =
     { windowWidth : Int
     , windowHeight : Int
+    , names : List String
     }
 
 

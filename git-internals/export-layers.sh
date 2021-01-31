@@ -2,6 +2,17 @@
 
 layers=$(xmlstarlet sel -t -m "//_:svg/_:g" -v "@id" -n all-slides.svg)
 
+mkdir -p build
+rm -f build/layers
+
+for layer in $layers; do
+  label=$(xmlstarlet sel -t -m "//_:svg/_:g[@id='$layer']" -v "@inkscape:label" -n all-slides.svg)
+  label=$(echo $label | sed 's/ /-/g')
+  echo $label >> build/layers
+done
+
+cat build/layers  | jq  --raw-input .  | jq --slurp . > src/names.json
+
 for layer in $layers; do
   label=$(xmlstarlet sel -t -m "//_:svg/_:g[@id='$layer']" -v "@inkscape:label" -n all-slides.svg)
   label=$(echo $label | sed 's/ /-/g')
