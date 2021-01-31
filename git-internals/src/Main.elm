@@ -39,8 +39,8 @@ type DragState
     | Moving Point
 
 
-init : ( Model, Cmd Msg )
-init =
+init : Flags -> ( Model, Cmd Msg )
+init { windowWidth, windowHeight } =
     let
         positions =
             Dict.fromList
@@ -67,10 +67,10 @@ init =
             ]
 
         screenX =
-            1440 / 2
+            toFloat windowWidth / 2.0
 
         screenY =
-            800 / 2
+            toFloat windowHeight / 2.0
 
         offset { x, y } =
             { x = screenX - x, y = screenY - y }
@@ -236,11 +236,17 @@ view model =
 ---- PROGRAM ----
 
 
-main : Program () Model Msg
+type alias Flags =
+    { windowWidth : Int
+    , windowHeight : Int
+    }
+
+
+main : Program Flags Model Msg
 main =
     Browser.element
         { view = view
-        , init = \_ -> init
+        , init = init
         , update = update
         , subscriptions = subscriptions
         }
