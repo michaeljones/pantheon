@@ -39,7 +39,7 @@ img {
 .layer-group {
     position: absolute;
 
-    width: 4000px;
+    width: 6000px;
     height: 4000px;
 
     top: 0;
@@ -53,7 +53,7 @@ img {
 
     display: none;
 
-    width: 4000px;
+    width: 6000px;
     height: 4000px;
 }
 
