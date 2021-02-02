@@ -5,6 +5,7 @@ import Browser
 import Browser.Events
 import Dict
 import Html exposing (..)
+import Html.Keyed
 import Html.Attributes exposing (..)
 import Json.Decode as Decode
 import Keyboard
@@ -199,13 +200,13 @@ view model =
                     (\index { path } ->
                         if index == model.currentIndex then
                             if model.fresh then
-                                img [ class "layer-image layer-current", src path ] []
+                                ( path, img [ class "layer-image layer-current", src path ] [])
 
                             else
-                                img [ class "layer-image layer-past", src path ] []
+                                ( path, img [ class "layer-image layer-past", src path ] [])
 
                         else
-                            img [ class "layer-image layer-past", src path ] []
+                            ( path, img [ class "layer-image layer-past", src path ] [])
                     )
 
         transitionOverride =
@@ -217,7 +218,7 @@ view model =
                     []
     in
     div [ class "layer-holder" ]
-        [ div (List.append [ class "layer-group", offsetX, offsetY ] transitionOverride)
+        [ Html.Keyed.node "div" (List.append [ class "layer-group", offsetX, offsetY ] transitionOverride)
             layers
         ]
 
