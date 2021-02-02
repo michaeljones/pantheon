@@ -1544,16 +1544,16 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.1737082"
-     inkscape:cx="1534.3769"
-     inkscape:cy="3671.1449"
+     inkscape:cx="2250.0573"
+     inkscape:cy="1921.1358"
      inkscape:document-units="px"
-     inkscape:current-layer="layer32"
+     inkscape:current-layer="layer21"
      inkscape:document-rotation="0"
      showgrid="false"
      units="px"
-     inkscape:window-width="1440"
-     inkscape:window-height="855"
-     inkscape:window-x="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1035"
+     inkscape:window-x="1440"
      inkscape:window-y="23"
      inkscape:window-maximized="1" />
   <metadata
@@ -2668,12 +2668,12 @@
          x="579.96301"
          y="502.51312"
          id="tspan3633-9"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64817px;line-height:1.25;font-family:Verdana;-inkscape-font-specification:'Verdana, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.211806"> </tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64817px;line-height:1.25;font-family:Verdana;-inkscape-font-specification:'Verdana, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.211806" /><tspan
          sodipodi:role="line"
          x="579.96301"
          y="509.57333"
          id="tspan3692"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64817px;line-height:1.25;font-family:Verdana;-inkscape-font-specification:'Verdana, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.211806">README</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64817px;line-height:1.25;font-family:Verdana;-inkscape-font-specification:'Verdana, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.211806"># README</tspan><tspan
          sodipodi:role="line"
          x="579.96301"
          y="516.63354"
@@ -2818,7 +2818,7 @@
          x="577.22943"
          y="502.16647"
          id="tspan3749"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64817px;line-height:1.25;font-family:Verdana;-inkscape-font-specification:'Verdana, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.211806">100644 blob c11aa4... README</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64817px;line-height:1.25;font-family:Verdana;-inkscape-font-specification:'Verdana, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.211806">100644 blob c11aa4... README.md</tspan></text>
     <path
        style="display:inline;fill:none;stroke:url(#linearGradient21048);stroke-width:1.05903;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-7-2-9-0-2-7-5-6-5)"
        d="m 356.88703,499.10142 c 35.02293,-25.88582 72.85579,-32.91366 136.71064,-17.09155"
@@ -2829,8 +2829,7 @@
      inkscape:groupmode="layer"
      id="layer16"
      inkscape:label="first-commit-commit"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <g
        style="display:inline"
        id="g4115-6-7"
@@ -2866,9 +2865,9 @@
        inkscape:connection-start-point="d4"
        inkscape:connection-end-point="d4" />
     <rect
-       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.635419;stroke-miterlimit:4;stroke-dasharray:none"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.674501;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect6687-0-6-3-6"
-       width="92.448303"
+       width="104.17041"
        height="56.963093"
        x="576.06653"
        y="466.9993" />
@@ -4173,7 +4172,8 @@
      inkscape:groupmode="layer"
      id="layer36"
      inkscape:label="mistakes"
-     style="display:inline">
+     style="display:inline"
+     sodipodi:insensitive="true">
     <text
        xml:space="preserve"
        style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.211806"
@@ -4217,7 +4217,8 @@
      inkscape:groupmode="layer"
      id="layer9"
      inkscape:label="git-commit-amend"
-     style="display:inline">
+     style="display:inline"
+     sodipodi:insensitive="true">
     <text
        xml:space="preserve"
        style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;display:inline;stroke-width:0.211806"
@@ -4239,7 +4240,8 @@
      inkscape:groupmode="layer"
      id="layer37"
      inkscape:label="git-reset"
-     style="display:inline">
+     style="display:inline"
+     sodipodi:insensitive="true">
     <text
        xml:space="preserve"
        style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;display:inline;stroke-width:0.211806"
@@ -4266,7 +4268,8 @@
      inkscape:groupmode="layer"
      id="layer40"
      inkscape:label="commit-refs"
-     style="display:inline">
+     style="display:inline"
+     sodipodi:insensitive="true">
     <text
        xml:space="preserve"
        style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;display:inline;stroke-width:0.211806"
@@ -4329,7 +4332,9 @@
   <g
      inkscape:groupmode="layer"
      id="layer38"
-     inkscape:label="git-rebase">
+     inkscape:label="git-rebase"
+     sodipodi:insensitive="true"
+     style="display:inline">
     <text
        xml:space="preserve"
        style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;display:inline;stroke-width:0.211806"
@@ -4355,7 +4360,9 @@
   <g
      inkscape:groupmode="layer"
      id="layer39"
-     inkscape:label="git-rebase-i">
+     inkscape:label="git-rebase-i"
+     sodipodi:insensitive="true"
+     style="display:inline">
     <path
        style="display:inline;fill:none;stroke:url(#linearGradient5198);stroke-width:1.05903;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-8-1-71-1-8-6-1-0-4)"
        d="m 135.43393,926.55676 c 21.43689,52.02358 79.45765,50.36276 124.52503,55.50246"
@@ -4377,7 +4384,8 @@
      inkscape:groupmode="layer"
      id="layer32"
      inkscape:label="thanks"
-     style="display:inline">
+     style="display:inline"
+     sodipodi:insensitive="true">
     <text
        xml:space="preserve"
        style="font-size:5.64817px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.211806"
