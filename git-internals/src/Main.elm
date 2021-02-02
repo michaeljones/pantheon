@@ -65,7 +65,7 @@ init { windowWidth, windowHeight, names } =
                 , ( "first-commit-branch", { x = 2267, y = 1682 } )
                 , ( "second-commit-file-1", { x = 2095, y = 1831 } )
                 , ( "second-commit-dir", { x = 2267, y = 1831 } ) -- Manual
-                , ( "second-commit-root", { x = 2257, y = 1898 } )
+                , ( "second-commit-root", { x = 2257, y = 1831 } ) -- Manual
                 , ( "second-commit-commit", { x = 2188, y = 1763 } )
                 , ( "more-commits", { x = 2644, y = 1732 } )
                 , ( "branch-commits", { x = 3065, y = 1728 } )
@@ -75,15 +75,16 @@ init { windowWidth, windowHeight, names } =
                 , ( "tags", { x = 4146, y = 1750 } )
                 , ( "branch-work", { x = 4074, y = 1939 } )
                 , ( "branch-rework", { x = 4120, y = 2016 } )
-                , ( "history-of-history", { x = 4034, y = 2360 } ) -- Manual
-                , ( "why-source-control", { x = 3459, y = 2488 } ) -- Manual
-                , ( "mistakes", { x = 2915, y = 2675 } ) -- Manual
+                , ( "history-of-history", { x = 4034, y = 2260 } ) -- Manual
+                , ( "why-source-control", { x = 3459, y = 2388 } ) -- Manual
+                , ( "mistakes", { x = 2915, y = 2575 } ) -- Manual
                 , ( "git-commit-amend", { x = 2318, y = 2638 } )
                 , ( "git-reset", { x = 1749, y = 2837 } )
                 , ( "commit-refs", { x = 1070, y = 2934 } )
-                , ( "git-rebase", { x = 825, y = 3424 } )
-                , ( "git-rebase-i", { x = 749, y = 3610 } )
-                , ( "thanks", { x = 1630, y = 3903 } )
+                , ( "commit-refs", { x = 1070, y = 2934 } )
+                , ( "git-rebase", { x = 659, y = 3283 } ) -- Manual
+                , ( "git-rebase-i", { x = 943, y = 3516 } ) -- Manual
+                , ( "thanks", { x = 1730, y = 3803 } ) -- Manual
                 ]
 
         slides =

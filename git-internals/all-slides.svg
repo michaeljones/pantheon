@@ -1544,16 +1544,16 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.1737082"
-     inkscape:cx="1507.9649"
-     inkscape:cy="3854.325"
+     inkscape:cx="1534.3769"
+     inkscape:cy="3671.1449"
      inkscape:document-units="px"
      inkscape:current-layer="layer32"
      inkscape:document-rotation="0"
      showgrid="false"
      units="px"
-     inkscape:window-width="1920"
-     inkscape:window-height="1035"
-     inkscape:window-x="1440"
+     inkscape:window-width="1440"
+     inkscape:window-height="855"
+     inkscape:window-x="0"
      inkscape:window-y="23"
      inkscape:window-maximized="1" />
   <metadata
@@ -1564,7 +1564,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -3293,7 +3293,7 @@
     </g>
     <path
        style="display:inline;fill:none;stroke:#000000;stroke-width:0.791915px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#TriangleInM)"
-       d="m 677.79589,458.38574 h 17.07904"
+       d="m 677.79589,458.38574 17.07904,0"
        id="path4442"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0"
@@ -3902,7 +3902,7 @@
        y="509.20355" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.802745;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker21605)"
-       d="M 1113.3567,503.43448 H 1095.984"
+       d="m 1113.3567,503.43448 -17.3727,0"
        id="path21235"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0"
@@ -3910,7 +3910,7 @@
        inkscape:connection-end="#g4379-05-1-4" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.802745;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker21247)"
-       d="m 1062.9458,503.43448 h -19.4901"
+       d="m 1062.9458,503.43448 -19.4901,0"
        id="path21237"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0"
@@ -4346,17 +4346,6 @@
          y="910.98285"
          style="font-size:8.46667px;stroke-width:0.211806"
          id="tspan2067">git rebase --onto &lt;destination&gt; &lt;from&gt; [&lt;to&gt;]</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;display:inline;stroke-width:0.211806"
-       x="277.22418"
-       y="985.64691"
-       id="text26852-6-54-5"><tspan
-         sodipodi:role="line"
-         x="277.22418"
-         y="985.64691"
-         style="font-size:8.46667px;stroke-width:0.211806"
-         id="tspan2067-2">git rebase -i &lt;from&gt;</tspan></text>
     <path
        style="display:inline;fill:none;stroke:url(#linearGradient4558);stroke-width:1.05903;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-8-1-71-1-8-6-1-0)"
        d="m 197.76186,825.11294 c -12.03704,25.88204 -72.92841,19.43923 -83.65091,51.99567"
@@ -4372,6 +4361,17 @@
        d="m 135.43393,926.55676 c 21.43689,52.02358 79.45765,50.36276 124.52503,55.50246"
        id="path5745-4-2-4-6-7-3-7-5-5-0-1-6-4-1"
        sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;display:inline;stroke-width:0.211806"
+       x="277.22418"
+       y="985.64691"
+       id="text26852-6-54-5"><tspan
+         sodipodi:role="line"
+         x="277.22418"
+         y="985.64691"
+         style="font-size:8.46667px;stroke-width:0.211806"
+         id="tspan2067-2">git rebase -i &lt;from&gt;</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
