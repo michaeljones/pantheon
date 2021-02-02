@@ -44,41 +44,46 @@ init { windowWidth, windowHeight, names } =
     let
         positions =
             Dict.fromList
-                [ ( "git", { x = 676, y = 286 } )
-                , ( "timeline", { x = 2014, y = 594 } )
-                , ( "tarballs", { x = 3171, y = 947 } )
-                , ( "git-in-git", { x = 2558, y = 1091 } )
-                , ( "inconsistency", { x = 1860, y = 1201 } )
-                , ( "plumbing", { x = 869, y = 1250 } )
-                , ( "data-store", { x = 587, y = 1478 } )
-                , ( "sha-1", { x = 677, y = 1808 } )
-                , ( "content-addressable", { x = 754, y = 2045 } )
-                , ( "git-objects", { x = 769, y = 2316 } )
-                , ( "git-objects-breakdown", { x = 816, y = 2539 } )
-                , ( "directory-structure", { x = 1474, y = 2568 } )
-                , ( "first-commit-file-1", { x = 1926, y = 2725 } )
-                , ( "first-commit-file-2", { x = 2038, y = 2779 } )
-                , ( "first-commit-dir", { x = 2320, y = 2697 } )
-                , ( "first-commit-file-3", { x = 2319, y = 2483 } )
-                , ( "first-commit-root", { x = 2370, y = 2378 } )
-                , ( "first-commit-commit", { x = 2529, y = 2254 } )
-                , ( "first-commit-branch", { x = 2782, y = 2077 } )
-                , ( "second-commit-file-1", { x = 2567, y = 2264 } )
-                , ( "second-commit-dir", { x = 2782, y = 2511 } )
-                , ( "second-commit-root", { x = 2769, y = 2347 } )
-                , ( "second-commit-commit", { x = 2684, y = 2178 } )
-                , ( "more-commits", { x = 3253, y = 2140 } )
-                , ( "branch-commits", { x = 3779, y = 2136 } )
-                , ( "merge-commits", { x = 4049, y = 2120 } )
-                , ( "final-branching", { x = 4701, y = 2230 } )
-                , ( "integrity", { x = 5316, y = 1972 } )
-                , ( "tags", { x = 5265, y = 2138 } )
-                , ( "branch-work", { x = 5039, y = 2399 } )
-                , ( "branch-rework", { x = 5096, y = 2495 } )
-                , ( "history-of-history", { x = 4989, y = 2800 } )
-                , ( "why-source-control", { x = 4371, y = 2952 } )
-                , ( "mistakes", { x = 3903, y = 3130 } )
-                , ( "thanks", { x = 3307, y = 3387 } )
+                [ ( "git", { x = 400, y = 250 } ) -- Manual
+                , ( "timeline", { x = 1652, y = 495 } )
+                , ( "tarballs", { x = 2579, y = 777 } )
+                , ( "git-in-git", { x = 2087, y = 892 } )
+                , ( "inconsistency", { x = 1529, y = 980 } )
+                , ( "plumbing", { x = 736, y = 1020 } )
+                , ( "data-store", { x = 510, y = 1202 } )
+                , ( "sha-1", { x = 582, y = 1466 } )
+                , ( "content-addressable", { x = 644, y = 1656 } )
+                , ( "git-objects", { x = 656, y = 1873 } )
+                , ( "git-objects-breakdown", { x = 693, y = 2051 } )
+                , ( "directory-structure", { x = 1220, y = 2075 } )
+                , ( "first-commit-file-1", { x = 1583, y = 2201 } )
+                , ( "first-commit-file-2", { x = 1672, y = 2243 } )
+                , ( "first-commit-dir", { x = 1897, y = 2178 } )
+                , ( "first-commit-file-3", { x = 1897, y = 2007 } )
+                , ( "first-commit-root", { x = 1937, y = 1923 } )
+                , ( "first-commit-commit", { x = 2065, y = 1824 } )
+                , ( "first-commit-branch", { x = 2267, y = 1682 } )
+                , ( "second-commit-file-1", { x = 2095, y = 1831 } )
+                , ( "second-commit-dir", { x = 2267, y = 1831 } ) -- Manual
+                , ( "second-commit-root", { x = 2257, y = 1898 } )
+                , ( "second-commit-commit", { x = 2188, y = 1763 } )
+                , ( "more-commits", { x = 2644, y = 1732 } )
+                , ( "branch-commits", { x = 3065, y = 1728 } )
+                , ( "merge-commits", { x = 3282, y = 1716 } )
+                , ( "final-branching", { x = 3803, y = 1804 } )
+                , ( "integrity", { x = 4352, y = 1625 } )
+                , ( "tags", { x = 4146, y = 1750 } )
+                , ( "branch-work", { x = 4074, y = 1939 } )
+                , ( "branch-rework", { x = 4120, y = 2016 } )
+                , ( "history-of-history", { x = 4034, y = 2360 } ) -- Manual
+                , ( "why-source-control", { x = 3459, y = 2488 } ) -- Manual
+                , ( "mistakes", { x = 2915, y = 2675 } ) -- Manual
+                , ( "git-commit-amend", { x = 2318, y = 2638 } )
+                , ( "git-reset", { x = 1749, y = 2837 } )
+                , ( "commit-refs", { x = 1070, y = 2934 } )
+                , ( "git-rebase", { x = 825, y = 3424 } )
+                , ( "git-rebase-i", { x = 749, y = 3610 } )
+                , ( "thanks", { x = 1630, y = 3903 } )
                 ]
 
         slides =
@@ -106,7 +111,7 @@ init { windowWidth, windowHeight, names } =
       , currentIndex = 0
       , farthestIndex = 0
       , fresh = False
-      , offset = { x = 0, y = 0 }
+      , offset = { x = screenX - 400, y = screenY - 250 }
       , dragState = Static
       }
     , Cmd.none
