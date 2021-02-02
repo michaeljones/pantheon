@@ -83,7 +83,7 @@ init { windowWidth, windowHeight, names } =
                 , ( "commit-refs", { x = 1070, y = 2934 } )
                 , ( "commit-refs", { x = 1070, y = 2934 } )
                 , ( "git-rebase", { x = 659, y = 3283 } ) -- Manual
-                , ( "git-rebase-i", { x = 943, y = 3516 } ) -- Manual
+                , ( "git-rebase-i", { x = 1243, y = 3516 } ) -- Manual
                 , ( "thanks", { x = 1730, y = 3803 } ) -- Manual
                 ]
 
@@ -226,6 +226,12 @@ view model =
         offsetY =
             style "top" (String.fromFloat y ++ "px")
 
+        dropCount =
+            if model.farthestIndex == (Array.length model.layers - 1) then
+                0
+            else
+                Basics.max 0 (model.currentIndex  - 20)
+
         layers =
             Array.toList model.layers
                 |> List.take (model.farthestIndex + 1)
@@ -241,6 +247,7 @@ view model =
                         else
                             img [ class "layer-image layer-past", src path ] []
                     )
+                |> List.drop (dropCount)
 
         transitionOverride =
             case model.dragState of
