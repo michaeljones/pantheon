@@ -39,9 +39,6 @@ img {
 .layer-group {
     position: absolute;
 
-    width: 4000px;
-    height: 4000px;
-
     top: 0;
     left: 0;
 
@@ -52,9 +49,6 @@ img {
     position: absolute;
 
     display: none;
-
-    width: 4000px;
-    height: 4000px;
 }
 
 .layer-past {
