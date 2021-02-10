@@ -40,19 +40,12 @@ type DragState
 
 
 init : Flags -> ( Model, Cmd Msg )
-init { windowWidth, windowHeight, names } =
+init { windowWidth, windowHeight, names, focusPoints } =
     let
         positions =
-            Dict.fromList
-                [ ( "git", { x = 601, y = 301 } )
-                , ( "content-addressable", { x = 1115, y = 1980 } )
-                , ( "timeline", { x = 1995, y = 554 } )
-                , ( "tarballs", { x = 3066, y = 1040 } )
-                , ( "git-in-git", { x = 2381, y = 1085 } )
-                , ( "inconsistency", { x = 1662, y = 1199 } )
-                , ( "plumbing", { x = 667, y = 1117 } )
-                , ( "data-store", { x = 744, y = 1621 } )
-                ]
+            focusPoints
+                |> List.map (\focus -> ( focus.name, focus.position ))
+                |> Dict.fromList
 
         slides =
             names
@@ -231,6 +224,13 @@ type alias Flags =
     { windowWidth : Int
     , windowHeight : Int
     , names : List String
+    , focusPoints : List FocusPoint
+    }
+
+
+type alias FocusPoint =
+    { name : String
+    , position : Point
     }
 
 

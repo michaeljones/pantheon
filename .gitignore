@@ -15,3 +15,4 @@ node_modules
 
 /public/layers
 /src/names.json
+/src/focus-points.json

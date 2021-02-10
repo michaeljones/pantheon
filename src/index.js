@@ -3,6 +3,7 @@ import { Elm } from "./Main.elm";
 import * as serviceWorker from "./serviceWorker";
 
 const names = require("./names.json");
+const focusPoints = require("./focus-points.json");
 
 Elm.Main.init({
   node: document.getElementById("root"),
@@ -10,6 +11,7 @@ Elm.Main.init({
     windowWidth: window.innerWidth,
     windowHeight: window.innerHeight,
     names,
+    focusPoints,
   },
 });
 
