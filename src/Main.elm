@@ -114,7 +114,7 @@ update msg model =
 
                     newOffset =
                         Array.get newIndex model.layers
-                            |> Maybe.map (\layer -> { x = layer.position.x, y = layer.position.y })
+                            |> Maybe.map .position
                             |> Maybe.withDefault model.offset
                 in
                 ( { model
@@ -135,7 +135,7 @@ update msg model =
 
                     newOffset =
                         Array.get newIndex model.layers
-                            |> Maybe.map (\layer -> { x = layer.position.x, y = layer.position.y })
+                            |> Maybe.map .position
                             |> Maybe.withDefault model.offset
                 in
                 ( { model
