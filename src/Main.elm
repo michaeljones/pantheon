@@ -56,15 +56,21 @@ init { windowWidth, windowHeight, names, focusPoints } =
         screenY =
             toFloat windowHeight / 2.0
 
-        offset { x, y } =
+        screenOffset { x, y } =
             { x = screenX - x, y = screenY - y }
+
+        offset =
+            List.head focusPoints
+                |> Maybe.map .position
+                |> Maybe.withDefault { x = 0, y = 0 }
+                |> screenOffset
 
         layers =
             slides
                 |> List.filterMap
                     (\name ->
                         Dict.get name positions
-                            |> Maybe.map (\pos -> { path = "/layers/" ++ name ++ ".svg", position = offset pos })
+                            |> Maybe.map (\pos -> { path = "/layers/" ++ name ++ ".svg", position = screenOffset pos })
                     )
                 |> Array.fromList
     in
@@ -72,7 +78,7 @@ init { windowWidth, windowHeight, names, focusPoints } =
       , currentIndex = 0
       , farthestIndex = 0
       , fresh = False
-      , offset = { x = 0, y = 0 }
+      , offset = offset
       , dragState = Static
       }
     , Cmd.none
