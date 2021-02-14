@@ -62,7 +62,9 @@ init { windowWidth, windowHeight, names, focusPoints } =
 
         offset =
             List.head focusPoints
-                |> Maybe.map .position
+                -- Extract the position from positions by the name of the focus point in case there are overrides in the
+                -- focus point list which override the position of the first entry
+                |> Maybe.andThen (\focus -> Dict.get focus.name positions)
                 |> Maybe.withDefault { x = 0, y = 0 }
                 |> screenOffset
 
